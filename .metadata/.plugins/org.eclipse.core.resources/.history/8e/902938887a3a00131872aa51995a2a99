@@ -1,0 +1,19 @@
+grammar org.example.expressions.Expressions with org.eclipse.xtext.common.Terminals
+
+generate expressions "http://www.example.org/expressions/Expressions"
+
+ExpressionModel:
+	elements += AbstractElement*;
+
+
+AbstractElement:
+	Variable | Expression;
+;
+
+Variable:
+	name = ID '=' expression=Expression;
+;
+
+Expression:
+	value=INT
+;

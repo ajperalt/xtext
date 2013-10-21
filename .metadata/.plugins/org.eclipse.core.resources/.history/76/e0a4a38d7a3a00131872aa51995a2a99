@@ -1,0 +1,7 @@
+package org.example.expressions.tests;
+
+/* @RunWith(XtextRunner.class)
+@InjectWith(ExpressionsInjectorProvider.class)
+ */@SuppressWarnings("all")
+public class ExpressionsParserTest {
+}

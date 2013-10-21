@@ -1,0 +1,37 @@
+package org.example.entites.tests;
+
+import com.google.inject.Inject;
+import org.eclipse.xtext.junit4.InjectWith;
+import org.eclipse.xtext.junit4.XtextRunner;
+import org.eclipse.xtext.junit4.util.ParseHelper;
+import org.eclipse.xtext.xbase.lib.Extension;
+import org.examples.entities.EntitiesInjectorProvider;
+import org.examples.entities.entities.Model;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+@RunWith(XtextRunner.class)
+@InjectWith(EntitiesInjectorProvider.class)
+@SuppressWarnings("all")
+public class EntitiesParserTest {
+  @Inject
+  @Extension
+  private ParseHelper<Model> _parseHelper;
+  
+  @Test
+  public void testParsing() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nEntityType cannot be resolved to a type."
+      + "\nAssert cannot be resolved to a type."
+      + "\nThe method or field attribute is undefined for the type EntitiesParserTest"
+      + "\nAssert cannot be resolved to a type."
+      + "\nThe method or field attribute is undefined for the type EntitiesParserTest"
+      + "\nassertEquals cannot be resolved"
+      + "\nname cannot be resolved"
+      + "\nassertEquals cannot be resolved"
+      + "\ntype cannot be resolved"
+      + "\nelemntType cannot be resolved"
+      + "\nentity cannot be resolved"
+      + "\nname cannot be resolved");
+  }
+}

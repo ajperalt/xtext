@@ -1,0 +1,12 @@
+package org.example.entites.tests
+
+import org.junit.runner.RunWith
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
+import org.examples.entities.EntitiesInjectorProvider
+
+@RunWith(typeof(XtextRunner))
+@InjectWith(typeof(EntitiesInjectorProvider))
+class EntitiesParserTest {
+	
+}

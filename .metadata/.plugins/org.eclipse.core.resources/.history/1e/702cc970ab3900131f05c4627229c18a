@@ -1,0 +1,10 @@
+package org.example.entites.tests;
+
+import org.eclipse.xtext.junit4.InjectWith;
+import org.junit.runner.RunWith;
+
+@RunWith(void.class)
+@InjectWith(void.class)
+@SuppressWarnings("all")
+public class EntitiesValidatorTest {
+}

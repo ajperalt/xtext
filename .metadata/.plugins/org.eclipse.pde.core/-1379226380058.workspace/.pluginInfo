@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="910" localization="OSGI-INF/l10n/bundle" name="org.example.expressions.tests" project="org.example.expressions.tests" provider="My Company"/>
+	<bundle bundleID="905" localization="OSGI-INF/l10n/bundle" name="org.example.entites" project="org.example.entites" provider="My Company"/>
+	<bundle bundleID="897" localization="plugin" name="%pluginName" project="ca.mcgill.sel.ram" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="898" localization="OSGI-INF/l10n/bundle" name="TouchRAM GUI" project="ca.mcgill.sel.ram.gui" provider="SEL Team">
+		<library name="build/codemodel-2.6.jar"/>
+	</bundle>
+	<bundle bundleID="911" class="org.example.expressions.ui.internal.ExpressionsActivator" localization="OSGI-INF/l10n/bundle" name="org.example.expressions.ui" project="org.example.expressions.ui" provider="My Company"/>
+	<bundle bundleID="906" localization="OSGI-INF/l10n/bundle" name="org.example.entites.tests" project="org.example.entites.tests" provider="My Company"/>
+	<bundle bundleID="909" localization="OSGI-INF/l10n/bundle" name="org.example.expressions" project="org.example.expressions" provider="My Company"/>
+	<bundle bundleID="899" class="ca.mcgill.cs.sel.ram.provider.RAMEditPlugin$Implementation" localization="plugin" name="%pluginName" project="ca.mcgill.sel.ram.edit" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="907" class="org.examples.entities.ui.internal.EntitiesActivator" localization="OSGI-INF/l10n/bundle" name="org.example.entites.ui" project="org.example.entites.ui" provider="My Company"/>
+	<bundle bundleID="900" localization="OSGI-INF/l10n/bundle" name="RAM Controller" project="ca.mcgill.sel.ram.controller"/>
+	<bundle bundleID="901" localization="OSGI-INF/l10n/bundle" name="RAM Weaver" project="ca.mcgill.sel.ram.weaver" provider="SEL Team">
+		<library name="."/>
+	</bundle>
+</map>

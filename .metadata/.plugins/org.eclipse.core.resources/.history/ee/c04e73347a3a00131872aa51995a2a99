@@ -1,0 +1,5 @@
+package org.example.expressions.tests;
+
+@SuppressWarnings("all")
+public class ExpressionsParserTest {
+}

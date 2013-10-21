@@ -1,0 +1,7 @@
+package org.example.entites.tests
+
+@RunWtih(typeof(XTextRunner))
+@InjectWith(typeof(EntitiesInjectorProvider))
+class EntitiesValidatorTest {
+	
+}

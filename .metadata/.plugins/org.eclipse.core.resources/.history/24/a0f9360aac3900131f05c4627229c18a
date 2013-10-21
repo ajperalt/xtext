@@ -1,0 +1,29 @@
+package org.example.entites.tests
+
+import org.junit.runner.RunWith
+import org.eclipse.xtext.junit4.*
+import org.examples.entities.*
+import com.google.inject.Inject
+import org.eclipse.xtext.junit4.validation.ValidationTestHelper
+import org.examples.entities.entities.EntitiesPackage
+import org.examples.entities.validation.EntitiesValidator
+import org.eclipse.xtext.junit4.util.ParseHelper
+
+@RunWith(typeof(XtextRunner))
+@InjectWith(typeof(EntitiesInjectorProvider))
+class EntitiesValidatorTest {
+	
+	@Inject extension ParseHelper<Model>
+	@Inject extension ValidationTestHelper
+	
+	def void testEntityExtendsItself() {
+		'''
+			entity MyEntity extends MyEntity {}
+		'''.parse.assertError(EntitiesPackage::eINSTANCE.entity, 
+			EntitiesValidator::HIERARCHY_CYCLE,
+			"cycle in hierarchy of entity 'My Entity'"
+		)
+		
+	}
+	
+}

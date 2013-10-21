@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config date="1382201575745" transient="false" version="3.0">
+<site enabled="true" policy="USER-EXCLUDE" updateable="true" url="platform:/base/">
+<feature id="org.eclipse.emf.codegen.ui.source" url="features/org.eclipse.emf.codegen.ui.source_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtext.ui.source" url="features/org.eclipse.xtext.ui.source_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.xsd.example" url="features/org.eclipse.xsd.example_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend.ui" url="features/org.eclipse.xtend.ui_1.4.0.v201306110406/" version="1.4.0.v201306110406">
+</feature>
+<feature id="org.eclipse.emf.all" url="features/org.eclipse.emf.all_2.9.1.v20130902-0605/" version="2.9.1.v20130902-0605">
+</feature>
+<feature id="org.eclipse.contribution.xref" url="features/org.eclipse.contribution.xref_2.2.3.e43x-RELEASE-20130627-0800/" version="2.2.3.e43x-RELEASE-20130627-0800">
+</feature>
+<feature id="org.eclipse.ocl.examples" url="features/org.eclipse.ocl.examples_3.3.1.v20130916-1423/" version="3.3.1.v20130916-1423">
+</feature>
+<feature id="org.eclipse.emf.ecore" url="features/org.eclipse.emf.ecore_2.9.1.v20130827-0309/" version="2.9.1.v20130827-0309">
+</feature>
+<feature id="org.eclipse.emf.codegen.ui" url="features/org.eclipse.emf.codegen.ui_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.examples" url="features/org.eclipse.emf.examples_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.sdk" url="features/org.eclipse.emf.sdk_2.9.1.v20130902-0605/" version="2.9.1.v20130902-0605">
+</feature>
+<feature id="org.eclipse.ajdt.source" url="features/org.eclipse.ajdt.source_2.2.3.e43x-RELEASE-20130627-0800/" version="2.2.3.e43x-RELEASE-20130627-0800">
+</feature>
+<feature id="org.eclipse.emf.oda.ecore" url="features/org.eclipse.emf.oda.ecore_1.2.0.v20130902-0605/" version="1.2.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend.sdk" plugin-identifier="org.eclipse.xtend.ide" url="features/org.eclipse.xtend.sdk_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.emf.ecore.xcore.ui.source" url="features/org.eclipse.emf.ecore.xcore.ui.source_1.1.0.v20130903-0948/" version="1.1.0.v20130903-0948">
+</feature>
+<feature id="org.eclipse.emf.mwe2.language.sdk.source" url="features/org.eclipse.emf.mwe2.language.sdk.source_2.4.1.v201309030840/" version="2.4.1.v201309030840">
+</feature>
+<feature id="org.eclipse.equinox.p2.user.ui" url="features/org.eclipse.equinox.p2.user.ui_2.2.0.v20130828-0031/" version="2.2.0.v20130828-0031">
+</feature>
+<feature id="org.eclipse.ajdt" plugin-identifier="org.eclipse.aspectj" url="features/org.eclipse.ajdt_2.2.3.e43x-RELEASE-20130627-0800/" version="2.2.3.e43x-RELEASE-20130627-0800">
+</feature>
+<feature id="org.eclipse.xtend.backend.ui.source" url="features/org.eclipse.xtend.backend.ui.source_1.2.1.v201206110941/" version="1.2.1.v201206110941">
+</feature>
+<feature id="org.eclipse.emf.source" url="features/org.eclipse.emf.source_2.9.1.v20130902-0605/" version="2.9.1.v20130902-0605">
+</feature>
+<feature id="org.eclipse.epp.package.common.feature" url="features/org.eclipse.epp.package.common.feature_2.0.1.20130919-0803/" version="2.0.1.20130919-0803">
+</feature>
+<feature id="org.eclipse.egit" url="features/org.eclipse.egit_3.0.3.201309161630-r/" version="3.0.3.201309161630-r">
+</feature>
+<feature id="org.eclipse.emf.converter.source" url="features/org.eclipse.emf.converter.source_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.oda.ecore.ui.source" url="features/org.eclipse.emf.oda.ecore.ui.source_1.1.0.v20130902-0605/" version="1.1.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.jgit" url="features/org.eclipse.jgit_3.0.3.201309161630-r/" version="3.0.3.201309161630-r">
+</feature>
+<feature id="org.eclipse.emf.mwe2.runtime.sdk.source" url="features/org.eclipse.emf.mwe2.runtime.sdk.source_2.0.1.v201108020506/" version="2.0.1.v201108020506">
+</feature>
+<feature id="org.eclipse.xsd.ecore.converter" url="features/org.eclipse.xsd.ecore.converter_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.mapping.ecore.source" url="features/org.eclipse.emf.mapping.ecore.source_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend.backend.xsdtypes" url="features/org.eclipse.xtend.backend.xsdtypes_1.2.1.v201206110941/" version="1.2.1.v201206110941">
+</feature>
+<feature id="org.eclipse.xpand.ui" url="features/org.eclipse.xpand.ui_1.4.0.v201306110406/" version="1.4.0.v201306110406">
+</feature>
+<feature id="org.eclipse.cvs.source" url="features/org.eclipse.cvs.source_1.4.0.v20130911-1000/" version="1.4.0.v20130911-1000">
+</feature>
+<feature id="org.eclipse.xsd.mapping.editor" url="features/org.eclipse.xsd.mapping.editor_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.databinding.edit" url="features/org.eclipse.emf.databinding.edit_1.3.0.v20130902-0605/" version="1.3.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.common" url="features/org.eclipse.emf.common_2.9.1.v20130827-0309/" version="2.9.1.v20130827-0309">
+</feature>
+<feature id="org.eclipse.xtext.examples" url="features/org.eclipse.xtext.examples_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.equinox.p2.extras.feature" url="features/org.eclipse.equinox.p2.extras.feature_1.2.0.v20130827-1605/" version="1.2.0.v20130827-1605">
+</feature>
+<feature id="org.eclipse.emf.ecore.edit" url="features/org.eclipse.emf.ecore.edit_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.oda.source" url="features/org.eclipse.emf.oda.source_1.2.0.v20130902-0605/" version="1.2.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend.backend.source" url="features/org.eclipse.xtend.backend.source_1.2.1.v201206110941/" version="1.2.1.v201206110941">
+</feature>
+<feature id="org.eclipse.rcp.configuration" url="features/org.eclipse.rcp.configuration_1.0.0.v20130521-1847/" version="1.0.0.v20130521-1847">
+</feature>
+<feature id="org.eclipse.xsd.mapping" url="features/org.eclipse.xsd.mapping_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend.dependencies" url="features/org.eclipse.xtend.dependencies_1.4.0.v201306110406/" version="1.4.0.v201306110406">
+</feature>
+<feature id="org.eclipse.emf.ecore.editor" url="features/org.eclipse.emf.ecore.editor_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.equinox.p2.discovery.feature" url="features/org.eclipse.equinox.p2.discovery.feature_1.0.100.v20130502-0334/" version="1.0.100.v20130502-0334">
+</feature>
+<feature id="org.eclipse.xtend.backend.uml2types.source" url="features/org.eclipse.xtend.backend.uml2types.source_1.2.1.v201206110941/" version="1.2.1.v201206110941">
+</feature>
+<feature id="org.eclipse.platform" url="features/org.eclipse.platform_4.3.1.v20130911-1000/" version="4.3.1.v20130911-1000">
+</feature>
+<feature id="org.eclipse.emf.ecore.xcore.lib.source" url="features/org.eclipse.emf.ecore.xcore.lib.source_1.1.0.v20130903-0948/" version="1.1.0.v20130903-0948">
+</feature>
+<feature id="org.eclipse.xtext.gwt" url="features/org.eclipse.xtext.gwt_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.emf.codegen.source" url="features/org.eclipse.emf.codegen.source_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend.backend.sdk" url="features/org.eclipse.xtend.backend.sdk_1.2.1.v201206110941/" version="1.2.1.v201206110941">
+</feature>
+<feature id="org.eclipse.emf.mwe.ui" url="features/org.eclipse.emf.mwe.ui_1.2.1.v201309030422/" version="1.2.1.v201309030422">
+</feature>
+<feature id="org.eclipse.help" plugin-identifier="org.eclipse.help.base" url="features/org.eclipse.help_2.0.1.v20130911-1000/" version="2.0.1.v20130911-1000">
+</feature>
+<feature id="org.eclipse.emf.codegen.ecore" url="features/org.eclipse.emf.codegen.ecore_2.9.1.v20130902-0605/" version="2.9.1.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.databinding" url="features/org.eclipse.emf.databinding_1.3.0.v20130902-0605/" version="1.3.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xsd.editor" url="features/org.eclipse.xsd.editor_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.ecore.xcore.source" url="features/org.eclipse.emf.ecore.xcore.source_1.1.1.v20130903-0948/" version="1.1.1.v20130903-0948">
+</feature>
+<feature id="org.eclipse.xtext.xbase.lib.source" url="features/org.eclipse.xtext.xbase.lib.source_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.xtend.gwt" plugin-identifier="org.eclipse.xtend.ide" url="features/org.eclipse.xtend.gwt_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.emf.gwt.common" url="features/org.eclipse.emf.gwt.common_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.oda" url="features/org.eclipse.emf.oda_1.2.0.v20130902-0605/" version="1.2.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.epp.mpc" plugin-identifier="org.eclipse.epp.mpc.ui" url="features/org.eclipse.epp.mpc_1.2.1.I20130917-2019/" version="1.2.1.I20130917-2019">
+</feature>
+<feature id="org.eclipse.xtend.backend.uml2types" url="features/org.eclipse.xtend.backend.uml2types_1.2.1.v201206110941/" version="1.2.1.v201206110941">
+</feature>
+<feature id="org.eclipse.emf.mwe2.runtime.sdk" url="features/org.eclipse.emf.mwe2.runtime.sdk_2.0.1.v201108020506/" version="2.0.1.v201108020506">
+</feature>
+<feature id="org.eclipse.equinox.p2.rcp.feature.source" url="features/org.eclipse.equinox.p2.rcp.feature.source_1.2.0.v20130828-0031/" version="1.2.0.v20130828-0031">
+</feature>
+<feature id="org.eclipse.jdt.source" url="features/org.eclipse.jdt.source_3.9.1.v20130911-1000/" version="3.9.1.v20130911-1000">
+</feature>
+<feature id="rascal-feature" url="features/rascal-feature_0.6.1.201309131400/" version="0.6.1.201309131400">
+</feature>
+<feature id="org.eclipse.xsd.editor.source" url="features/org.eclipse.xsd.editor.source_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xsd.ecore.converter.source" url="features/org.eclipse.xsd.ecore.converter.source_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtext.ui" url="features/org.eclipse.xtext.ui_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.xtext.docs" plugin-identifier="org.eclipse.xtext.doc" url="features/org.eclipse.xtext.docs_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.jdt" url="features/org.eclipse.jdt_3.9.1.v20130911-1000/" version="3.9.1.v20130911-1000">
+</feature>
+<feature id="org.eclipse.contribution.weaving" url="features/org.eclipse.contribution.weaving_2.2.3.e43x-RELEASE-20130627-0800/" version="2.2.3.e43x-RELEASE-20130627-0800">
+</feature>
+<feature id="org.eclipse.xtext.xbase" url="features/org.eclipse.xtext.xbase_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.emf.edit.ui" url="features/org.eclipse.emf.edit.ui_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtext.runtime.source" url="features/org.eclipse.xtext.runtime.source_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.emf.ecore.xcore.sdk" url="features/org.eclipse.emf.ecore.xcore.sdk_1.1.1.v20130903-0948/" version="1.1.1.v20130903-0948">
+</feature>
+<feature id="org.eclipse.equinox.p2.user.ui.source" url="features/org.eclipse.equinox.p2.user.ui.source_2.2.0.v20130828-0031/" version="2.2.0.v20130828-0031">
+</feature>
+<feature id="org.eclipse.xtext.xtext.ui" url="features/org.eclipse.xtext.xtext.ui_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.xtext.runtime" url="features/org.eclipse.xtext.runtime_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.equinox.p2.core.feature.source" url="features/org.eclipse.equinox.p2.core.feature.source_1.2.1.v20130827-1605/" version="1.2.1.v20130827-1605">
+</feature>
+<feature id="org.eclipse.xtext.xtend2.m2e" url="features/org.eclipse.xtext.xtend2.m2e_2.2.1.v201112130541/" version="2.2.1.v201112130541">
+</feature>
+<feature id="org.eclipse.xtend.middleend.xpand" url="features/org.eclipse.xtend.middleend.xpand_1.4.0.v201306110406/" version="1.4.0.v201306110406">
+</feature>
+<feature id="org.eclipse.xtend.m2e" url="features/org.eclipse.xtend.m2e_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.emf.mapping" url="features/org.eclipse.emf.mapping_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.codegen.ecore.ui" url="features/org.eclipse.emf.codegen.ecore.ui_2.9.1.v20130902-0605/" version="2.9.1.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend" url="features/org.eclipse.xtend_1.4.0.v201306110406/" version="1.4.0.v201306110406">
+</feature>
+<feature id="org.eclipse.equinox.p2.core.feature" url="features/org.eclipse.equinox.p2.core.feature_1.2.1.v20130827-1605/" version="1.2.1.v20130827-1605">
+</feature>
+<feature id="org.eclipse.e4.rcp.source" url="features/org.eclipse.e4.rcp.source_1.2.1.v20130910-2014/" version="1.2.1.v20130910-2014">
+</feature>
+<feature id="org.eclipse.emf.oda.sdk" url="features/org.eclipse.emf.oda.sdk_1.2.0.v20130902-0605/" version="1.2.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.equinox.p2.extras.feature.source" url="features/org.eclipse.equinox.p2.extras.feature.source_1.2.0.v20130827-1605/" version="1.2.0.v20130827-1605">
+</feature>
+<feature id="org.eclipse.xpand.doc" url="features/org.eclipse.xpand.doc_1.2.2.v201302260541/" version="1.2.2.v201302260541">
+</feature>
+<feature id="org.eclipse.emf.mapping.ui.source" url="features/org.eclipse.emf.mapping.ui.source_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend.backend" url="features/org.eclipse.xtend.backend_1.2.1.v201206110941/" version="1.2.1.v201206110941">
+</feature>
+<feature id="org.eclipse.help.source" url="features/org.eclipse.help.source_2.0.1.v20130911-1000/" version="2.0.1.v20130911-1000">
+</feature>
+<feature id="org.eclipse.xtext.xtext.ui.source" url="features/org.eclipse.xtext.xtext.ui.source_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.xtext.xbase.lib" url="features/org.eclipse.xtext.xbase.lib_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.emf.ecore.edit.source" url="features/org.eclipse.emf.ecore.edit.source_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.doc" url="features/org.eclipse.emf.doc_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.common.ui.source" url="features/org.eclipse.emf.common.ui.source_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend.typesystem.emf" url="features/org.eclipse.xtend.typesystem.emf_1.4.0.v201306110406/" version="1.4.0.v201306110406">
+</feature>
+<feature id="org.eclipse.emf.mapping.ecore.editor.source" url="features/org.eclipse.emf.mapping.ecore.editor.source_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.mwe.doc" url="features/org.eclipse.emf.mwe.doc_1.2.1.v201112070431/" version="1.2.1.v201112070431">
+</feature>
+<feature id="org.eclipse.xpand" url="features/org.eclipse.xpand_1.4.0.v201306110406/" version="1.4.0.v201306110406">
+</feature>
+<feature id="org.eclipse.xtend.backend.xsdtypes.source" url="features/org.eclipse.xtend.backend.xsdtypes.source_1.2.1.v201206110941/" version="1.2.1.v201206110941">
+</feature>
+<feature id="org.eclipse.emf.ecore.editor.source" url="features/org.eclipse.emf.ecore.editor.source_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.equinox.p2.rcp.feature" url="features/org.eclipse.equinox.p2.rcp.feature_1.2.0.v20130828-0031/" version="1.2.0.v20130828-0031">
+</feature>
+<feature id="org.eclipse.xtext.sdk" plugin-identifier="org.eclipse.xtext" url="features/org.eclipse.xtext.sdk_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.xsd" url="features/org.eclipse.xsd_2.9.1.v20130902-0605/" version="2.9.1.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.edit.source" url="features/org.eclipse.emf.edit.source_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf" url="features/org.eclipse.emf_2.9.1.v20130902-0605/" version="2.9.1.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.edit" url="features/org.eclipse.emf.edit_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.oda.ecore.ui" url="features/org.eclipse.emf.oda.ecore.ui_1.1.0.v20130902-0605/" version="1.1.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.converter" url="features/org.eclipse.emf.converter_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xsd.example.source" url="features/org.eclipse.xsd.example.source_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtext.examples.source" url="features/org.eclipse.xtext.examples.source_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.emf.ecore.xcore.ui" url="features/org.eclipse.emf.ecore.xcore.ui_1.1.0.v20130903-0948/" version="1.1.0.v20130903-0948">
+</feature>
+<feature id="org.eclipse.emf.databinding.source" url="features/org.eclipse.emf.databinding.source_1.3.0.v20130902-0605/" version="1.3.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtext.xbase.source" url="features/org.eclipse.xtext.xbase.source_2.4.2.v201306120542/" version="2.4.2.v201306120542">
+</feature>
+<feature id="org.eclipse.emf.mapping.source" url="features/org.eclipse.emf.mapping.source_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.mwe.ui.source" url="features/org.eclipse.emf.mwe.ui.source_1.0.2.v201102150556/" version="1.0.2.v201102150556">
+</feature>
+<feature id="org.eclipse.xsd.mapping.editor.source" url="features/org.eclipse.xsd.mapping.editor.source_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.examples.source" url="features/org.eclipse.emf.examples.source_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.doc.source" url="features/org.eclipse.emf.doc.source_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend.backend.ui" url="features/org.eclipse.xtend.backend.ui_1.2.1.v201206110941/" version="1.2.1.v201206110941">
+</feature>
+<feature id="org.eclipse.pde" url="features/org.eclipse.pde_3.9.1.v20130911-1000/" version="3.9.1.v20130911-1000">
+</feature>
+<feature id="org.eclipse.epp.package.standard.feature" plugin-identifier="org.eclipse.epp.package.standard" url="features/org.eclipse.epp.package.standard.feature_2.0.1.20130919-0803/" version="2.0.1.20130919-0803">
+</feature>
+<feature id="org.eclipse.emf.common.ui" url="features/org.eclipse.emf.common.ui_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.gwt.ecore" url="features/org.eclipse.emf.gwt.ecore_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xsd.source" url="features/org.eclipse.xsd.source_2.9.1.v20130902-0605/" version="2.9.1.v20130902-0605">
+</feature>
+<feature id="org.aspectj" plugin-identifier="org.eclipse.aspectj" url="features/org.aspectj_1.7.3.20130613144500-a/" version="1.7.3.20130613144500-a">
+</feature>
+<feature id="org.eclipse.emf.mwe.core.source" url="features/org.eclipse.emf.mwe.core.source_1.0.2.v201102150556/" version="1.0.2.v201102150556">
+</feature>
+<feature id="org.eclipse.emf.mapping.ecore.editor" url="features/org.eclipse.emf.mapping.ecore.editor_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.equinox.weaving.sdk" url="features/org.eclipse.equinox.weaving.sdk_1.0.200.v20130327-1442/" version="1.0.200.v20130327-1442">
+</feature>
+<feature id="org.eclipse.emf.databinding.edit.source" url="features/org.eclipse.emf.databinding.edit.source_1.3.0.v20130902-0605/" version="1.3.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.codegen.ecore.source" url="features/org.eclipse.emf.codegen.ecore.source_2.9.1.v20130902-0605/" version="2.9.1.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.gwt.edit" url="features/org.eclipse.emf.gwt.edit_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend.middleend.xtend" url="features/org.eclipse.xtend.middleend.xtend_1.3.0.v201302260541/" version="1.3.0.v201302260541">
+</feature>
+<feature id="org.eclipse.xsd.sdk" url="features/org.eclipse.xsd.sdk_2.9.1.v20130902-0605/" version="2.9.1.v20130902-0605">
+</feature>
+<feature id="org.eclipse.contribution.weaving.source" url="features/org.eclipse.contribution.weaving.source_2.2.3.e43x-RELEASE-20130627-0800/" version="2.2.3.e43x-RELEASE-20130627-0800">
+</feature>
+<feature id="org.eclipse.ocl.examples.source" url="features/org.eclipse.ocl.examples.source_3.3.1.v20130916-1423/" version="3.3.1.v20130916-1423">
+</feature>
+<feature id="org.eclipse.emf.ecore.xcore" url="features/org.eclipse.emf.ecore.xcore_1.1.1.v20130903-0948/" version="1.1.1.v20130903-0948">
+</feature>
+<feature id="org.eclipse.rcp.source" url="features/org.eclipse.rcp.source_4.3.1.v20130911-1000/" version="4.3.1.v20130911-1000">
+</feature>
+<feature id="org.eclipse.pde.source" url="features/org.eclipse.pde.source_3.9.1.v20130911-1000/" version="3.9.1.v20130911-1000">
+</feature>
+<feature id="org.eclipse.emf.gwt.ecore.edit" url="features/org.eclipse.emf.gwt.ecore.edit_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.cvs" url="features/org.eclipse.cvs_1.4.0.v20130911-1000/" version="1.4.0.v20130911-1000">
+</feature>
+<feature id="org.eclipse.xtend.typesystem.xsd" url="features/org.eclipse.xtend.typesystem.xsd_1.2.1.v201206110941/" version="1.2.1.v201206110941">
+</feature>
+<feature id="org.eclipse.emf.oda.ecore.source" url="features/org.eclipse.emf.oda.ecore.source_1.2.0.v20130902-0605/" version="1.2.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xpand.examples" url="features/org.eclipse.xpand.examples_1.2.2.v201302260541/" version="1.2.2.v201302260541">
+</feature>
+<feature id="org.eclipse.xsd.edit.source" url="features/org.eclipse.xsd.edit.source_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xsd.edit" url="features/org.eclipse.xsd.edit_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.rcp" url="features/org.eclipse.rcp_4.3.1.v20130911-1000/" version="4.3.1.v20130911-1000">
+</feature>
+<feature id="org.eclipse.contribution.xref.source" url="features/org.eclipse.contribution.xref.source_2.2.3.e43x-RELEASE-20130627-0800/" version="2.2.3.e43x-RELEASE-20130627-0800">
+</feature>
+<feature id="org.eclipse.xsd.doc.source" url="features/org.eclipse.xsd.doc.source_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.mwe2.launcher" url="features/org.eclipse.emf.mwe2.launcher_2.4.1.v201309030840/" version="2.4.1.v201309030840">
+</feature>
+<feature id="org.aspectj.source" url="features/org.aspectj.source_1.7.3.20130613144500-a/" version="1.7.3.20130613144500-a">
+</feature>
+<feature id="org.eclipse.emf.codegen.ecore.ui.source" url="features/org.eclipse.emf.codegen.ecore.ui.source_2.9.1.v20130902-0605/" version="2.9.1.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.mwe2.language.sdk" url="features/org.eclipse.emf.mwe2.language.sdk_2.4.1.v201309030840/" version="2.4.1.v201309030840">
+</feature>
+<feature id="org.eclipse.e4.rcp" url="features/org.eclipse.e4.rcp_1.2.1.v20130910-2014/" version="1.2.1.v20130910-2014">
+</feature>
+<feature id="org.eclipse.emf.mapping.ecore" url="features/org.eclipse.emf.mapping.ecore_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.mwe.core" url="features/org.eclipse.emf.mwe.core_1.3.0.v201306110341/" version="1.3.0.v201306110341">
+</feature>
+<feature id="org.eclipse.emf.gwt.edit.ui" url="features/org.eclipse.emf.gwt.edit.ui_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xsd.doc" url="features/org.eclipse.xsd.doc_2.8.0.v20130902-0605/" version="2.8.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.xtend.typesystem.uml2" url="features/org.eclipse.xtend.typesystem.uml2_1.3.0.v201302260541/" version="1.3.0.v201302260541">
+</feature>
+<feature id="org.eclipse.emf.mapping.ui" url="features/org.eclipse.emf.mapping.ui_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.edit.ui.source" url="features/org.eclipse.emf.edit.ui.source_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.platform.source" url="features/org.eclipse.platform.source_4.3.1.v20130911-1000/" version="4.3.1.v20130911-1000">
+</feature>
+<feature id="org.eclipse.emf.ecore.xcore.lib" url="features/org.eclipse.emf.ecore.xcore.lib_1.1.0.v20130903-0948/" version="1.1.0.v20130903-0948">
+</feature>
+<feature id="org.eclipse.xsd.mapping.source" url="features/org.eclipse.xsd.mapping.source_2.7.0.v20130902-0605/" version="2.7.0.v20130902-0605">
+</feature>
+<feature id="org.eclipse.emf.codegen" url="features/org.eclipse.emf.codegen_2.9.0.v20130902-0605/" version="2.9.0.v20130902-0605">
+</feature>
+</site>
+</config>

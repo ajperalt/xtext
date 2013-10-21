@@ -1,0 +1,11 @@
+package org.example.expressions.tests
+
+import org.junit.runner.RunWith
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
+
+@RunWith(typeof(XtextRunner))
+//@InjectWith(typeof(ExpressionsInjectorProvider))
+class ExpressionsParserTest {
+	
+}

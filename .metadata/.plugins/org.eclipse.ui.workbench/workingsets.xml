@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1380220203792_2" label="touchram" name="touchram">
+<item elementID="=ca.mcgill.sel.ram" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=ca.mcgill.sel.ram.gui" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ca.mcgill.sel.ram.tests" type="4"/>
+<item elementID="=ca.mcgill.sel.ram.edit" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=ca.mcgill.sel.ram.controller" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=ca.mcgill.sel.ram.weaver" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1380038202852_0" label="Window Working Set" name="Aggregate for window 1380038202851"/>
+<mruList name="touchram"/>
+</workingSetManager>

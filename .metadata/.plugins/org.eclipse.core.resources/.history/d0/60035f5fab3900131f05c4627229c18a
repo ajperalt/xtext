@@ -1,0 +1,5 @@
+package org.example.entites.tests;
+
+@SuppressWarnings("all")
+public class EntitiesValidatorTest {
+}

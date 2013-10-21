@@ -1,0 +1,7 @@
+package org.example.entites.tests;
+
+/* @RunWith(XTextRunner.class)
+@InjectWith(EntitiesInjectorProvider.class)
+ */@SuppressWarnings("all")
+public class EntitiesValidatorTest {
+}

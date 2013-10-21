@@ -1,0 +1,10 @@
+package org.example.entites.tests
+
+import org.junit.runner.RunWith
+import org.eclipse.xtext.junit4.*
+
+@RunWith(typeof(XTextRunner))
+@InjectWith(typeof(EntitiesInjectorProvider))
+class EntitiesValidatorTest {
+	
+}

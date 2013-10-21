@@ -1,0 +1,37 @@
+package org.example.entites.tests;
+
+import com.google.inject.Inject;
+import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.junit4.InjectWith;
+import org.eclipse.xtext.junit4.XtextRunner;
+import org.eclipse.xtext.junit4.util.ParseHelper;
+import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
+import org.examples.entities.EntitiesInjectorProvider;
+import org.junit.runner.RunWith;
+
+@RunWith(XtextRunner.class)
+@InjectWith(EntitiesInjectorProvider.class)
+@SuppressWarnings("all")
+public class EntitiesParserTest {
+  @Inject
+  @Extension
+  private /* ParseHelper<Model> */Object _parseHelper;
+  
+  /* @Test
+   */public void testParsing() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("entity MyEntity {");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("MyEntity attribute;");
+      _builder.newLine();
+      _builder.append("}");
+      _builder.newLine();
+      final Model model = this._parseHelper.parse(_builder);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+}

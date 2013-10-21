@@ -1,0 +1,84 @@
+package org.example.entites.tests;
+
+import com.google.inject.Inject;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.junit4.InjectWith;
+import org.eclipse.xtext.junit4.XtextRunner;
+import org.eclipse.xtext.junit4.util.ParseHelper;
+import org.eclipse.xtext.junit4.validation.ValidationTestHelper;
+import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Extension;
+import org.examples.entities.EntitiesInjectorProvider;
+import org.examples.entities.entities.Attribute;
+import org.examples.entities.entities.AttributeType;
+import org.examples.entities.entities.ElementType;
+import org.examples.entities.entities.Entity;
+import org.examples.entities.entities.EntityType;
+import org.examples.entities.entities.Model;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+@RunWith(XtextRunner.class)
+@InjectWith(EntitiesInjectorProvider.class)
+@SuppressWarnings("all")
+public class EntitiesParserTest {
+  @Inject
+  @Extension
+  private ParseHelper<Model> _parseHelper;
+  
+  @Inject
+  @Extension
+  private ValidationTestHelper _validationTestHelper;
+  
+  @Test
+  public void testParsing() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("entity MyEntity {");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("MyEntity attribute;");
+      _builder.newLine();
+      _builder.append("}");
+      _builder.newLine();
+      final Model model = this._parseHelper.parse(_builder);
+      EList<Entity> _entities = model.getEntities();
+      final Entity entity = _entities.get(0);
+      String _name = entity.getName();
+      Assert.assertEquals("MyEntity", _name);
+      EList<Attribute> _attibutes = entity.getAttibutes();
+      final Attribute attribute = _attibutes.get(0);
+      String _name_1 = attribute.getName();
+      Assert.assertEquals("attribute", _name_1);
+      AttributeType _type = attribute.getType();
+      ElementType _elementType = _type.getElementType();
+      Entity _entity = ((EntityType) _elementType).getEntity();
+      String _name_2 = _entity.getName();
+      Assert.assertEquals("MyEntity", _name_2);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testCorrectParsing() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("entity MyEntity {");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("MyEntity attribute");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.newLine();
+      _builder.append("}");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+}

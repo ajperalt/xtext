@@ -1,0 +1,36 @@
+package org.example.entites.tests
+
+import org.junit.runner.RunWith
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
+import org.examples.entities.EntitiesInjectorProvider
+import com.google.inject.Inject
+import org.eclipse.xtext.junit4.util.ParseHelper
+import org.junit.Test
+import org.examples.entities.entities.Model
+
+@RunWith(typeof(XtextRunner))
+@InjectWith(typeof(EntitiesInjectorProvider))
+class EntitiesParserTest {
+	
+	@Inject extension ParseHelper<Model>
+	
+	@Test
+	def void testParsing() 
+	{
+		val model = '''
+			entity MyEntity {
+				MyEntity attribute;
+			}
+		'''.parse
+		
+		val entity = model.entities.get(0)
+		Assert::assertEquals("attribute", attribute.name);
+		Assert::assertEquals("MyEntity", 
+			(attribute.type.elemntType as EntityType).
+			entity.name);
+		
+			
+		
+	}
+}

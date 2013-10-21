@@ -1,0 +1,9 @@
+package org.example.expressions.tests;
+
+import org.eclipse.xtext.junit4.XtextRunner;
+import org.junit.runner.RunWith;
+
+@RunWith(XtextRunner.class)
+@SuppressWarnings("all")
+public class ExpressionsParserTest {
+}
