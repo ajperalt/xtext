@@ -14,7 +14,10 @@ Variable:
 	name = ID '=' expression=Expression;
  
  Expression:
-	Atomic ({Plus.left=current} '+' right=Atomic)* ;
+	Atomic (
+		({Plus.left = current} '+' | {Minus.left = current}  '-') 
+		right = Atomic
+	)*;
 
 Atomic returns Expression:
 	'(' Expression ')' | 

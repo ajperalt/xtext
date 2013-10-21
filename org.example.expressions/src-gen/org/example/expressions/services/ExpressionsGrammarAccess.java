@@ -91,35 +91,55 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cAtomicParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cPlusLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cPlusSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightAtomicParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cAlternatives_1_0.eContents().get(0);
+		private final Action cPlusLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Keyword cPlusSignKeyword_1_0_0_1 = (Keyword)cGroup_1_0_0.eContents().get(1);
+		private final Group cGroup_1_0_1 = (Group)cAlternatives_1_0.eContents().get(1);
+		private final Action cMinusLeftAction_1_0_1_0 = (Action)cGroup_1_0_1.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1_0_1_1 = (Keyword)cGroup_1_0_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightAtomicParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//Expression:
-		//	Atomic ({Plus.left=current} "+" right=Atomic)*;
+		//	Atomic (({Plus.left=current} "+" | {Minus.left=current} "-") right=Atomic)*;
 		public ParserRule getRule() { return rule; }
 
-		//Atomic ({Plus.left=current} "+" right=Atomic)*
+		//Atomic (({Plus.left=current} "+" | {Minus.left=current} "-") right=Atomic)*
 		public Group getGroup() { return cGroup; }
 
 		//Atomic
 		public RuleCall getAtomicParserRuleCall_0() { return cAtomicParserRuleCall_0; }
 
-		//({Plus.left=current} "+" right=Atomic)*
+		//(({Plus.left=current} "+" | {Minus.left=current} "-") right=Atomic)*
 		public Group getGroup_1() { return cGroup_1; }
 
+		//{Plus.left=current} "+" | {Minus.left=current} "-"
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+
+		//{Plus.left=current} "+"
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+
 		//{Plus.left=current}
-		public Action getPlusLeftAction_1_0() { return cPlusLeftAction_1_0; }
+		public Action getPlusLeftAction_1_0_0_0() { return cPlusLeftAction_1_0_0_0; }
 
 		//"+"
-		public Keyword getPlusSignKeyword_1_1() { return cPlusSignKeyword_1_1; }
+		public Keyword getPlusSignKeyword_1_0_0_1() { return cPlusSignKeyword_1_0_0_1; }
+
+		//{Minus.left=current} "-"
+		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
+
+		//{Minus.left=current}
+		public Action getMinusLeftAction_1_0_1_0() { return cMinusLeftAction_1_0_1_0; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_1_0_1_1() { return cHyphenMinusKeyword_1_0_1_1; }
 
 		//right=Atomic
-		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
 
 		//Atomic
-		public RuleCall getRightAtomicParserRuleCall_1_2_0() { return cRightAtomicParserRuleCall_1_2_0; }
+		public RuleCall getRightAtomicParserRuleCall_1_1_0() { return cRightAtomicParserRuleCall_1_1_0; }
 	}
 
 	public class AtomicElements extends AbstractParserRuleElementFinder {
@@ -304,7 +324,7 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Expression:
-	//	Atomic ({Plus.left=current} "+" right=Atomic)*;
+	//	Atomic (({Plus.left=current} "+" | {Minus.left=current} "-") right=Atomic)*;
 	public ExpressionElements getExpressionAccess() {
 		return (pExpression != null) ? pExpression : (pExpression = new ExpressionElements());
 	}

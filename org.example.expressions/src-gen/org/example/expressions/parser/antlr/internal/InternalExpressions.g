@@ -226,29 +226,40 @@ ruleExpression returns [EObject current=null]
         $current = $this_Atomic_0.current; 
         afterParserOrEnumRuleCall();
     }
-((
+((((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getExpressionAccess().getPlusLeftAction_1_0(),
+            grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0(),
             $current);
     }
 )	otherlv_2='+' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getExpressionAccess().getPlusSignKeyword_1_1());
+    	newLeafNode(otherlv_2, grammarAccess.getExpressionAccess().getPlusSignKeyword_1_0_0_1());
     }
-(
+)
+    |((
+    {
+        $current = forceCreateModelElementAndSet(
+            grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0(),
+            $current);
+    }
+)	otherlv_4='-' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getExpressionAccess().getHyphenMinusKeyword_1_0_1_1());
+    }
+))(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getExpressionAccess().getRightAtomicParserRuleCall_1_2_0()); 
+	        newCompositeNode(grammarAccess.getExpressionAccess().getRightAtomicParserRuleCall_1_1_0()); 
 	    }
-		lv_right_3_0=ruleAtomic		{
+		lv_right_5_0=ruleAtomic		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getExpressionRule());
 	        }
        		set(
        			$current, 
        			"right",
-        		lv_right_3_0, 
+        		lv_right_5_0, 
         		"Atomic");
 	        afterParserOrEnumRuleCall();
 	    }

@@ -18,6 +18,7 @@ import org.example.expressions.expressions.BoolConstant;
 import org.example.expressions.expressions.Expression;
 import org.example.expressions.expressions.ExpressionModel;
 import org.example.expressions.expressions.IntConstant;
+import org.example.expressions.expressions.Minus;
 import org.example.expressions.expressions.Plus;
 import org.example.expressions.expressions.StringConstant;
 import org.example.expressions.expressions.Variable;
@@ -200,6 +201,23 @@ public class ExpressionsParserTest {
       }
     }
     if (!_matched) {
+      if (e instanceof Minus) {
+        final Minus _minus = (Minus)e;
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        Expression _left = _minus.getLeft();
+        Object _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" - ");
+        Expression _right = _minus.getRight();
+        Object _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
       if (e instanceof IntConstant) {
         final IntConstant _intConstant = (IntConstant)e;
         _matched=true;
@@ -268,6 +286,20 @@ public class ExpressionsParserTest {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("10 + 5 + 1 + 2");
     this.assertRepr(_builder, "(((10 + 5) + 1) + 2)");
+  }
+  
+  @Test
+  public void testMinus() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("10 - 5 - 1 - 2");
+    this.assertRepr(_builder, "(((10 - 5) - 1) - 2)");
+  }
+  
+  @Test
+  public void testPlusWithMinus() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("10 - 5 + 1 - 2");
+    this.assertRepr(_builder, "(((10 - 5) + 1) - 2)");
   }
   
   @Test

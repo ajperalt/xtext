@@ -17,6 +17,7 @@ import org.example.expressions.expressions.Plus
 import org.example.expressions.expressions.IntConstant
 import org.example.expressions.expressions.BoolConstant
 import org.example.expressions.expressions.StringConstant
+import org.example.expressions.expressions.Minus
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(ExpressionsInjectorProvider))
@@ -98,6 +99,8 @@ class ExpressionsParserTest {
 		switch(e) {
 			Plus:
 			'''(«e.left.stringRepr» + «e.right.stringRepr»)'''
+			Minus:
+			'''(«e.left.stringRepr» - «e.right.stringRepr»)'''
 			IntConstant: '''«e.value»''' 
 			StringConstant: '''«e.value»'''
 			BoolConstant: '''«e.value»'''
@@ -117,7 +120,17 @@ class ExpressionsParserTest {
 	@Test 
 	def void testPlus() {
 		'''10 + 5 + 1 + 2'''.assertRepr("(((10 + 5) + 1) + 2)")
-	} 
+	}
+	
+	@Test 
+	def void testMinus() {
+		'''10 - 5 - 1 - 2'''.assertRepr("(((10 - 5) - 1) - 2)")
+	}
+	
+	@Test 
+	def void testPlusWithMinus() {
+		'''10 - 5 + 1 - 2'''.assertRepr("(((10 - 5) + 1) - 2)")
+	}
 	
 	@Test
 	def void testParenthesis() {
@@ -127,6 +140,7 @@ class ExpressionsParserTest {
 	@Test
 	def void testPlusWithParenthesis() {
 		"( 10 + 5 ) + ( 1 + 2 )".assertRepr("((10 + 5) + (1 + 2))")
+
 	}
 	
 	

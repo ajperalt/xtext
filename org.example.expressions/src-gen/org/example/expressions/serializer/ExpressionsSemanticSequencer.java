@@ -17,6 +17,7 @@ import org.example.expressions.expressions.BoolConstant;
 import org.example.expressions.expressions.ExpressionModel;
 import org.example.expressions.expressions.ExpressionsPackage;
 import org.example.expressions.expressions.IntConstant;
+import org.example.expressions.expressions.Minus;
 import org.example.expressions.expressions.Plus;
 import org.example.expressions.expressions.StringConstant;
 import org.example.expressions.expressions.Variable;
@@ -35,7 +36,8 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAtomicRule() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()) {
+				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
 					sequence_Atomic(context, (BoolConstant) semanticObject); 
 					return; 
 				}
@@ -50,8 +52,19 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAtomicRule() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()) {
+				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
 					sequence_Atomic(context, (IntConstant) semanticObject); 
+					return; 
+				}
+				else break;
+			case ExpressionsPackage.MINUS:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getAtomicRule() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
+					sequence_Expression(context, (Minus) semanticObject); 
 					return; 
 				}
 				else break;
@@ -59,7 +72,8 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAtomicRule() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()) {
+				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
 					sequence_Expression(context, (Plus) semanticObject); 
 					return; 
 				}
@@ -68,7 +82,8 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAtomicRule() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()) {
+				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
 					sequence_Atomic(context, (StringConstant) semanticObject); 
 					return; 
 				}
@@ -84,7 +99,8 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAtomicRule() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()) {
+				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
 					sequence_Atomic(context, (VariableRef) semanticObject); 
 					return; 
 				}
@@ -161,7 +177,26 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Constraint:
-	 *     (left=Expression_Plus_1_0 right=Atomic)
+	 *     (left=Expression_Minus_1_0_1_0 right=Atomic)
+	 */
+	protected void sequence_Expression(EObject context, Minus semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ExpressionsPackage.Literals.MINUS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpressionsPackage.Literals.MINUS__LEFT));
+			if(transientValues.isValueTransient(semanticObject, ExpressionsPackage.Literals.MINUS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpressionsPackage.Literals.MINUS__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getExpressionAccess().getRightAtomicParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=Expression_Plus_1_0_0_0 right=Atomic)
 	 */
 	protected void sequence_Expression(EObject context, Plus semanticObject) {
 		if(errorAcceptor != null) {
@@ -172,8 +207,8 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getExpressionAccess().getPlusLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getExpressionAccess().getRightAtomicParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getExpressionAccess().getRightAtomicParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	

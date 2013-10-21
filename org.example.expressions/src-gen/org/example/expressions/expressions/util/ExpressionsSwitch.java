@@ -111,6 +111,15 @@ public class ExpressionsSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ExpressionsPackage.MINUS:
+      {
+        Minus minus = (Minus)theEObject;
+        T result = caseMinus(minus);
+        if (result == null) result = caseExpression(minus);
+        if (result == null) result = caseAbstractElement(minus);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ExpressionsPackage.INT_CONSTANT:
       {
         IntConstant intConstant = (IntConstant)theEObject;
@@ -227,6 +236,22 @@ public class ExpressionsSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePlus(Plus object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Minus</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Minus</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMinus(Minus object)
   {
     return null;
   }
