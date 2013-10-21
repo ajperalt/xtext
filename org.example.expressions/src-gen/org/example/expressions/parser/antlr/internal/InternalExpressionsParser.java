@@ -501,12 +501,12 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:216:1: ruleExpression returns [EObject current=null] : ( () ( (lv_left_1_0= ruleAtomic ) ) (otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )? ) ;
+    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:216:1: ruleExpression returns [EObject current=null] : (this_Atomic_0= ruleAtomic ( () otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )? ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject lv_left_1_0 = null;
+        EObject this_Atomic_0 = null;
 
         EObject lv_right_3_0 = null;
 
@@ -514,55 +514,25 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:219:28: ( ( () ( (lv_left_1_0= ruleAtomic ) ) (otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )? ) )
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:220:1: ( () ( (lv_left_1_0= ruleAtomic ) ) (otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )? )
+            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:219:28: ( (this_Atomic_0= ruleAtomic ( () otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )? ) )
+            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:220:1: (this_Atomic_0= ruleAtomic ( () otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )? )
             {
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:220:1: ( () ( (lv_left_1_0= ruleAtomic ) ) (otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )? )
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:220:2: () ( (lv_left_1_0= ruleAtomic ) ) (otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )?
-            {
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:220:2: ()
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:221:5: 
-            {
-
-                    current = forceCreateModelElement(
-                        grammarAccess.getExpressionAccess().getPlusAction_0(),
-                        current);
-                
-
-            }
-
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:226:2: ( (lv_left_1_0= ruleAtomic ) )
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:227:1: (lv_left_1_0= ruleAtomic )
-            {
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:227:1: (lv_left_1_0= ruleAtomic )
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:228:3: lv_left_1_0= ruleAtomic
+            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:220:1: (this_Atomic_0= ruleAtomic ( () otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )? )
+            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:221:5: this_Atomic_0= ruleAtomic ( () otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )?
             {
              
-            	        newCompositeNode(grammarAccess.getExpressionAccess().getLeftAtomicParserRuleCall_1_0()); 
-            	    
-            pushFollow(FOLLOW_ruleAtomic_in_ruleExpression476);
-            lv_left_1_0=ruleAtomic();
+                    newCompositeNode(grammarAccess.getExpressionAccess().getAtomicParserRuleCall_0()); 
+                
+            pushFollow(FOLLOW_ruleAtomic_in_ruleExpression468);
+            this_Atomic_0=ruleAtomic();
 
             state._fsp--;
 
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getExpressionRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"left",
-                    		lv_left_1_0, 
-                    		"Atomic");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:244:2: (otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )?
+             
+                    current = this_Atomic_0; 
+                    afterParserOrEnumRuleCall();
+                
+            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:229:1: ( () otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) ) )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -571,20 +541,31 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:244:4: otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:229:2: () otherlv_2= '+' ( (lv_right_3_0= ruleExpression ) )
                     {
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:229:2: ()
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:230:5: 
+                    {
+
+                            current = forceCreateModelElementAndSet(
+                                grammarAccess.getExpressionAccess().getPlusLeftAction_1_0(),
+                                current);
+                        
+
+                    }
+
                     otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleExpression489); 
 
-                        	newLeafNode(otherlv_2, grammarAccess.getExpressionAccess().getPlusSignKeyword_2_0());
+                        	newLeafNode(otherlv_2, grammarAccess.getExpressionAccess().getPlusSignKeyword_1_1());
                         
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:248:1: ( (lv_right_3_0= ruleExpression ) )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:249:1: (lv_right_3_0= ruleExpression )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:239:1: ( (lv_right_3_0= ruleExpression ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:240:1: (lv_right_3_0= ruleExpression )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:249:1: (lv_right_3_0= ruleExpression )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:250:3: lv_right_3_0= ruleExpression
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:240:1: (lv_right_3_0= ruleExpression )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:241:3: lv_right_3_0= ruleExpression
                     {
                      
-                    	        newCompositeNode(grammarAccess.getExpressionAccess().getRightExpressionParserRuleCall_2_1_0()); 
+                    	        newCompositeNode(grammarAccess.getExpressionAccess().getRightExpressionParserRuleCall_1_2_0()); 
                     	    
                     pushFollow(FOLLOW_ruleExpression_in_ruleExpression510);
                     lv_right_3_0=ruleExpression();
@@ -635,7 +616,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAtomic"
-    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:274:1: entryRuleAtomic returns [EObject current=null] : iv_ruleAtomic= ruleAtomic EOF ;
+    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:265:1: entryRuleAtomic returns [EObject current=null] : iv_ruleAtomic= ruleAtomic EOF ;
     public final EObject entryRuleAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -643,8 +624,8 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:275:2: (iv_ruleAtomic= ruleAtomic EOF )
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:276:2: iv_ruleAtomic= ruleAtomic EOF
+            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:266:2: (iv_ruleAtomic= ruleAtomic EOF )
+            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:267:2: iv_ruleAtomic= ruleAtomic EOF
             {
              newCompositeNode(grammarAccess.getAtomicRule()); 
             pushFollow(FOLLOW_ruleAtomic_in_entryRuleAtomic548);
@@ -671,7 +652,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:283:1: ruleAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) ) ;
+    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:274:1: ruleAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) ) ;
     public final EObject ruleAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -684,10 +665,10 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:286:28: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) ) )
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:287:1: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) )
+            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:277:28: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) ) )
+            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:278:1: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) )
             {
-            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:287:1: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) )
+            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:278:1: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) )
             int alt5=4;
             switch ( input.LA(1) ) {
             case RULE_INT:
@@ -720,13 +701,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
             switch (alt5) {
                 case 1 :
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:287:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:278:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:287:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:287:3: () ( (lv_value_1_0= RULE_INT ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:278:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:278:3: () ( (lv_value_1_0= RULE_INT ) )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:287:3: ()
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:288:5: 
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:278:3: ()
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:279:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -736,11 +717,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:293:2: ( (lv_value_1_0= RULE_INT ) )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:294:1: (lv_value_1_0= RULE_INT )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:284:2: ( (lv_value_1_0= RULE_INT ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:285:1: (lv_value_1_0= RULE_INT )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:294:1: (lv_value_1_0= RULE_INT )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:295:3: lv_value_1_0= RULE_INT
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:285:1: (lv_value_1_0= RULE_INT )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:286:3: lv_value_1_0= RULE_INT
                     {
                     lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleAtomic610); 
 
@@ -769,13 +750,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:312:6: ( () ( (lv_value_3_0= RULE_STRING ) ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:303:6: ( () ( (lv_value_3_0= RULE_STRING ) ) )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:312:6: ( () ( (lv_value_3_0= RULE_STRING ) ) )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:312:7: () ( (lv_value_3_0= RULE_STRING ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:303:6: ( () ( (lv_value_3_0= RULE_STRING ) ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:303:7: () ( (lv_value_3_0= RULE_STRING ) )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:312:7: ()
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:313:5: 
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:303:7: ()
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:304:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -785,11 +766,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:318:2: ( (lv_value_3_0= RULE_STRING ) )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:319:1: (lv_value_3_0= RULE_STRING )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:309:2: ( (lv_value_3_0= RULE_STRING ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:310:1: (lv_value_3_0= RULE_STRING )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:319:1: (lv_value_3_0= RULE_STRING )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:320:3: lv_value_3_0= RULE_STRING
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:310:1: (lv_value_3_0= RULE_STRING )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:311:3: lv_value_3_0= RULE_STRING
                     {
                     lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAtomic649); 
 
@@ -818,13 +799,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:337:6: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:328:6: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:337:6: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:337:7: () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:328:6: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:328:7: () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:337:7: ()
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:338:5: 
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:328:7: ()
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:329:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -834,13 +815,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:343:2: ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:344:1: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:334:2: ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:335:1: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:344:1: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:345:1: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:335:1: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:336:1: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:345:1: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:336:1: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -858,7 +839,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt4) {
                         case 1 :
-                            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:346:3: lv_value_5_1= 'true'
+                            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:337:3: lv_value_5_1= 'true'
                             {
                             lv_value_5_1=(Token)match(input,13,FOLLOW_13_in_ruleAtomic691); 
 
@@ -874,7 +855,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:358:8: lv_value_5_2= 'false'
+                            // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:349:8: lv_value_5_2= 'false'
                             {
                             lv_value_5_2=(Token)match(input,14,FOLLOW_14_in_ruleAtomic720); 
 
@@ -905,13 +886,13 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:374:6: ( () ( (otherlv_7= RULE_ID ) ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:365:6: ( () ( (otherlv_7= RULE_ID ) ) )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:374:6: ( () ( (otherlv_7= RULE_ID ) ) )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:374:7: () ( (otherlv_7= RULE_ID ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:365:6: ( () ( (otherlv_7= RULE_ID ) ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:365:7: () ( (otherlv_7= RULE_ID ) )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:374:7: ()
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:375:5: 
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:365:7: ()
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:366:5: 
                     {
 
                             current = forceCreateModelElement(
@@ -921,11 +902,11 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:380:2: ( (otherlv_7= RULE_ID ) )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:381:1: (otherlv_7= RULE_ID )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:371:2: ( (otherlv_7= RULE_ID ) )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:372:1: (otherlv_7= RULE_ID )
                     {
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:381:1: (otherlv_7= RULE_ID )
-                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:382:3: otherlv_7= RULE_ID
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:372:1: (otherlv_7= RULE_ID )
+                    // ../org.example.expressions/src-gen/org/example/expressions/parser/antlr/internal/InternalExpressions.g:373:3: otherlv_7= RULE_ID
                     {
 
                     			if (current==null) {
@@ -986,7 +967,7 @@ public class InternalExpressionsParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleExpression_in_ruleVariable375 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression411 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleExpression421 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomic_in_ruleExpression476 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_ruleAtomic_in_ruleExpression468 = new BitSet(new long[]{0x0000000000001002L});
     public static final BitSet FOLLOW_12_in_ruleExpression489 = new BitSet(new long[]{0x0000000000006070L});
     public static final BitSet FOLLOW_ruleExpression_in_ruleExpression510 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtomic_in_entryRuleAtomic548 = new BitSet(new long[]{0x0000000000000000L});

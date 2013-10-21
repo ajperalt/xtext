@@ -14,7 +14,7 @@ Variable:
 	name = ID '=' expression=Expression;
  
  Expression:
-	{Plus} left=Atomic ('+' right=Expression)?;
+	Atomic ({Plus.left=current} '+' right=Expression)? ;
 
 Atomic returns Expression:
 	{IntConstant} value=INT |

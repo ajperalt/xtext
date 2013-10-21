@@ -32,7 +32,10 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ExpressionsPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case ExpressionsPackage.BOOL_CONSTANT:
-				if(context == grammarAccess.getAtomicRule()) {
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getAtomicRule() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()) {
 					sequence_Atomic(context, (BoolConstant) semanticObject); 
 					return; 
 				}
@@ -44,7 +47,10 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				}
 				else break;
 			case ExpressionsPackage.INT_CONSTANT:
-				if(context == grammarAccess.getAtomicRule()) {
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getAtomicRule() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()) {
 					sequence_Atomic(context, (IntConstant) semanticObject); 
 					return; 
 				}
@@ -57,7 +63,10 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				}
 				else break;
 			case ExpressionsPackage.STRING_CONSTANT:
-				if(context == grammarAccess.getAtomicRule()) {
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getAtomicRule() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()) {
 					sequence_Atomic(context, (StringConstant) semanticObject); 
 					return; 
 				}
@@ -70,7 +79,10 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				}
 				else break;
 			case ExpressionsPackage.VARIABLE_REF:
-				if(context == grammarAccess.getAtomicRule()) {
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getAtomicRule() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()) {
 					sequence_Atomic(context, (VariableRef) semanticObject); 
 					return; 
 				}
@@ -147,10 +159,20 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Constraint:
-	 *     (left=Atomic right=Expression?)
+	 *     (left=Expression_Plus_1_0 right=Expression)
 	 */
 	protected void sequence_Expression(EObject context, Plus semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ExpressionsPackage.Literals.PLUS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpressionsPackage.Literals.PLUS__LEFT));
+			if(transientValues.isValueTransient(semanticObject, ExpressionsPackage.Literals.PLUS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpressionsPackage.Literals.PLUS__RIGHT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getExpressionAccess().getPlusLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getExpressionAccess().getRightExpressionParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	

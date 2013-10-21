@@ -1075,31 +1075,35 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Expression__Group__0__Impl"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:390:1: rule__Expression__Group__0__Impl : ( () ) ;
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:390:1: rule__Expression__Group__0__Impl : ( ruleAtomic ) ;
     public final void rule__Expression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:394:1: ( ( () ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:395:1: ( () )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:394:1: ( ( ruleAtomic ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:395:1: ( ruleAtomic )
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:395:1: ( () )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:396:1: ()
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:395:1: ( ruleAtomic )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:396:1: ruleAtomic
             {
-             before(grammarAccess.getExpressionAccess().getPlusAction_0()); 
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:397:1: ()
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:399:1: 
-            {
-            }
+             before(grammarAccess.getExpressionAccess().getAtomicParserRuleCall_0()); 
+            pushFollow(FOLLOW_ruleAtomic_in_rule__Expression__Group__0__Impl775);
+            ruleAtomic();
 
-             after(grammarAccess.getExpressionAccess().getPlusAction_0()); 
+            state._fsp--;
 
-            }
-
+             after(grammarAccess.getExpressionAccess().getAtomicParserRuleCall_0()); 
 
             }
 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
         }
         finally {
 
@@ -1112,22 +1116,17 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Expression__Group__1"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:409:1: rule__Expression__Group__1 : rule__Expression__Group__1__Impl rule__Expression__Group__2 ;
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:407:1: rule__Expression__Group__1 : rule__Expression__Group__1__Impl ;
     public final void rule__Expression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:413:1: ( rule__Expression__Group__1__Impl rule__Expression__Group__2 )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:414:2: rule__Expression__Group__1__Impl rule__Expression__Group__2
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:411:1: ( rule__Expression__Group__1__Impl )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:412:2: rule__Expression__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Expression__Group__1__Impl_in_rule__Expression__Group__1806);
+            pushFollow(FOLLOW_rule__Expression__Group__1__Impl_in_rule__Expression__Group__1804);
             rule__Expression__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Expression__Group__2_in_rule__Expression__Group__1809);
-            rule__Expression__Group__2();
 
             state._fsp--;
 
@@ -1150,31 +1149,42 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Expression__Group__1__Impl"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:421:1: rule__Expression__Group__1__Impl : ( ( rule__Expression__LeftAssignment_1 ) ) ;
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:418:1: rule__Expression__Group__1__Impl : ( ( rule__Expression__Group_1__0 )? ) ;
     public final void rule__Expression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:425:1: ( ( ( rule__Expression__LeftAssignment_1 ) ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:426:1: ( ( rule__Expression__LeftAssignment_1 ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:422:1: ( ( ( rule__Expression__Group_1__0 )? ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:423:1: ( ( rule__Expression__Group_1__0 )? )
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:426:1: ( ( rule__Expression__LeftAssignment_1 ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:427:1: ( rule__Expression__LeftAssignment_1 )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:423:1: ( ( rule__Expression__Group_1__0 )? )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:424:1: ( rule__Expression__Group_1__0 )?
             {
-             before(grammarAccess.getExpressionAccess().getLeftAssignment_1()); 
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:428:1: ( rule__Expression__LeftAssignment_1 )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:428:2: rule__Expression__LeftAssignment_1
-            {
-            pushFollow(FOLLOW_rule__Expression__LeftAssignment_1_in_rule__Expression__Group__1__Impl836);
-            rule__Expression__LeftAssignment_1();
+             before(grammarAccess.getExpressionAccess().getGroup_1()); 
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:425:1: ( rule__Expression__Group_1__0 )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA5_0==14) ) {
+                alt5=1;
+            }
+            switch (alt5) {
+                case 1 :
+                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:425:2: rule__Expression__Group_1__0
+                    {
+                    pushFollow(FOLLOW_rule__Expression__Group_1__0_in_rule__Expression__Group__1__Impl831);
+                    rule__Expression__Group_1__0();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
-             after(grammarAccess.getExpressionAccess().getLeftAssignment_1()); 
+             after(grammarAccess.getExpressionAccess().getGroup_1()); 
 
             }
 
@@ -1196,18 +1206,23 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Expression__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Expression__Group__2"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:438:1: rule__Expression__Group__2 : rule__Expression__Group__2__Impl ;
-    public final void rule__Expression__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Expression__Group_1__0"
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:439:1: rule__Expression__Group_1__0 : rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1 ;
+    public final void rule__Expression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:442:1: ( rule__Expression__Group__2__Impl )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:443:2: rule__Expression__Group__2__Impl
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:443:1: ( rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1 )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:444:2: rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Expression__Group__2__Impl_in_rule__Expression__Group__2866);
-            rule__Expression__Group__2__Impl();
+            pushFollow(FOLLOW_rule__Expression__Group_1__0__Impl_in_rule__Expression__Group_1__0866);
+            rule__Expression__Group_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Expression__Group_1__1_in_rule__Expression__Group_1__0869);
+            rule__Expression__Group_1__1();
 
             state._fsp--;
 
@@ -1226,56 +1241,35 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Expression__Group__2"
+    // $ANTLR end "rule__Expression__Group_1__0"
 
 
-    // $ANTLR start "rule__Expression__Group__2__Impl"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:449:1: rule__Expression__Group__2__Impl : ( ( rule__Expression__Group_2__0 )? ) ;
-    public final void rule__Expression__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Expression__Group_1__0__Impl"
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:451:1: rule__Expression__Group_1__0__Impl : ( () ) ;
+    public final void rule__Expression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:453:1: ( ( ( rule__Expression__Group_2__0 )? ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:454:1: ( ( rule__Expression__Group_2__0 )? )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:455:1: ( ( () ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:456:1: ( () )
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:454:1: ( ( rule__Expression__Group_2__0 )? )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:455:1: ( rule__Expression__Group_2__0 )?
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:456:1: ( () )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:457:1: ()
             {
-             before(grammarAccess.getExpressionAccess().getGroup_2()); 
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:456:1: ( rule__Expression__Group_2__0 )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
-
-            if ( (LA5_0==14) ) {
-                alt5=1;
-            }
-            switch (alt5) {
-                case 1 :
-                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:456:2: rule__Expression__Group_2__0
-                    {
-                    pushFollow(FOLLOW_rule__Expression__Group_2__0_in_rule__Expression__Group__2__Impl893);
-                    rule__Expression__Group_2__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
+             before(grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()); 
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:458:1: ()
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:460:1: 
+            {
             }
 
-             after(grammarAccess.getExpressionAccess().getGroup_2()); 
+             after(grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()); 
 
             }
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
         }
         finally {
 
@@ -1284,26 +1278,26 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Expression__Group__2__Impl"
+    // $ANTLR end "rule__Expression__Group_1__0__Impl"
 
 
-    // $ANTLR start "rule__Expression__Group_2__0"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:472:1: rule__Expression__Group_2__0 : rule__Expression__Group_2__0__Impl rule__Expression__Group_2__1 ;
-    public final void rule__Expression__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__Expression__Group_1__1"
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:470:1: rule__Expression__Group_1__1 : rule__Expression__Group_1__1__Impl rule__Expression__Group_1__2 ;
+    public final void rule__Expression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:476:1: ( rule__Expression__Group_2__0__Impl rule__Expression__Group_2__1 )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:477:2: rule__Expression__Group_2__0__Impl rule__Expression__Group_2__1
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:474:1: ( rule__Expression__Group_1__1__Impl rule__Expression__Group_1__2 )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:475:2: rule__Expression__Group_1__1__Impl rule__Expression__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Expression__Group_2__0__Impl_in_rule__Expression__Group_2__0930);
-            rule__Expression__Group_2__0__Impl();
+            pushFollow(FOLLOW_rule__Expression__Group_1__1__Impl_in_rule__Expression__Group_1__1927);
+            rule__Expression__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Expression__Group_2__1_in_rule__Expression__Group_2__0933);
-            rule__Expression__Group_2__1();
+            pushFollow(FOLLOW_rule__Expression__Group_1__2_in_rule__Expression__Group_1__1930);
+            rule__Expression__Group_1__2();
 
             state._fsp--;
 
@@ -1322,25 +1316,25 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Expression__Group_2__0"
+    // $ANTLR end "rule__Expression__Group_1__1"
 
 
-    // $ANTLR start "rule__Expression__Group_2__0__Impl"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:484:1: rule__Expression__Group_2__0__Impl : ( '+' ) ;
-    public final void rule__Expression__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Expression__Group_1__1__Impl"
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:482:1: rule__Expression__Group_1__1__Impl : ( '+' ) ;
+    public final void rule__Expression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:488:1: ( ( '+' ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:489:1: ( '+' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:486:1: ( ( '+' ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:487:1: ( '+' )
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:489:1: ( '+' )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:490:1: '+'
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:487:1: ( '+' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:488:1: '+'
             {
-             before(grammarAccess.getExpressionAccess().getPlusSignKeyword_2_0()); 
-            match(input,14,FOLLOW_14_in_rule__Expression__Group_2__0__Impl961); 
-             after(grammarAccess.getExpressionAccess().getPlusSignKeyword_2_0()); 
+             before(grammarAccess.getExpressionAccess().getPlusSignKeyword_1_1()); 
+            match(input,14,FOLLOW_14_in_rule__Expression__Group_1__1__Impl958); 
+             after(grammarAccess.getExpressionAccess().getPlusSignKeyword_1_1()); 
 
             }
 
@@ -1359,21 +1353,21 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Expression__Group_2__0__Impl"
+    // $ANTLR end "rule__Expression__Group_1__1__Impl"
 
 
-    // $ANTLR start "rule__Expression__Group_2__1"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:503:1: rule__Expression__Group_2__1 : rule__Expression__Group_2__1__Impl ;
-    public final void rule__Expression__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__Expression__Group_1__2"
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:501:1: rule__Expression__Group_1__2 : rule__Expression__Group_1__2__Impl ;
+    public final void rule__Expression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:507:1: ( rule__Expression__Group_2__1__Impl )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:508:2: rule__Expression__Group_2__1__Impl
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:505:1: ( rule__Expression__Group_1__2__Impl )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:506:2: rule__Expression__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Expression__Group_2__1__Impl_in_rule__Expression__Group_2__1992);
-            rule__Expression__Group_2__1__Impl();
+            pushFollow(FOLLOW_rule__Expression__Group_1__2__Impl_in_rule__Expression__Group_1__2989);
+            rule__Expression__Group_1__2__Impl();
 
             state._fsp--;
 
@@ -1392,35 +1386,35 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Expression__Group_2__1"
+    // $ANTLR end "rule__Expression__Group_1__2"
 
 
-    // $ANTLR start "rule__Expression__Group_2__1__Impl"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:514:1: rule__Expression__Group_2__1__Impl : ( ( rule__Expression__RightAssignment_2_1 ) ) ;
-    public final void rule__Expression__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Expression__Group_1__2__Impl"
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:512:1: rule__Expression__Group_1__2__Impl : ( ( rule__Expression__RightAssignment_1_2 ) ) ;
+    public final void rule__Expression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:518:1: ( ( ( rule__Expression__RightAssignment_2_1 ) ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:519:1: ( ( rule__Expression__RightAssignment_2_1 ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:516:1: ( ( ( rule__Expression__RightAssignment_1_2 ) ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:517:1: ( ( rule__Expression__RightAssignment_1_2 ) )
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:519:1: ( ( rule__Expression__RightAssignment_2_1 ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:520:1: ( rule__Expression__RightAssignment_2_1 )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:517:1: ( ( rule__Expression__RightAssignment_1_2 ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:518:1: ( rule__Expression__RightAssignment_1_2 )
             {
-             before(grammarAccess.getExpressionAccess().getRightAssignment_2_1()); 
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:521:1: ( rule__Expression__RightAssignment_2_1 )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:521:2: rule__Expression__RightAssignment_2_1
+             before(grammarAccess.getExpressionAccess().getRightAssignment_1_2()); 
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:519:1: ( rule__Expression__RightAssignment_1_2 )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:519:2: rule__Expression__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__Expression__RightAssignment_2_1_in_rule__Expression__Group_2__1__Impl1019);
-            rule__Expression__RightAssignment_2_1();
+            pushFollow(FOLLOW_rule__Expression__RightAssignment_1_2_in_rule__Expression__Group_1__2__Impl1016);
+            rule__Expression__RightAssignment_1_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getExpressionAccess().getRightAssignment_2_1()); 
+             after(grammarAccess.getExpressionAccess().getRightAssignment_1_2()); 
 
             }
 
@@ -1439,7 +1433,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Expression__Group_2__1__Impl"
+    // $ANTLR end "rule__Expression__Group_1__2__Impl"
 
 
     // $ANTLR start "rule__Atomic__Group_0__0"
@@ -1452,12 +1446,12 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:539:1: ( rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:540:2: rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__01053);
+            pushFollow(FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__01052);
             rule__Atomic__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__01056);
+            pushFollow(FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__01055);
             rule__Atomic__Group_0__1();
 
             state._fsp--;
@@ -1527,7 +1521,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:570:1: ( rule__Atomic__Group_0__1__Impl )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:571:2: rule__Atomic__Group_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__11114);
+            pushFollow(FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__11113);
             rule__Atomic__Group_0__1__Impl();
 
             state._fsp--;
@@ -1567,7 +1561,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:584:1: ( rule__Atomic__ValueAssignment_0_1 )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:584:2: rule__Atomic__ValueAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl1141);
+            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl1140);
             rule__Atomic__ValueAssignment_0_1();
 
             state._fsp--;
@@ -1607,12 +1601,12 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:602:1: ( rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1 )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:603:2: rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_1__0__Impl_in_rule__Atomic__Group_1__01175);
+            pushFollow(FOLLOW_rule__Atomic__Group_1__0__Impl_in_rule__Atomic__Group_1__01174);
             rule__Atomic__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_1__1_in_rule__Atomic__Group_1__01178);
+            pushFollow(FOLLOW_rule__Atomic__Group_1__1_in_rule__Atomic__Group_1__01177);
             rule__Atomic__Group_1__1();
 
             state._fsp--;
@@ -1682,7 +1676,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:633:1: ( rule__Atomic__Group_1__1__Impl )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:634:2: rule__Atomic__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_1__1__Impl_in_rule__Atomic__Group_1__11236);
+            pushFollow(FOLLOW_rule__Atomic__Group_1__1__Impl_in_rule__Atomic__Group_1__11235);
             rule__Atomic__Group_1__1__Impl();
 
             state._fsp--;
@@ -1722,7 +1716,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:647:1: ( rule__Atomic__ValueAssignment_1_1 )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:647:2: rule__Atomic__ValueAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_1_1_in_rule__Atomic__Group_1__1__Impl1263);
+            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_1_1_in_rule__Atomic__Group_1__1__Impl1262);
             rule__Atomic__ValueAssignment_1_1();
 
             state._fsp--;
@@ -1762,12 +1756,12 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:665:1: ( rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1 )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:666:2: rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_2__0__Impl_in_rule__Atomic__Group_2__01297);
+            pushFollow(FOLLOW_rule__Atomic__Group_2__0__Impl_in_rule__Atomic__Group_2__01296);
             rule__Atomic__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_2__1_in_rule__Atomic__Group_2__01300);
+            pushFollow(FOLLOW_rule__Atomic__Group_2__1_in_rule__Atomic__Group_2__01299);
             rule__Atomic__Group_2__1();
 
             state._fsp--;
@@ -1837,7 +1831,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:696:1: ( rule__Atomic__Group_2__1__Impl )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:697:2: rule__Atomic__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_2__1__Impl_in_rule__Atomic__Group_2__11358);
+            pushFollow(FOLLOW_rule__Atomic__Group_2__1__Impl_in_rule__Atomic__Group_2__11357);
             rule__Atomic__Group_2__1__Impl();
 
             state._fsp--;
@@ -1877,7 +1871,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:710:1: ( rule__Atomic__ValueAssignment_2_1 )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:710:2: rule__Atomic__ValueAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_2_1_in_rule__Atomic__Group_2__1__Impl1385);
+            pushFollow(FOLLOW_rule__Atomic__ValueAssignment_2_1_in_rule__Atomic__Group_2__1__Impl1384);
             rule__Atomic__ValueAssignment_2_1();
 
             state._fsp--;
@@ -1917,12 +1911,12 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:728:1: ( rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1 )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:729:2: rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_3__0__Impl_in_rule__Atomic__Group_3__01419);
+            pushFollow(FOLLOW_rule__Atomic__Group_3__0__Impl_in_rule__Atomic__Group_3__01418);
             rule__Atomic__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Atomic__Group_3__1_in_rule__Atomic__Group_3__01422);
+            pushFollow(FOLLOW_rule__Atomic__Group_3__1_in_rule__Atomic__Group_3__01421);
             rule__Atomic__Group_3__1();
 
             state._fsp--;
@@ -1992,7 +1986,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:759:1: ( rule__Atomic__Group_3__1__Impl )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:760:2: rule__Atomic__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Atomic__Group_3__1__Impl_in_rule__Atomic__Group_3__11480);
+            pushFollow(FOLLOW_rule__Atomic__Group_3__1__Impl_in_rule__Atomic__Group_3__11479);
             rule__Atomic__Group_3__1__Impl();
 
             state._fsp--;
@@ -2032,7 +2026,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:773:1: ( rule__Atomic__VariableAssignment_3_1 )
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:773:2: rule__Atomic__VariableAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Atomic__VariableAssignment_3_1_in_rule__Atomic__Group_3__1__Impl1507);
+            pushFollow(FOLLOW_rule__Atomic__VariableAssignment_3_1_in_rule__Atomic__Group_3__1__Impl1506);
             rule__Atomic__VariableAssignment_3_1();
 
             state._fsp--;
@@ -2076,7 +2070,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:794:1: ruleAbstractElement
             {
              before(grammarAccess.getExpressionModelAccess().getElementsAbstractElementParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleAbstractElement_in_rule__ExpressionModel__ElementsAssignment1546);
+            pushFollow(FOLLOW_ruleAbstractElement_in_rule__ExpressionModel__ElementsAssignment1545);
             ruleAbstractElement();
 
             state._fsp--;
@@ -2117,7 +2111,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:809:1: RULE_ID
             {
              before(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_01577); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_01576); 
              after(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
@@ -2154,7 +2148,7 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
             // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:824:1: ruleExpression
             {
              before(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleExpression_in_rule__Variable__ExpressionAssignment_21608);
+            pushFollow(FOLLOW_ruleExpression_in_rule__Variable__ExpressionAssignment_21607);
             ruleExpression();
 
             state._fsp--;
@@ -2181,67 +2175,26 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Variable__ExpressionAssignment_2"
 
 
-    // $ANTLR start "rule__Expression__LeftAssignment_1"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:833:1: rule__Expression__LeftAssignment_1 : ( ruleAtomic ) ;
-    public final void rule__Expression__LeftAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Expression__RightAssignment_1_2"
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:833:1: rule__Expression__RightAssignment_1_2 : ( ruleExpression ) ;
+    public final void rule__Expression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:837:1: ( ( ruleAtomic ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:838:1: ( ruleAtomic )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:837:1: ( ( ruleExpression ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:838:1: ( ruleExpression )
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:838:1: ( ruleAtomic )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:839:1: ruleAtomic
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:838:1: ( ruleExpression )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:839:1: ruleExpression
             {
-             before(grammarAccess.getExpressionAccess().getLeftAtomicParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleAtomic_in_rule__Expression__LeftAssignment_11639);
-            ruleAtomic();
-
-            state._fsp--;
-
-             after(grammarAccess.getExpressionAccess().getLeftAtomicParserRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Expression__LeftAssignment_1"
-
-
-    // $ANTLR start "rule__Expression__RightAssignment_2_1"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:848:1: rule__Expression__RightAssignment_2_1 : ( ruleExpression ) ;
-    public final void rule__Expression__RightAssignment_2_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:852:1: ( ( ruleExpression ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:853:1: ( ruleExpression )
-            {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:853:1: ( ruleExpression )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:854:1: ruleExpression
-            {
-             before(grammarAccess.getExpressionAccess().getRightExpressionParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleExpression_in_rule__Expression__RightAssignment_2_11670);
+             before(grammarAccess.getExpressionAccess().getRightExpressionParserRuleCall_1_2_0()); 
+            pushFollow(FOLLOW_ruleExpression_in_rule__Expression__RightAssignment_1_21638);
             ruleExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getExpressionAccess().getRightExpressionParserRuleCall_2_1_0()); 
+             after(grammarAccess.getExpressionAccess().getRightExpressionParserRuleCall_1_2_0()); 
 
             }
 
@@ -2260,24 +2213,24 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Expression__RightAssignment_2_1"
+    // $ANTLR end "rule__Expression__RightAssignment_1_2"
 
 
     // $ANTLR start "rule__Atomic__ValueAssignment_0_1"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:863:1: rule__Atomic__ValueAssignment_0_1 : ( RULE_INT ) ;
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:848:1: rule__Atomic__ValueAssignment_0_1 : ( RULE_INT ) ;
     public final void rule__Atomic__ValueAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:867:1: ( ( RULE_INT ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:868:1: ( RULE_INT )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:852:1: ( ( RULE_INT ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:853:1: ( RULE_INT )
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:868:1: ( RULE_INT )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:869:1: RULE_INT
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:853:1: ( RULE_INT )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:854:1: RULE_INT
             {
              before(grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_0_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Atomic__ValueAssignment_0_11701); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Atomic__ValueAssignment_0_11669); 
              after(grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_0_1_0()); 
 
             }
@@ -2301,20 +2254,20 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Atomic__ValueAssignment_1_1"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:878:1: rule__Atomic__ValueAssignment_1_1 : ( RULE_STRING ) ;
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:863:1: rule__Atomic__ValueAssignment_1_1 : ( RULE_STRING ) ;
     public final void rule__Atomic__ValueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:882:1: ( ( RULE_STRING ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:883:1: ( RULE_STRING )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:867:1: ( ( RULE_STRING ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:868:1: ( RULE_STRING )
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:883:1: ( RULE_STRING )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:884:1: RULE_STRING
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:868:1: ( RULE_STRING )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:869:1: RULE_STRING
             {
              before(grammarAccess.getAtomicAccess().getValueSTRINGTerminalRuleCall_1_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Atomic__ValueAssignment_1_11732); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Atomic__ValueAssignment_1_11700); 
              after(grammarAccess.getAtomicAccess().getValueSTRINGTerminalRuleCall_1_1_0()); 
 
             }
@@ -2338,23 +2291,23 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Atomic__ValueAssignment_2_1"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:893:1: rule__Atomic__ValueAssignment_2_1 : ( ( rule__Atomic__ValueAlternatives_2_1_0 ) ) ;
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:878:1: rule__Atomic__ValueAssignment_2_1 : ( ( rule__Atomic__ValueAlternatives_2_1_0 ) ) ;
     public final void rule__Atomic__ValueAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:897:1: ( ( ( rule__Atomic__ValueAlternatives_2_1_0 ) ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:898:1: ( ( rule__Atomic__ValueAlternatives_2_1_0 ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:882:1: ( ( ( rule__Atomic__ValueAlternatives_2_1_0 ) ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:883:1: ( ( rule__Atomic__ValueAlternatives_2_1_0 ) )
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:898:1: ( ( rule__Atomic__ValueAlternatives_2_1_0 ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:899:1: ( rule__Atomic__ValueAlternatives_2_1_0 )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:883:1: ( ( rule__Atomic__ValueAlternatives_2_1_0 ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:884:1: ( rule__Atomic__ValueAlternatives_2_1_0 )
             {
              before(grammarAccess.getAtomicAccess().getValueAlternatives_2_1_0()); 
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:900:1: ( rule__Atomic__ValueAlternatives_2_1_0 )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:900:2: rule__Atomic__ValueAlternatives_2_1_0
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:885:1: ( rule__Atomic__ValueAlternatives_2_1_0 )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:885:2: rule__Atomic__ValueAlternatives_2_1_0
             {
-            pushFollow(FOLLOW_rule__Atomic__ValueAlternatives_2_1_0_in_rule__Atomic__ValueAssignment_2_11763);
+            pushFollow(FOLLOW_rule__Atomic__ValueAlternatives_2_1_0_in_rule__Atomic__ValueAssignment_2_11731);
             rule__Atomic__ValueAlternatives_2_1_0();
 
             state._fsp--;
@@ -2385,24 +2338,24 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Atomic__VariableAssignment_3_1"
-    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:909:1: rule__Atomic__VariableAssignment_3_1 : ( ( RULE_ID ) ) ;
+    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:894:1: rule__Atomic__VariableAssignment_3_1 : ( ( RULE_ID ) ) ;
     public final void rule__Atomic__VariableAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:913:1: ( ( ( RULE_ID ) ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:914:1: ( ( RULE_ID ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:898:1: ( ( ( RULE_ID ) ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:899:1: ( ( RULE_ID ) )
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:914:1: ( ( RULE_ID ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:915:1: ( RULE_ID )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:899:1: ( ( RULE_ID ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:900:1: ( RULE_ID )
             {
              before(grammarAccess.getAtomicAccess().getVariableVariableCrossReference_3_1_0()); 
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:916:1: ( RULE_ID )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:917:1: RULE_ID
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:901:1: ( RULE_ID )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:902:1: RULE_ID
             {
              before(grammarAccess.getAtomicAccess().getVariableVariableIDTerminalRuleCall_3_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Atomic__VariableAssignment_3_11800); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Atomic__VariableAssignment_3_11768); 
              after(grammarAccess.getAtomicAccess().getVariableVariableIDTerminalRuleCall_3_1_0_1()); 
 
             }
@@ -2464,42 +2417,41 @@ public class InternalExpressionsParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_13_in_rule__Variable__Group__1__Impl651 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Variable__Group__2__Impl_in_rule__Variable__Group__2682 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Variable__ExpressionAssignment_2_in_rule__Variable__Group__2__Impl709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expression__Group__0__Impl_in_rule__Expression__Group__0745 = new BitSet(new long[]{0x0000000000001870L});
+    public static final BitSet FOLLOW_rule__Expression__Group__0__Impl_in_rule__Expression__Group__0745 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_rule__Expression__Group__1_in_rule__Expression__Group__0748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expression__Group__1__Impl_in_rule__Expression__Group__1806 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__Expression__Group__2_in_rule__Expression__Group__1809 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expression__LeftAssignment_1_in_rule__Expression__Group__1__Impl836 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expression__Group__2__Impl_in_rule__Expression__Group__2866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expression__Group_2__0_in_rule__Expression__Group__2__Impl893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expression__Group_2__0__Impl_in_rule__Expression__Group_2__0930 = new BitSet(new long[]{0x0000000000001870L});
-    public static final BitSet FOLLOW_rule__Expression__Group_2__1_in_rule__Expression__Group_2__0933 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Expression__Group_2__0__Impl961 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expression__Group_2__1__Impl_in_rule__Expression__Group_2__1992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expression__RightAssignment_2_1_in_rule__Expression__Group_2__1__Impl1019 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__01053 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__01056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__11114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl1141 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_1__0__Impl_in_rule__Atomic__Group_1__01175 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_1__1_in_rule__Atomic__Group_1__01178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_1__1__Impl_in_rule__Atomic__Group_1__11236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_1_1_in_rule__Atomic__Group_1__1__Impl1263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_2__0__Impl_in_rule__Atomic__Group_2__01297 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_2__1_in_rule__Atomic__Group_2__01300 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_2__1__Impl_in_rule__Atomic__Group_2__11358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_2_1_in_rule__Atomic__Group_2__1__Impl1385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3__0__Impl_in_rule__Atomic__Group_3__01419 = new BitSet(new long[]{0x0000000000001870L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3__1_in_rule__Atomic__Group_3__01422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__Group_3__1__Impl_in_rule__Atomic__Group_3__11480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__VariableAssignment_3_1_in_rule__Atomic__Group_3__1__Impl1507 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractElement_in_rule__ExpressionModel__ElementsAssignment1546 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_01577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_rule__Variable__ExpressionAssignment_21608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomic_in_rule__Expression__LeftAssignment_11639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpression_in_rule__Expression__RightAssignment_2_11670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Atomic__ValueAssignment_0_11701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Atomic__ValueAssignment_1_11732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Atomic__ValueAlternatives_2_1_0_in_rule__Atomic__ValueAssignment_2_11763 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Atomic__VariableAssignment_3_11800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomic_in_rule__Expression__Group__0__Impl775 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expression__Group__1__Impl_in_rule__Expression__Group__1804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expression__Group_1__0_in_rule__Expression__Group__1__Impl831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expression__Group_1__0__Impl_in_rule__Expression__Group_1__0866 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__Expression__Group_1__1_in_rule__Expression__Group_1__0869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expression__Group_1__1__Impl_in_rule__Expression__Group_1__1927 = new BitSet(new long[]{0x0000000000001870L});
+    public static final BitSet FOLLOW_rule__Expression__Group_1__2_in_rule__Expression__Group_1__1930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Expression__Group_1__1__Impl958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expression__Group_1__2__Impl_in_rule__Expression__Group_1__2989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expression__RightAssignment_1_2_in_rule__Expression__Group_1__2__Impl1016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__0__Impl_in_rule__Atomic__Group_0__01052 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__1_in_rule__Atomic__Group_0__01055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_0__1__Impl_in_rule__Atomic__Group_0__11113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_0_1_in_rule__Atomic__Group_0__1__Impl1140 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_1__0__Impl_in_rule__Atomic__Group_1__01174 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_1__1_in_rule__Atomic__Group_1__01177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_1__1__Impl_in_rule__Atomic__Group_1__11235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_1_1_in_rule__Atomic__Group_1__1__Impl1262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_2__0__Impl_in_rule__Atomic__Group_2__01296 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_2__1_in_rule__Atomic__Group_2__01299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_2__1__Impl_in_rule__Atomic__Group_2__11357 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__ValueAssignment_2_1_in_rule__Atomic__Group_2__1__Impl1384 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3__0__Impl_in_rule__Atomic__Group_3__01418 = new BitSet(new long[]{0x0000000000001870L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3__1_in_rule__Atomic__Group_3__01421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__Group_3__1__Impl_in_rule__Atomic__Group_3__11479 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__VariableAssignment_3_1_in_rule__Atomic__Group_3__1__Impl1506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractElement_in_rule__ExpressionModel__ElementsAssignment1545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_01576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_rule__Variable__ExpressionAssignment_21607 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpression_in_rule__Expression__RightAssignment_1_21638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Atomic__ValueAssignment_0_11669 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Atomic__ValueAssignment_1_11700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Atomic__ValueAlternatives_2_1_0_in_rule__Atomic__ValueAssignment_2_11731 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Atomic__VariableAssignment_3_11768 = new BitSet(new long[]{0x0000000000000002L});
 
 }

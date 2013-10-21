@@ -89,41 +89,37 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cPlusAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cLeftAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cLeftAtomicParserRuleCall_1_0 = (RuleCall)cLeftAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cPlusSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cRightAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cRightExpressionParserRuleCall_2_1_0 = (RuleCall)cRightAssignment_2_1.eContents().get(0);
+		private final RuleCall cAtomicParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cPlusLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cPlusSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//Expression:
-		//	{Plus} left=Atomic ("+" right=Expression)?;
+		//	Atomic ({Plus.left=current} "+" right=Expression)?;
 		public ParserRule getRule() { return rule; }
 
-		//{Plus} left=Atomic ("+" right=Expression)?
+		//Atomic ({Plus.left=current} "+" right=Expression)?
 		public Group getGroup() { return cGroup; }
 
-		//{Plus}
-		public Action getPlusAction_0() { return cPlusAction_0; }
-
-		//left=Atomic
-		public Assignment getLeftAssignment_1() { return cLeftAssignment_1; }
-
 		//Atomic
-		public RuleCall getLeftAtomicParserRuleCall_1_0() { return cLeftAtomicParserRuleCall_1_0; }
+		public RuleCall getAtomicParserRuleCall_0() { return cAtomicParserRuleCall_0; }
 
-		//("+" right=Expression)?
-		public Group getGroup_2() { return cGroup_2; }
+		//({Plus.left=current} "+" right=Expression)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{Plus.left=current}
+		public Action getPlusLeftAction_1_0() { return cPlusLeftAction_1_0; }
 
 		//"+"
-		public Keyword getPlusSignKeyword_2_0() { return cPlusSignKeyword_2_0; }
+		public Keyword getPlusSignKeyword_1_1() { return cPlusSignKeyword_1_1; }
 
 		//right=Expression
-		public Assignment getRightAssignment_2_1() { return cRightAssignment_2_1; }
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
 		//Expression
-		public RuleCall getRightExpressionParserRuleCall_2_1_0() { return cRightExpressionParserRuleCall_2_1_0; }
+		public RuleCall getRightExpressionParserRuleCall_1_2_0() { return cRightExpressionParserRuleCall_1_2_0; }
 	}
 
 	public class AtomicElements extends AbstractParserRuleElementFinder {
@@ -292,7 +288,7 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Expression:
-	//	{Plus} left=Atomic ("+" right=Expression)?;
+	//	Atomic ({Plus.left=current} "+" right=Expression)?;
 	public ExpressionElements getExpressionAccess() {
 		return (pExpression != null) ? pExpression : (pExpression = new ExpressionElements());
 	}

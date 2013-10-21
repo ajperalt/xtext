@@ -217,38 +217,29 @@ ruleExpression returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getExpressionAccess().getAtomicParserRuleCall_0()); 
+    }
+    this_Atomic_0=ruleAtomic
+    { 
+        $current = $this_Atomic_0.current; 
+        afterParserOrEnumRuleCall();
+    }
 ((
     {
-        $current = forceCreateModelElement(
-            grammarAccess.getExpressionAccess().getPlusAction_0(),
+        $current = forceCreateModelElementAndSet(
+            grammarAccess.getExpressionAccess().getPlusLeftAction_1_0(),
             $current);
     }
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getExpressionAccess().getLeftAtomicParserRuleCall_1_0()); 
-	    }
-		lv_left_1_0=ruleAtomic		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getExpressionRule());
-	        }
-       		set(
-       			$current, 
-       			"left",
-        		lv_left_1_0, 
-        		"Atomic");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(	otherlv_2='+' 
+)	otherlv_2='+' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getExpressionAccess().getPlusSignKeyword_2_0());
+    	newLeafNode(otherlv_2, grammarAccess.getExpressionAccess().getPlusSignKeyword_1_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getExpressionAccess().getRightExpressionParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getExpressionAccess().getRightExpressionParserRuleCall_1_2_0()); 
 	    }
 		lv_right_3_0=ruleExpression		{
 	        if ($current==null) {
