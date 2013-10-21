@@ -18,6 +18,7 @@ import org.example.expressions.expressions.IntConstant
 import org.example.expressions.expressions.BoolConstant
 import org.example.expressions.expressions.StringConstant
 import org.example.expressions.expressions.Minus
+import org.example.expressions.expressions.MulOrDiv
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(ExpressionsInjectorProvider))
@@ -101,6 +102,8 @@ class ExpressionsParserTest {
 			'''(«e.left.stringRepr» + «e.right.stringRepr»)'''
 			Minus:
 			'''(«e.left.stringRepr» - «e.right.stringRepr»)'''
+			MulOrDiv:
+			'''(«e.left.stringRepr» «e.op» «e.right.stringRepr»)'''
 			IntConstant: '''«e.value»''' 
 			StringConstant: '''«e.value»'''
 			BoolConstant: '''«e.value»'''
@@ -140,8 +143,11 @@ class ExpressionsParserTest {
 	@Test
 	def void testPlusWithParenthesis() {
 		"( 10 + 5 ) + ( 1 + 2 )".assertRepr("((10 + 5) + (1 + 2))")
-
 	}
 	
+	@Test
+	def void testPlusMulPrecedence() {
+		"10 + 5 * 2 - 5 / 1".assertRepr("((10 + (5*2)) - (5/1))")
+	}
 	
 }

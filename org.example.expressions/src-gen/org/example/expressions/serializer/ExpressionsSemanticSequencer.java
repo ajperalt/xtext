@@ -18,6 +18,7 @@ import org.example.expressions.expressions.ExpressionModel;
 import org.example.expressions.expressions.ExpressionsPackage;
 import org.example.expressions.expressions.IntConstant;
 import org.example.expressions.expressions.Minus;
+import org.example.expressions.expressions.MulOrDiv;
 import org.example.expressions.expressions.Plus;
 import org.example.expressions.expressions.StringConstant;
 import org.example.expressions.expressions.Variable;
@@ -36,8 +37,11 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAtomicRule() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
-				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
+				   context == grammarAccess.getMulOrDivRule() ||
+				   context == grammarAccess.getMulOrDivAccess().getMulOrDivLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusOrMinusRule() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0()) {
 					sequence_Atomic(context, (BoolConstant) semanticObject); 
 					return; 
 				}
@@ -52,8 +56,11 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAtomicRule() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
-				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
+				   context == grammarAccess.getMulOrDivRule() ||
+				   context == grammarAccess.getMulOrDivAccess().getMulOrDivLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusOrMinusRule() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0()) {
 					sequence_Atomic(context, (IntConstant) semanticObject); 
 					return; 
 				}
@@ -62,9 +69,25 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAtomicRule() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
-				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
-					sequence_Expression(context, (Minus) semanticObject); 
+				   context == grammarAccess.getMulOrDivRule() ||
+				   context == grammarAccess.getMulOrDivAccess().getMulOrDivLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusOrMinusRule() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0()) {
+					sequence_PlusOrMinus(context, (Minus) semanticObject); 
+					return; 
+				}
+				else break;
+			case ExpressionsPackage.MUL_OR_DIV:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getAtomicRule() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getMulOrDivRule() ||
+				   context == grammarAccess.getMulOrDivAccess().getMulOrDivLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusOrMinusRule() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0()) {
+					sequence_MulOrDiv(context, (MulOrDiv) semanticObject); 
 					return; 
 				}
 				else break;
@@ -72,9 +95,12 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAtomicRule() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
-				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
-					sequence_Expression(context, (Plus) semanticObject); 
+				   context == grammarAccess.getMulOrDivRule() ||
+				   context == grammarAccess.getMulOrDivAccess().getMulOrDivLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusOrMinusRule() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0()) {
+					sequence_PlusOrMinus(context, (Plus) semanticObject); 
 					return; 
 				}
 				else break;
@@ -82,8 +108,11 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAtomicRule() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
-				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
+				   context == grammarAccess.getMulOrDivRule() ||
+				   context == grammarAccess.getMulOrDivAccess().getMulOrDivLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusOrMinusRule() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0()) {
 					sequence_Atomic(context, (StringConstant) semanticObject); 
 					return; 
 				}
@@ -99,8 +128,11 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAtomicRule() ||
 				   context == grammarAccess.getExpressionRule() ||
-				   context == grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0() ||
-				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0()) {
+				   context == grammarAccess.getMulOrDivRule() ||
+				   context == grammarAccess.getMulOrDivAccess().getMulOrDivLeftAction_1_0_0() ||
+				   context == grammarAccess.getPlusOrMinusRule() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getMinusLeftAction_1_0_1_0() ||
+				   context == grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0()) {
 					sequence_Atomic(context, (VariableRef) semanticObject); 
 					return; 
 				}
@@ -177,9 +209,18 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Constraint:
-	 *     (left=Expression_Minus_1_0_1_0 right=Atomic)
+	 *     (left=MulOrDiv_MulOrDiv_1_0_0 (op='*' | op='/') right=Atomic)
 	 */
-	protected void sequence_Expression(EObject context, Minus semanticObject) {
+	protected void sequence_MulOrDiv(EObject context, MulOrDiv semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=PlusOrMinus_Minus_1_0_1_0 right=MulOrDiv)
+	 */
+	protected void sequence_PlusOrMinus(EObject context, Minus semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ExpressionsPackage.Literals.MINUS__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpressionsPackage.Literals.MINUS__LEFT));
@@ -188,17 +229,17 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getExpressionAccess().getMinusLeftAction_1_0_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getExpressionAccess().getRightAtomicParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getPlusOrMinusAccess().getMinusLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getPlusOrMinusAccess().getRightMulOrDivParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (left=Expression_Plus_1_0_0_0 right=Atomic)
+	 *     (left=PlusOrMinus_Plus_1_0_0_0 right=MulOrDiv)
 	 */
-	protected void sequence_Expression(EObject context, Plus semanticObject) {
+	protected void sequence_PlusOrMinus(EObject context, Plus semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ExpressionsPackage.Literals.PLUS__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpressionsPackage.Literals.PLUS__LEFT));
@@ -207,8 +248,8 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getExpressionAccess().getPlusLeftAction_1_0_0_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getExpressionAccess().getRightAtomicParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getPlusOrMinusAccess().getPlusLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getPlusOrMinusAccess().getRightMulOrDivParserRuleCall_1_1_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	

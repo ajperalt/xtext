@@ -17,6 +17,7 @@ import org.example.expressions.expressions.ExpressionsFactory;
 import org.example.expressions.expressions.ExpressionsPackage;
 import org.example.expressions.expressions.IntConstant;
 import org.example.expressions.expressions.Minus;
+import org.example.expressions.expressions.MulOrDiv;
 import org.example.expressions.expressions.Plus;
 import org.example.expressions.expressions.StringConstant;
 import org.example.expressions.expressions.Variable;
@@ -71,6 +72,13 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    * @generated
    */
   private EClass minusEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mulOrDivEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -298,6 +306,46 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMulOrDiv()
+  {
+    return mulOrDivEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMulOrDiv_Left()
+  {
+    return (EReference)mulOrDivEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMulOrDiv_Op()
+  {
+    return (EAttribute)mulOrDivEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMulOrDiv_Right()
+  {
+    return (EReference)mulOrDivEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getIntConstant()
   {
     return intConstantEClass;
@@ -422,6 +470,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
     createEReference(minusEClass, MINUS__LEFT);
     createEReference(minusEClass, MINUS__RIGHT);
 
+    mulOrDivEClass = createEClass(MUL_OR_DIV);
+    createEReference(mulOrDivEClass, MUL_OR_DIV__LEFT);
+    createEAttribute(mulOrDivEClass, MUL_OR_DIV__OP);
+    createEReference(mulOrDivEClass, MUL_OR_DIV__RIGHT);
+
     intConstantEClass = createEClass(INT_CONSTANT);
     createEAttribute(intConstantEClass, INT_CONSTANT__VALUE);
 
@@ -468,6 +521,7 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
     expressionEClass.getESuperTypes().add(this.getAbstractElement());
     plusEClass.getESuperTypes().add(this.getExpression());
     minusEClass.getESuperTypes().add(this.getExpression());
+    mulOrDivEClass.getESuperTypes().add(this.getExpression());
     intConstantEClass.getESuperTypes().add(this.getExpression());
     stringConstantEClass.getESuperTypes().add(this.getExpression());
     boolConstantEClass.getESuperTypes().add(this.getExpression());
@@ -492,6 +546,11 @@ public class ExpressionsPackageImpl extends EPackageImpl implements ExpressionsP
     initEClass(minusEClass, Minus.class, "Minus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMinus_Left(), this.getExpression(), null, "left", null, 0, 1, Minus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMinus_Right(), this.getExpression(), null, "right", null, 0, 1, Minus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mulOrDivEClass, MulOrDiv.class, "MulOrDiv", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMulOrDiv_Left(), this.getExpression(), null, "left", null, 0, 1, MulOrDiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMulOrDiv_Op(), ecorePackage.getEString(), "op", null, 0, 1, MulOrDiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMulOrDiv_Right(), this.getExpression(), null, "right", null, 0, 1, MulOrDiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(intConstantEClass, IntConstant.class, "IntConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIntConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

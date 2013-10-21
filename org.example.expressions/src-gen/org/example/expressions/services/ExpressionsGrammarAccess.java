@@ -88,8 +88,20 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expression");
+		private final RuleCall cPlusOrMinusParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Expression:
+		//	PlusOrMinus;
+		public ParserRule getRule() { return rule; }
+
+		//PlusOrMinus
+		public RuleCall getPlusOrMinusParserRuleCall() { return cPlusOrMinusParserRuleCall; }
+	}
+
+	public class PlusOrMinusElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PlusOrMinus");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cAtomicParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cMulOrDivParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
 		private final Group cGroup_1_0_0 = (Group)cAlternatives_1_0.eContents().get(0);
@@ -99,19 +111,19 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cMinusLeftAction_1_0_1_0 = (Action)cGroup_1_0_1.eContents().get(0);
 		private final Keyword cHyphenMinusKeyword_1_0_1_1 = (Keyword)cGroup_1_0_1.eContents().get(1);
 		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cRightAtomicParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		private final RuleCall cRightMulOrDivParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
-		//Expression:
-		//	Atomic (({Plus.left=current} "+" | {Minus.left=current} "-") right=Atomic)*;
+		//PlusOrMinus returns Expression:
+		//	MulOrDiv (({Plus.left=current} "+" | {Minus.left=current} "-") right=MulOrDiv)*;
 		public ParserRule getRule() { return rule; }
 
-		//Atomic (({Plus.left=current} "+" | {Minus.left=current} "-") right=Atomic)*
+		//MulOrDiv (({Plus.left=current} "+" | {Minus.left=current} "-") right=MulOrDiv)*
 		public Group getGroup() { return cGroup; }
 
-		//Atomic
-		public RuleCall getAtomicParserRuleCall_0() { return cAtomicParserRuleCall_0; }
+		//MulOrDiv
+		public RuleCall getMulOrDivParserRuleCall_0() { return cMulOrDivParserRuleCall_0; }
 
-		//(({Plus.left=current} "+" | {Minus.left=current} "-") right=Atomic)*
+		//(({Plus.left=current} "+" | {Minus.left=current} "-") right=MulOrDiv)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{Plus.left=current} "+" | {Minus.left=current} "-"
@@ -134,6 +146,58 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"-"
 		public Keyword getHyphenMinusKeyword_1_0_1_1() { return cHyphenMinusKeyword_1_0_1_1; }
+
+		//right=MulOrDiv
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+
+		//MulOrDiv
+		public RuleCall getRightMulOrDivParserRuleCall_1_1_0() { return cRightMulOrDivParserRuleCall_1_1_0; }
+	}
+
+	public class MulOrDivElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MulOrDiv");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cAtomicParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Action cMulOrDivLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_0_1_0 = (Alternatives)cOpAssignment_1_0_1.eContents().get(0);
+		private final Keyword cOpAsteriskKeyword_1_0_1_0_0 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(0);
+		private final Keyword cOpSolidusKeyword_1_0_1_0_1 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(1);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightAtomicParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//MulOrDiv returns Expression:
+		//	Atomic (({MulOrDiv.left=current} op=("*" | "/")) right=Atomic)*;
+		public ParserRule getRule() { return rule; }
+
+		//Atomic (({MulOrDiv.left=current} op=("*" | "/")) right=Atomic)*
+		public Group getGroup() { return cGroup; }
+
+		//Atomic
+		public RuleCall getAtomicParserRuleCall_0() { return cAtomicParserRuleCall_0; }
+
+		//(({MulOrDiv.left=current} op=("*" | "/")) right=Atomic)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{MulOrDiv.left=current} op=("*" | "/")
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
+		//{MulOrDiv.left=current}
+		public Action getMulOrDivLeftAction_1_0_0() { return cMulOrDivLeftAction_1_0_0; }
+
+		//op=("*" | "/")
+		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
+
+		//"*" | "/"
+		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
+
+		//"*"
+		public Keyword getOpAsteriskKeyword_1_0_1_0_0() { return cOpAsteriskKeyword_1_0_1_0_0; }
+
+		//"/"
+		public Keyword getOpSolidusKeyword_1_0_1_0_1() { return cOpSolidusKeyword_1_0_1_0_1; }
 
 		//right=Atomic
 		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
@@ -253,6 +317,8 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	private AbstractElementElements pAbstractElement;
 	private VariableElements pVariable;
 	private ExpressionElements pExpression;
+	private PlusOrMinusElements pPlusOrMinus;
+	private MulOrDivElements pMulOrDiv;
 	private AtomicElements pAtomic;
 	
 	private final Grammar grammar;
@@ -324,13 +390,33 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Expression:
-	//	Atomic (({Plus.left=current} "+" | {Minus.left=current} "-") right=Atomic)*;
+	//	PlusOrMinus;
 	public ExpressionElements getExpressionAccess() {
 		return (pExpression != null) ? pExpression : (pExpression = new ExpressionElements());
 	}
 	
 	public ParserRule getExpressionRule() {
 		return getExpressionAccess().getRule();
+	}
+
+	//PlusOrMinus returns Expression:
+	//	MulOrDiv (({Plus.left=current} "+" | {Minus.left=current} "-") right=MulOrDiv)*;
+	public PlusOrMinusElements getPlusOrMinusAccess() {
+		return (pPlusOrMinus != null) ? pPlusOrMinus : (pPlusOrMinus = new PlusOrMinusElements());
+	}
+	
+	public ParserRule getPlusOrMinusRule() {
+		return getPlusOrMinusAccess().getRule();
+	}
+
+	//MulOrDiv returns Expression:
+	//	Atomic (({MulOrDiv.left=current} op=("*" | "/")) right=Atomic)*;
+	public MulOrDivElements getMulOrDivAccess() {
+		return (pMulOrDiv != null) ? pMulOrDiv : (pMulOrDiv = new MulOrDivElements());
+	}
+	
+	public ParserRule getMulOrDivRule() {
+		return getMulOrDivAccess().getRule();
 	}
 
 	//Atomic returns Expression:

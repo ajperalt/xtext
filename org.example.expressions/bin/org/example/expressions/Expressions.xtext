@@ -13,11 +13,19 @@ AbstractElement:
 Variable:
 	name = ID '=' expression=Expression;
  
- Expression:
-	Atomic (
-		({Plus.left = current} '+' | {Minus.left = current}  '-') 
-		right = Atomic
-	)*;
+ Expression: PlusOrMinus;
+ 
+ PlusOrMinus returns Expression:
+ 	MulOrDiv (
+ 		({Plus.left=current} '+' | {Minus.left=current} '-')
+ 		right=MulOrDiv
+ 	)* ;
+ 	
+ MulOrDiv returns Expression:
+ 	Atomic (
+ 		({MulOrDiv.left=current} op=('*'|'/'))
+ 		right=Atomic
+ 	)*  ;
 
 Atomic returns Expression:
 	'(' Expression ')' | 

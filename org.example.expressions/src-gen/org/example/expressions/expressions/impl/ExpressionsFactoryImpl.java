@@ -70,6 +70,7 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
       case ExpressionsPackage.EXPRESSION: return createExpression();
       case ExpressionsPackage.PLUS: return createPlus();
       case ExpressionsPackage.MINUS: return createMinus();
+      case ExpressionsPackage.MUL_OR_DIV: return createMulOrDiv();
       case ExpressionsPackage.INT_CONSTANT: return createIntConstant();
       case ExpressionsPackage.STRING_CONSTANT: return createStringConstant();
       case ExpressionsPackage.BOOL_CONSTANT: return createBoolConstant();
@@ -143,6 +144,17 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
   {
     MinusImpl minus = new MinusImpl();
     return minus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MulOrDiv createMulOrDiv()
+  {
+    MulOrDivImpl mulOrDiv = new MulOrDivImpl();
+    return mulOrDiv;
   }
 
   /**

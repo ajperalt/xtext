@@ -234,6 +234,52 @@ public interface ExpressionsPackage extends EPackage
   int MINUS_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link org.example.expressions.expressions.impl.MulOrDivImpl <em>Mul Or Div</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.expressions.expressions.impl.MulOrDivImpl
+   * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getMulOrDiv()
+   * @generated
+   */
+  int MUL_OR_DIV = 6;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MUL_OR_DIV__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MUL_OR_DIV__OP = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MUL_OR_DIV__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Mul Or Div</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MUL_OR_DIV_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link org.example.expressions.expressions.impl.IntConstantImpl <em>Int Constant</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -241,7 +287,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getIntConstant()
    * @generated
    */
-  int INT_CONSTANT = 6;
+  int INT_CONSTANT = 7;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -269,7 +315,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getStringConstant()
    * @generated
    */
-  int STRING_CONSTANT = 7;
+  int STRING_CONSTANT = 8;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -297,7 +343,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getBoolConstant()
    * @generated
    */
-  int BOOL_CONSTANT = 8;
+  int BOOL_CONSTANT = 9;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -325,7 +371,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getVariableRef()
    * @generated
    */
-  int VARIABLE_REF = 9;
+  int VARIABLE_REF = 10;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -482,6 +528,49 @@ public interface ExpressionsPackage extends EPackage
    * @generated
    */
   EReference getMinus_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.example.expressions.expressions.MulOrDiv <em>Mul Or Div</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Mul Or Div</em>'.
+   * @see org.example.expressions.expressions.MulOrDiv
+   * @generated
+   */
+  EClass getMulOrDiv();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.MulOrDiv#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.example.expressions.expressions.MulOrDiv#getLeft()
+   * @see #getMulOrDiv()
+   * @generated
+   */
+  EReference getMulOrDiv_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.expressions.expressions.MulOrDiv#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.example.expressions.expressions.MulOrDiv#getOp()
+   * @see #getMulOrDiv()
+   * @generated
+   */
+  EAttribute getMulOrDiv_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.MulOrDiv#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.example.expressions.expressions.MulOrDiv#getRight()
+   * @see #getMulOrDiv()
+   * @generated
+   */
+  EReference getMulOrDiv_Right();
 
   /**
    * Returns the meta object for class '{@link org.example.expressions.expressions.IntConstant <em>Int Constant</em>}'.
@@ -705,6 +794,40 @@ public interface ExpressionsPackage extends EPackage
      * @generated
      */
     EReference MINUS__RIGHT = eINSTANCE.getMinus_Right();
+
+    /**
+     * The meta object literal for the '{@link org.example.expressions.expressions.impl.MulOrDivImpl <em>Mul Or Div</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.expressions.expressions.impl.MulOrDivImpl
+     * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getMulOrDiv()
+     * @generated
+     */
+    EClass MUL_OR_DIV = eINSTANCE.getMulOrDiv();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MUL_OR_DIV__LEFT = eINSTANCE.getMulOrDiv_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MUL_OR_DIV__OP = eINSTANCE.getMulOrDiv_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MUL_OR_DIV__RIGHT = eINSTANCE.getMulOrDiv_Right();
 
     /**
      * The meta object literal for the '{@link org.example.expressions.expressions.impl.IntConstantImpl <em>Int Constant</em>}' class.

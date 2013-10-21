@@ -13,20 +13,22 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalExpressionsLexer extends Lexer {
     public static final int RULE_ID=4;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int EOF=-1;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__19=19;
     public static final int RULE_STRING=6;
     public static final int T__16=16;
     public static final int T__15=15;
+    public static final int T__18=18;
     public static final int T__17=17;
     public static final int T__12=12;
     public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
-    public static final int RULE_ANY_OTHER=10;
     public static final int RULE_INT=5;
     public static final int RULE_WS=9;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
 
     // delegates
     // delegators
@@ -46,11 +48,10 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:11:7: ( 'true' )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:11:9: 'true'
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:11:7: ( '*' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:11:9: '*'
             {
-            match("true"); 
-
+            match('*'); 
 
             }
 
@@ -67,11 +68,10 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:12:7: ( 'false' )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:12:9: 'false'
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:12:7: ( '/' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:12:9: '/'
             {
-            match("false"); 
-
+            match('/'); 
 
             }
 
@@ -88,10 +88,11 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:13:7: ( '=' )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:13:9: '='
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:13:7: ( 'true' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:13:9: 'true'
             {
-            match('='); 
+            match("true"); 
+
 
             }
 
@@ -108,10 +109,11 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:14:7: ( '+' )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:14:9: '+'
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:14:7: ( 'false' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:14:9: 'false'
             {
-            match('+'); 
+            match("false"); 
+
 
             }
 
@@ -128,10 +130,10 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:15:7: ( '-' )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:15:9: '-'
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:15:7: ( '=' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:15:9: '='
             {
-            match('-'); 
+            match('='); 
 
             }
 
@@ -148,10 +150,10 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:16:7: ( '(' )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:16:9: '('
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:16:7: ( '+' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:16:9: '+'
             {
-            match('('); 
+            match('+'); 
 
             }
 
@@ -168,10 +170,10 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:17:7: ( ')' )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:17:9: ')'
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:17:7: ( '-' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:17:9: '-'
             {
-            match(')'); 
+            match('-'); 
 
             }
 
@@ -183,15 +185,55 @@ public class InternalExpressionsLexer extends Lexer {
     }
     // $ANTLR end "T__17"
 
+    // $ANTLR start "T__18"
+    public final void mT__18() throws RecognitionException {
+        try {
+            int _type = T__18;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:18:7: ( '(' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:18:9: '('
+            {
+            match('('); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__18"
+
+    // $ANTLR start "T__19"
+    public final void mT__19() throws RecognitionException {
+        try {
+            int _type = T__19;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:19:7: ( ')' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:19:9: ')'
+            {
+            match(')'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__19"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1133:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1133:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1431:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1431:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1133:11: ( '^' )?
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1431:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -200,7 +242,7 @@ public class InternalExpressionsLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1133:11: '^'
+                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1431:11: '^'
                     {
                     match('^'); 
 
@@ -218,7 +260,7 @@ public class InternalExpressionsLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1133:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1431:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -267,10 +309,10 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1135:10: ( ( '0' .. '9' )+ )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1135:12: ( '0' .. '9' )+
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1433:10: ( ( '0' .. '9' )+ )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1433:12: ( '0' .. '9' )+
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1135:12: ( '0' .. '9' )+
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1433:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -284,7 +326,7 @@ public class InternalExpressionsLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1135:13: '0' .. '9'
+            	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1433:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -316,10 +358,10 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1137:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1137:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1435:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1435:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1137:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1435:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -337,10 +379,10 @@ public class InternalExpressionsLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1137:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1435:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1137:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1435:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -356,7 +398,7 @@ public class InternalExpressionsLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1137:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1435:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -372,7 +414,7 @@ public class InternalExpressionsLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1137:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1435:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -397,10 +439,10 @@ public class InternalExpressionsLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1137:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1435:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1137:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1435:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -416,7 +458,7 @@ public class InternalExpressionsLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1137:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1435:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -432,7 +474,7 @@ public class InternalExpressionsLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1137:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1435:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -475,12 +517,12 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1139:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1139:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1437:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1437:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1139:24: ( options {greedy=false; } : . )*
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1437:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -505,7 +547,7 @@ public class InternalExpressionsLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1139:52: .
+            	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1437:52: .
             	    {
             	    matchAny(); 
 
@@ -535,12 +577,12 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1141:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1141:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1439:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1439:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1141:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1439:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -553,7 +595,7 @@ public class InternalExpressionsLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1141:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1439:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -573,7 +615,7 @@ public class InternalExpressionsLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1141:40: ( ( '\\r' )? '\\n' )?
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1439:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -582,9 +624,9 @@ public class InternalExpressionsLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1141:41: ( '\\r' )? '\\n'
+                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1439:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1141:41: ( '\\r' )?
+                    // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1439:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -593,7 +635,7 @@ public class InternalExpressionsLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1141:41: '\\r'
+                            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1439:41: '\\r'
                             {
                             match('\r'); 
 
@@ -625,10 +667,10 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1143:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1143:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1441:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1441:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1143:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1441:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -682,8 +724,8 @@ public class InternalExpressionsLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1145:16: ( . )
-            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1145:18: .
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1443:16: ( . )
+            // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1443:18: .
             {
             matchAny(); 
 
@@ -698,8 +740,8 @@ public class InternalExpressionsLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=14;
+        // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=16;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -752,49 +794,63 @@ public class InternalExpressionsLexer extends Lexer {
                 }
                 break;
             case 8 :
-                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:52: RULE_ID
+                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:52: T__18
+                {
+                mT__18(); 
+
+                }
+                break;
+            case 9 :
+                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:58: T__19
+                {
+                mT__19(); 
+
+                }
+                break;
+            case 10 :
+                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:64: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 9 :
-                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:60: RULE_INT
+            case 11 :
+                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:72: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 10 :
-                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:69: RULE_STRING
+            case 12 :
+                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:81: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 11 :
-                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:81: RULE_ML_COMMENT
+            case 13 :
+                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:93: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 12 :
-                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:97: RULE_SL_COMMENT
+            case 14 :
+                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:109: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 13 :
-                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:113: RULE_WS
+            case 15 :
+                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:125: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 14 :
-                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:121: RULE_ANY_OTHER
+            case 16 :
+                // ../org.example.expressions.ui/src-gen/org/example/expressions/ui/contentassist/antlr/internal/InternalExpressions.g:1:133: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -808,61 +864,65 @@ public class InternalExpressionsLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\2\21\5\uffff\1\17\2\uffff\3\17\2\uffff\1\21\1\uffff\1\21"+
-        "\12\uffff\2\21\1\41\1\21\1\uffff\1\43\1\uffff";
+        "\2\uffff\1\24\2\26\5\uffff\1\20\2\uffff\2\20\6\uffff\1\26\1\uffff"+
+        "\1\26\10\uffff\2\26\1\44\1\26\1\uffff\1\46\1\uffff";
     static final String DFA12_eofS =
-        "\44\uffff";
+        "\47\uffff";
     static final String DFA12_minS =
-        "\1\0\1\162\1\141\5\uffff\1\101\2\uffff\2\0\1\52\2\uffff\1\165\1"+
-        "\uffff\1\154\12\uffff\1\145\1\163\1\60\1\145\1\uffff\1\60\1\uffff";
+        "\1\0\1\uffff\1\52\1\162\1\141\5\uffff\1\101\2\uffff\2\0\6\uffff"+
+        "\1\165\1\uffff\1\154\10\uffff\1\145\1\163\1\60\1\145\1\uffff\1\60"+
+        "\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\162\1\141\5\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff"+
-        "\1\165\1\uffff\1\154\12\uffff\1\145\1\163\1\172\1\145\1\uffff\1"+
-        "\172\1\uffff";
+        "\1\uffff\1\uffff\1\57\1\162\1\141\5\uffff\1\172\2\uffff\2\uffff"+
+        "\6\uffff\1\165\1\uffff\1\154\10\uffff\1\145\1\163\1\172\1\145\1"+
+        "\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\3\uffff\1\3\1\4\1\5\1\6\1\7\1\uffff\1\10\1\11\3\uffff\1\15\1\16"+
-        "\1\uffff\1\10\1\uffff\1\3\1\4\1\5\1\6\1\7\1\11\1\12\1\13\1\14\1"+
-        "\15\4\uffff\1\1\1\uffff\1\2";
+        "\1\uffff\1\1\3\uffff\1\5\1\6\1\7\1\10\1\11\1\uffff\1\12\1\13\2\uffff"+
+        "\1\17\1\20\1\1\1\15\1\16\1\2\1\uffff\1\12\1\uffff\1\5\1\6\1\7\1"+
+        "\10\1\11\1\13\1\14\1\17\4\uffff\1\3\1\uffff\1\4";
     static final String DFA12_specialS =
-        "\1\2\12\uffff\1\1\1\0\27\uffff}>";
+        "\1\0\14\uffff\1\2\1\1\30\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\17\2\16\2\17\1\16\22\17\1\16\1\17\1\13\4\17\1\14\1\6\1\7"+
-            "\1\17\1\4\1\17\1\5\1\17\1\15\12\12\3\17\1\3\3\17\32\11\3\17"+
-            "\1\10\1\11\1\17\5\11\1\2\15\11\1\1\6\11\uff85\17",
-            "\1\20",
-            "\1\22",
+            "\11\20\2\17\2\20\1\17\22\20\1\17\1\20\1\15\4\20\1\16\1\10\1"+
+            "\11\1\1\1\6\1\20\1\7\1\20\1\2\12\14\3\20\1\5\3\20\32\13\3\20"+
+            "\1\12\1\13\1\20\5\13\1\4\15\13\1\3\6\13\uff85\20",
+            "",
+            "\1\22\4\uffff\1\23",
+            "\1\25",
+            "\1\27",
             "",
             "",
             "",
             "",
             "",
-            "\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\32\26\4\uffff\1\26\1\uffff\32\26",
             "",
             "",
-            "\0\31",
-            "\0\31",
-            "\1\32\4\uffff\1\33",
-            "",
-            "",
-            "\1\35",
-            "",
-            "\1\36",
-            "",
-            "",
+            "\0\36",
+            "\0\36",
             "",
             "",
             "",
             "",
             "",
             "",
-            "",
-            "",
-            "\1\37",
             "\1\40",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
-            "\1\42",
             "",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\1\41",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\42",
+            "\1\43",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
+            "\1\45",
+            "",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             ""
     };
 
@@ -896,65 +956,67 @@ public class InternalExpressionsLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_12 = input.LA(1);
+                        int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_12>='\u0000' && LA12_12<='\uFFFF')) ) {s = 25;}
+                        if ( (LA12_0=='*') ) {s = 1;}
 
-                        else s = 15;
+                        else if ( (LA12_0=='/') ) {s = 2;}
+
+                        else if ( (LA12_0=='t') ) {s = 3;}
+
+                        else if ( (LA12_0=='f') ) {s = 4;}
+
+                        else if ( (LA12_0=='=') ) {s = 5;}
+
+                        else if ( (LA12_0=='+') ) {s = 6;}
+
+                        else if ( (LA12_0=='-') ) {s = 7;}
+
+                        else if ( (LA12_0=='(') ) {s = 8;}
+
+                        else if ( (LA12_0==')') ) {s = 9;}
+
+                        else if ( (LA12_0=='^') ) {s = 10;}
+
+                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='e')||(LA12_0>='g' && LA12_0<='s')||(LA12_0>='u' && LA12_0<='z')) ) {s = 11;}
+
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 12;}
+
+                        else if ( (LA12_0=='\"') ) {s = 13;}
+
+                        else if ( (LA12_0=='\'') ) {s = 14;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 15;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||LA12_0==','||LA12_0=='.'||(LA12_0>=':' && LA12_0<='<')||(LA12_0>='>' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 16;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_11 = input.LA(1);
+                        int LA12_14 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_11>='\u0000' && LA12_11<='\uFFFF')) ) {s = 25;}
+                        if ( ((LA12_14>='\u0000' && LA12_14<='\uFFFF')) ) {s = 30;}
 
-                        else s = 15;
+                        else s = 16;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_0 = input.LA(1);
+                        int LA12_13 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='t') ) {s = 1;}
+                        if ( ((LA12_13>='\u0000' && LA12_13<='\uFFFF')) ) {s = 30;}
 
-                        else if ( (LA12_0=='f') ) {s = 2;}
-
-                        else if ( (LA12_0=='=') ) {s = 3;}
-
-                        else if ( (LA12_0=='+') ) {s = 4;}
-
-                        else if ( (LA12_0=='-') ) {s = 5;}
-
-                        else if ( (LA12_0=='(') ) {s = 6;}
-
-                        else if ( (LA12_0==')') ) {s = 7;}
-
-                        else if ( (LA12_0=='^') ) {s = 8;}
-
-                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='e')||(LA12_0>='g' && LA12_0<='s')||(LA12_0>='u' && LA12_0<='z')) ) {s = 9;}
-
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 10;}
-
-                        else if ( (LA12_0=='\"') ) {s = 11;}
-
-                        else if ( (LA12_0=='\'') ) {s = 12;}
-
-                        else if ( (LA12_0=='/') ) {s = 13;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 14;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||LA12_0=='*'||LA12_0==','||LA12_0=='.'||(LA12_0>=':' && LA12_0<='<')||(LA12_0>='>' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 15;}
+                        else s = 16;
 
                         if ( s>=0 ) return s;
                         break;

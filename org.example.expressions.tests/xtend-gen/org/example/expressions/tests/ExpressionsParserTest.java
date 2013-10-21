@@ -19,6 +19,7 @@ import org.example.expressions.expressions.Expression;
 import org.example.expressions.expressions.ExpressionModel;
 import org.example.expressions.expressions.IntConstant;
 import org.example.expressions.expressions.Minus;
+import org.example.expressions.expressions.MulOrDiv;
 import org.example.expressions.expressions.Plus;
 import org.example.expressions.expressions.StringConstant;
 import org.example.expressions.expressions.Variable;
@@ -218,6 +219,26 @@ public class ExpressionsParserTest {
       }
     }
     if (!_matched) {
+      if (e instanceof MulOrDiv) {
+        final MulOrDiv _mulOrDiv = (MulOrDiv)e;
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        Expression _left = _mulOrDiv.getLeft();
+        Object _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" ");
+        String _op = _mulOrDiv.getOp();
+        _builder.append(_op, "");
+        _builder.append(" ");
+        Expression _right = _mulOrDiv.getRight();
+        Object _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
       if (e instanceof IntConstant) {
         final IntConstant _intConstant = (IntConstant)e;
         _matched=true;
@@ -318,5 +339,10 @@ public class ExpressionsParserTest {
   @Test
   public void testPlusWithParenthesis() {
     this.assertRepr("( 10 + 5 ) + ( 1 + 2 )", "((10 + 5) + (1 + 2))");
+  }
+  
+  @Test
+  public void testPlusMulPrecedence() {
+    this.assertRepr("10 + 5 * 2 - 5 / 1", "((10 + (5*2)) - (5/1))");
   }
 }

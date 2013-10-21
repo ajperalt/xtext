@@ -77,6 +77,15 @@ public interface ExpressionsFactory extends EFactory
   Minus createMinus();
 
   /**
+   * Returns a new object of class '<em>Mul Or Div</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mul Or Div</em>'.
+   * @generated
+   */
+  MulOrDiv createMulOrDiv();
+
+  /**
    * Returns a new object of class '<em>Int Constant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
