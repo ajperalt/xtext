@@ -94,19 +94,19 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cPlusLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Keyword cPlusSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightAtomicParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//Expression:
-		//	Atomic ({Plus.left=current} "+" right=Expression)?;
+		//	Atomic ({Plus.left=current} "+" right=Atomic)*;
 		public ParserRule getRule() { return rule; }
 
-		//Atomic ({Plus.left=current} "+" right=Expression)?
+		//Atomic ({Plus.left=current} "+" right=Atomic)*
 		public Group getGroup() { return cGroup; }
 
 		//Atomic
 		public RuleCall getAtomicParserRuleCall_0() { return cAtomicParserRuleCall_0; }
 
-		//({Plus.left=current} "+" right=Expression)?
+		//({Plus.left=current} "+" right=Atomic)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{Plus.left=current}
@@ -115,101 +115,117 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 		//"+"
 		public Keyword getPlusSignKeyword_1_1() { return cPlusSignKeyword_1_1; }
 
-		//right=Expression
+		//right=Atomic
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
-		//Expression
-		public RuleCall getRightExpressionParserRuleCall_1_2_0() { return cRightExpressionParserRuleCall_1_2_0; }
+		//Atomic
+		public RuleCall getRightAtomicParserRuleCall_1_2_0() { return cRightAtomicParserRuleCall_1_2_0; }
 	}
 
 	public class AtomicElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Atomic");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cIntConstantAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final RuleCall cExpressionParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cStringConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cIntConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cValueSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		private final RuleCall cValueINTTerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cBoolConstantAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Action cStringConstantAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final Alternatives cValueAlternatives_2_1_0 = (Alternatives)cValueAssignment_2_1.eContents().get(0);
-		private final Keyword cValueTrueKeyword_2_1_0_0 = (Keyword)cValueAlternatives_2_1_0.eContents().get(0);
-		private final Keyword cValueFalseKeyword_2_1_0_1 = (Keyword)cValueAlternatives_2_1_0.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cVariableRefAction_3_0 = (Action)cGroup_3.eContents().get(0);
-		private final Assignment cVariableAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cVariableVariableCrossReference_3_1_0 = (CrossReference)cVariableAssignment_3_1.eContents().get(0);
-		private final RuleCall cVariableVariableIDTerminalRuleCall_3_1_0_1 = (RuleCall)cVariableVariableCrossReference_3_1_0.eContents().get(1);
+		private final Action cBoolConstantAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Assignment cValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final Alternatives cValueAlternatives_3_1_0 = (Alternatives)cValueAssignment_3_1.eContents().get(0);
+		private final Keyword cValueTrueKeyword_3_1_0_0 = (Keyword)cValueAlternatives_3_1_0.eContents().get(0);
+		private final Keyword cValueFalseKeyword_3_1_0_1 = (Keyword)cValueAlternatives_3_1_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Action cVariableRefAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Assignment cVariableAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cVariableVariableCrossReference_4_1_0 = (CrossReference)cVariableAssignment_4_1.eContents().get(0);
+		private final RuleCall cVariableVariableIDTerminalRuleCall_4_1_0_1 = (RuleCall)cVariableVariableCrossReference_4_1_0.eContents().get(1);
 		
 		//Atomic returns Expression:
-		//	{IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=("true" | "false") | {VariableRef}
-		//	variable=[Variable];
+		//	"(" Expression ")" | {IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=("true" | "false")
+		//	| {VariableRef} variable=[Variable];
 		public ParserRule getRule() { return rule; }
 
-		//{IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=("true" | "false") | {VariableRef}
-		//variable=[Variable]
+		//"(" Expression ")" | {IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=("true" | "false") |
+		//{VariableRef} variable=[Variable]
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{IntConstant} value=INT
+		//"(" Expression ")"
 		public Group getGroup_0() { return cGroup_0; }
 
-		//{IntConstant}
-		public Action getIntConstantAction_0_0() { return cIntConstantAction_0_0; }
+		//"("
+		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
 
-		//value=INT
-		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
+		//Expression
+		public RuleCall getExpressionParserRuleCall_0_1() { return cExpressionParserRuleCall_0_1; }
 
-		//INT
-		public RuleCall getValueINTTerminalRuleCall_0_1_0() { return cValueINTTerminalRuleCall_0_1_0; }
+		//")"
+		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
 
-		//{StringConstant} value=STRING
+		//{IntConstant} value=INT
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{StringConstant}
-		public Action getStringConstantAction_1_0() { return cStringConstantAction_1_0; }
+		//{IntConstant}
+		public Action getIntConstantAction_1_0() { return cIntConstantAction_1_0; }
 
-		//value=STRING
+		//value=INT
 		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
 
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_1_1_0() { return cValueSTRINGTerminalRuleCall_1_1_0; }
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_1_1_0() { return cValueINTTerminalRuleCall_1_1_0; }
 
-		//{BoolConstant} value=("true" | "false")
+		//{StringConstant} value=STRING
 		public Group getGroup_2() { return cGroup_2; }
 
-		//{BoolConstant}
-		public Action getBoolConstantAction_2_0() { return cBoolConstantAction_2_0; }
+		//{StringConstant}
+		public Action getStringConstantAction_2_0() { return cStringConstantAction_2_0; }
 
-		//value=("true" | "false")
+		//value=STRING
 		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
 
-		//"true" | "false"
-		public Alternatives getValueAlternatives_2_1_0() { return cValueAlternatives_2_1_0; }
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_1_0() { return cValueSTRINGTerminalRuleCall_2_1_0; }
 
-		//"true"
-		public Keyword getValueTrueKeyword_2_1_0_0() { return cValueTrueKeyword_2_1_0_0; }
-
-		//"false"
-		public Keyword getValueFalseKeyword_2_1_0_1() { return cValueFalseKeyword_2_1_0_1; }
-
-		//{VariableRef} variable=[Variable]
+		//{BoolConstant} value=("true" | "false")
 		public Group getGroup_3() { return cGroup_3; }
 
+		//{BoolConstant}
+		public Action getBoolConstantAction_3_0() { return cBoolConstantAction_3_0; }
+
+		//value=("true" | "false")
+		public Assignment getValueAssignment_3_1() { return cValueAssignment_3_1; }
+
+		//"true" | "false"
+		public Alternatives getValueAlternatives_3_1_0() { return cValueAlternatives_3_1_0; }
+
+		//"true"
+		public Keyword getValueTrueKeyword_3_1_0_0() { return cValueTrueKeyword_3_1_0_0; }
+
+		//"false"
+		public Keyword getValueFalseKeyword_3_1_0_1() { return cValueFalseKeyword_3_1_0_1; }
+
+		//{VariableRef} variable=[Variable]
+		public Group getGroup_4() { return cGroup_4; }
+
 		//{VariableRef}
-		public Action getVariableRefAction_3_0() { return cVariableRefAction_3_0; }
+		public Action getVariableRefAction_4_0() { return cVariableRefAction_4_0; }
 
 		//variable=[Variable]
-		public Assignment getVariableAssignment_3_1() { return cVariableAssignment_3_1; }
+		public Assignment getVariableAssignment_4_1() { return cVariableAssignment_4_1; }
 
 		//[Variable]
-		public CrossReference getVariableVariableCrossReference_3_1_0() { return cVariableVariableCrossReference_3_1_0; }
+		public CrossReference getVariableVariableCrossReference_4_1_0() { return cVariableVariableCrossReference_4_1_0; }
 
 		//ID
-		public RuleCall getVariableVariableIDTerminalRuleCall_3_1_0_1() { return cVariableVariableIDTerminalRuleCall_3_1_0_1; }
+		public RuleCall getVariableVariableIDTerminalRuleCall_4_1_0_1() { return cVariableVariableIDTerminalRuleCall_4_1_0_1; }
 	}
 	
 	
@@ -288,7 +304,7 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Expression:
-	//	Atomic ({Plus.left=current} "+" right=Expression)?;
+	//	Atomic ({Plus.left=current} "+" right=Atomic)*;
 	public ExpressionElements getExpressionAccess() {
 		return (pExpression != null) ? pExpression : (pExpression = new ExpressionElements());
 	}
@@ -298,8 +314,8 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Atomic returns Expression:
-	//	{IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=("true" | "false") | {VariableRef}
-	//	variable=[Variable];
+	//	"(" Expression ")" | {IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=("true" | "false")
+	//	| {VariableRef} variable=[Variable];
 	public AtomicElements getAtomicAccess() {
 		return (pAtomic != null) ? pAtomic : (pAtomic = new AtomicElements());
 	}

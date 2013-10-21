@@ -12,6 +12,11 @@ import org.junit.Test
 import org.example.expressions.expressions.VariableRef
 
 import static extension org.junit.Assert.*;
+import org.example.expressions.expressions.Expression
+import org.example.expressions.expressions.Plus
+import org.example.expressions.expressions.IntConstant
+import org.example.expressions.expressions.BoolConstant
+import org.example.expressions.expressions.StringConstant
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(ExpressionsInjectorProvider))
@@ -89,6 +94,40 @@ class ExpressionsParserTest {
 		assertSame(e.elements.get(0))
 	}
 	
+	def stringRepr(Expression e) {
+		switch(e) {
+			Plus:
+			'''(«e.left.stringRepr» + «e.right.stringRepr»)'''
+			IntConstant: '''«e.value»''' 
+			StringConstant: '''«e.value»'''
+			BoolConstant: '''«e.value»'''
+			VariableRef: '''«e.variable.name»'''
+		}.toString
+		
+	}
+	
+	def assertRepr(CharSequence input, CharSequence expected) {
+		input.parse => [
+			assertNoErrors;
+			expected.assertEquals((elements.last as Expression).stringRepr
+			)
+		]
+	}
+	
+	@Test 
+	def void testPlus() {
+		'''10 + 5 + 1 + 2'''.assertRepr("(((10 + 5) + 1) + 2)")
+	} 
+	
+	@Test
+	def void testParenthesis() {
+		'''(10)'''.parse.elements.get(0) as IntConstant
+	}
 
+	@Test
+	def void testPlusWithParenthesis() {
+		"( 10 + 5 ) + ( 1 + 2 )".assertRepr("((10 + 5) + (1 + 2))")
+	}
+	
 	
 }

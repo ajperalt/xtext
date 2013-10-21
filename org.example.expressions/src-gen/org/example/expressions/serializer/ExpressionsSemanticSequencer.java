@@ -57,7 +57,9 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 				else break;
 			case ExpressionsPackage.PLUS:
 				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getExpressionRule()) {
+				   context == grammarAccess.getAtomicRule() ||
+				   context == grammarAccess.getExpressionRule() ||
+				   context == grammarAccess.getExpressionAccess().getPlusLeftAction_1_0()) {
 					sequence_Expression(context, (Plus) semanticObject); 
 					return; 
 				}
@@ -111,7 +113,7 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_0_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_1_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -127,7 +129,7 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtomicAccess().getValueSTRINGTerminalRuleCall_1_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAtomicAccess().getValueSTRINGTerminalRuleCall_2_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -143,7 +145,7 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAtomicAccess().getVariableVariableIDTerminalRuleCall_3_1_0_1(), semanticObject.getVariable());
+		feeder.accept(grammarAccess.getAtomicAccess().getVariableVariableIDTerminalRuleCall_4_1_0_1(), semanticObject.getVariable());
 		feeder.finish();
 	}
 	
@@ -159,7 +161,7 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Constraint:
-	 *     (left=Expression_Plus_1_0 right=Expression)
+	 *     (left=Expression_Plus_1_0 right=Atomic)
 	 */
 	protected void sequence_Expression(EObject context, Plus semanticObject) {
 		if(errorAcceptor != null) {
@@ -171,7 +173,7 @@ public class ExpressionsSemanticSequencer extends AbstractDelegatingSemanticSequ
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getExpressionAccess().getPlusLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getExpressionAccess().getRightExpressionParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getExpressionAccess().getRightAtomicParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
