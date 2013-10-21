@@ -1,0 +1,74 @@
+package org.example.entites.tests
+
+import com.google.inject.Inject
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
+import org.eclipse.xtext.junit4.util.ParseHelper
+import org.eclipse.xtext.junit4.validation.ValidationTestHelper
+import org.examples.entities.EntitiesInjectorProvider
+import org.examples.entities.entities.EntitiesPackage
+import org.examples.entities.entities.Model
+import org.examples.entities.validation.EntitiesValidator
+import org.junit.runner.RunWith
+import org.junit.Test
+
+@RunWith(typeof(XtextRunner))
+@InjectWith(typeof(EntitiesInjectorProvider))
+class EntitiesValidatorTest {
+	
+	@Inject extension ParseHelper<Model>
+	@Inject extension ValidationTestHelper
+	
+	@Test
+	def void testEntityExtendsItself() {
+		'''
+			entity MyEntity extends MyEntity {}
+		'''.parse.assertError(EntitiesPackage::eINSTANCE.entity, 
+			EntitiesValidator::HIERARCHY_CYCLE,
+			"cycle in hierarchy of entity 'My Entity'"
+		)
+		
+	}
+	
+	@Test
+	def void testCycleInEntityHierarchy()
+	{
+		val model = '''
+			entity A extends B {}
+			entity B extends C {}
+			entity C extends A {}
+		'''.parse
+		
+		model.assertError(EntitiesPackage::eINSTANCE.entity,
+			EntitiesValidator::HIERARCHY_CYCLE,
+			"cycle in hieracrhy of entity 'A'"
+		)
+		
+		model.assertError(EntitiesPackage::eINSTANCE.entity,
+			EntitiesValidator::HIERARCHY_CYCLE,
+			"cycle in hierarchy of entity 'B'"
+		)
+		
+		model.assertError(EntitiesPackage::eINSTANCE.entity,
+			EntitiesValidator::HIERARCHY_CYCLE,
+			"cycle in hierarchy of entity 'C'"
+		)
+		
+	}
+	
+	@Test
+	def void testDuplicatesEntities() {
+		val model= 
+		 '''
+		 	entity MyEntity {}
+		 	
+		 	entity MyEntity {}
+		 '''.parse
+		
+		model.assertError(EntitiesPackage::eINSTANCE.entity,
+			null,
+			"Duplicate Entity 'MyEntity'"
+		)
+	}
+	
+}
