@@ -160,6 +160,43 @@ public interface ExpressionsPackage extends EPackage
   int EXPRESSION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.example.expressions.expressions.impl.PlusImpl <em>Plus</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.expressions.expressions.impl.PlusImpl
+   * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getPlus()
+   * @generated
+   */
+  int PLUS = 4;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLUS__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLUS__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Plus</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLUS_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.example.expressions.expressions.impl.IntConstantImpl <em>Int Constant</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -167,7 +204,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getIntConstant()
    * @generated
    */
-  int INT_CONSTANT = 4;
+  int INT_CONSTANT = 5;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -195,7 +232,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getStringConstant()
    * @generated
    */
-  int STRING_CONSTANT = 5;
+  int STRING_CONSTANT = 6;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -223,7 +260,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getBoolConstant()
    * @generated
    */
-  int BOOL_CONSTANT = 6;
+  int BOOL_CONSTANT = 7;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -251,7 +288,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getVariableRef()
    * @generated
    */
-  int VARIABLE_REF = 7;
+  int VARIABLE_REF = 8;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -344,6 +381,38 @@ public interface ExpressionsPackage extends EPackage
    * @generated
    */
   EClass getExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.example.expressions.expressions.Plus <em>Plus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Plus</em>'.
+   * @see org.example.expressions.expressions.Plus
+   * @generated
+   */
+  EClass getPlus();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.Plus#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.example.expressions.expressions.Plus#getLeft()
+   * @see #getPlus()
+   * @generated
+   */
+  EReference getPlus_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.Plus#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.example.expressions.expressions.Plus#getRight()
+   * @see #getPlus()
+   * @generated
+   */
+  EReference getPlus_Right();
 
   /**
    * Returns the meta object for class '{@link org.example.expressions.expressions.IntConstant <em>Int Constant</em>}'.
@@ -515,6 +584,32 @@ public interface ExpressionsPackage extends EPackage
      * @generated
      */
     EClass EXPRESSION = eINSTANCE.getExpression();
+
+    /**
+     * The meta object literal for the '{@link org.example.expressions.expressions.impl.PlusImpl <em>Plus</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.expressions.expressions.impl.PlusImpl
+     * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getPlus()
+     * @generated
+     */
+    EClass PLUS = eINSTANCE.getPlus();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PLUS__LEFT = eINSTANCE.getPlus_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PLUS__RIGHT = eINSTANCE.getPlus_Right();
 
     /**
      * The meta object literal for the '{@link org.example.expressions.expressions.impl.IntConstantImpl <em>Int Constant</em>}' class.

@@ -88,6 +88,46 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cPlusAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cLeftAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLeftAtomicParserRuleCall_1_0 = (RuleCall)cLeftAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cPlusSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cRightAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cRightExpressionParserRuleCall_2_1_0 = (RuleCall)cRightAssignment_2_1.eContents().get(0);
+		
+		//Expression:
+		//	{Plus} left=Atomic ("+" right=Expression)?;
+		public ParserRule getRule() { return rule; }
+
+		//{Plus} left=Atomic ("+" right=Expression)?
+		public Group getGroup() { return cGroup; }
+
+		//{Plus}
+		public Action getPlusAction_0() { return cPlusAction_0; }
+
+		//left=Atomic
+		public Assignment getLeftAssignment_1() { return cLeftAssignment_1; }
+
+		//Atomic
+		public RuleCall getLeftAtomicParserRuleCall_1_0() { return cLeftAtomicParserRuleCall_1_0; }
+
+		//("+" right=Expression)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"+"
+		public Keyword getPlusSignKeyword_2_0() { return cPlusSignKeyword_2_0; }
+
+		//right=Expression
+		public Assignment getRightAssignment_2_1() { return cRightAssignment_2_1; }
+
+		//Expression
+		public RuleCall getRightExpressionParserRuleCall_2_1_0() { return cRightExpressionParserRuleCall_2_1_0; }
+	}
+
+	public class AtomicElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Atomic");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cIntConstantAction_0_0 = (Action)cGroup_0.eContents().get(0);
@@ -109,7 +149,7 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cVariableVariableCrossReference_3_1_0 = (CrossReference)cVariableAssignment_3_1.eContents().get(0);
 		private final RuleCall cVariableVariableIDTerminalRuleCall_3_1_0_1 = (RuleCall)cVariableVariableCrossReference_3_1_0.eContents().get(1);
 		
-		//Expression:
+		//Atomic returns Expression:
 		//	{IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=("true" | "false") | {VariableRef}
 		//	variable=[Variable];
 		public ParserRule getRule() { return rule; }
@@ -181,6 +221,7 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	private AbstractElementElements pAbstractElement;
 	private VariableElements pVariable;
 	private ExpressionElements pExpression;
+	private AtomicElements pAtomic;
 	
 	private final Grammar grammar;
 
@@ -251,14 +292,24 @@ public class ExpressionsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Expression:
-	//	{IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=("true" | "false") | {VariableRef}
-	//	variable=[Variable];
+	//	{Plus} left=Atomic ("+" right=Expression)?;
 	public ExpressionElements getExpressionAccess() {
 		return (pExpression != null) ? pExpression : (pExpression = new ExpressionElements());
 	}
 	
 	public ParserRule getExpressionRule() {
 		return getExpressionAccess().getRule();
+	}
+
+	//Atomic returns Expression:
+	//	{IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=("true" | "false") | {VariableRef}
+	//	variable=[Variable];
+	public AtomicElements getAtomicAccess() {
+		return (pAtomic != null) ? pAtomic : (pAtomic = new AtomicElements());
+	}
+	
+	public ParserRule getAtomicRule() {
+		return getAtomicAccess().getRule();
 	}
 
 	//terminal ID:

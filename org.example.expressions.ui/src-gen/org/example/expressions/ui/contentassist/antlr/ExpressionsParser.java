@@ -38,20 +38,24 @@ public class ExpressionsParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getAbstractElementAccess().getAlternatives(), "rule__AbstractElement__Alternatives");
-					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
-					put(grammarAccess.getExpressionAccess().getValueAlternatives_2_1_0(), "rule__Expression__ValueAlternatives_2_1_0");
+					put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
+					put(grammarAccess.getAtomicAccess().getValueAlternatives_2_1_0(), "rule__Atomic__ValueAlternatives_2_1_0");
 					put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
-					put(grammarAccess.getExpressionAccess().getGroup_0(), "rule__Expression__Group_0__0");
-					put(grammarAccess.getExpressionAccess().getGroup_1(), "rule__Expression__Group_1__0");
+					put(grammarAccess.getExpressionAccess().getGroup(), "rule__Expression__Group__0");
 					put(grammarAccess.getExpressionAccess().getGroup_2(), "rule__Expression__Group_2__0");
-					put(grammarAccess.getExpressionAccess().getGroup_3(), "rule__Expression__Group_3__0");
+					put(grammarAccess.getAtomicAccess().getGroup_0(), "rule__Atomic__Group_0__0");
+					put(grammarAccess.getAtomicAccess().getGroup_1(), "rule__Atomic__Group_1__0");
+					put(grammarAccess.getAtomicAccess().getGroup_2(), "rule__Atomic__Group_2__0");
+					put(grammarAccess.getAtomicAccess().getGroup_3(), "rule__Atomic__Group_3__0");
 					put(grammarAccess.getExpressionModelAccess().getElementsAssignment(), "rule__ExpressionModel__ElementsAssignment");
 					put(grammarAccess.getVariableAccess().getNameAssignment_0(), "rule__Variable__NameAssignment_0");
 					put(grammarAccess.getVariableAccess().getExpressionAssignment_2(), "rule__Variable__ExpressionAssignment_2");
-					put(grammarAccess.getExpressionAccess().getValueAssignment_0_1(), "rule__Expression__ValueAssignment_0_1");
-					put(grammarAccess.getExpressionAccess().getValueAssignment_1_1(), "rule__Expression__ValueAssignment_1_1");
-					put(grammarAccess.getExpressionAccess().getValueAssignment_2_1(), "rule__Expression__ValueAssignment_2_1");
-					put(grammarAccess.getExpressionAccess().getVariableAssignment_3_1(), "rule__Expression__VariableAssignment_3_1");
+					put(grammarAccess.getExpressionAccess().getLeftAssignment_1(), "rule__Expression__LeftAssignment_1");
+					put(grammarAccess.getExpressionAccess().getRightAssignment_2_1(), "rule__Expression__RightAssignment_2_1");
+					put(grammarAccess.getAtomicAccess().getValueAssignment_0_1(), "rule__Atomic__ValueAssignment_0_1");
+					put(grammarAccess.getAtomicAccess().getValueAssignment_1_1(), "rule__Atomic__ValueAssignment_1_1");
+					put(grammarAccess.getAtomicAccess().getValueAssignment_2_1(), "rule__Atomic__ValueAssignment_2_1");
+					put(grammarAccess.getAtomicAccess().getVariableAssignment_3_1(), "rule__Atomic__VariableAssignment_3_1");
 				}
 			};
 		}

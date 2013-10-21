@@ -12,11 +12,12 @@ AbstractElement:
 
 Variable:
 	name = ID '=' expression=Expression;
+ 
+ Expression:
+	{Plus} left=Atomic ('+' right=Expression)?;
 
-Expression:
+Atomic returns Expression:
 	{IntConstant} value=INT |
 	{StringConstant} value=STRING |
 	{BoolConstant} value = ('true'|'false')|
 	{VariableRef} variable =[Variable];
-	
-	
