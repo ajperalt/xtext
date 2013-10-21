@@ -13,7 +13,25 @@ AbstractElement:
 Variable:
 	name = ID '=' expression=Expression;
  
- Expression: PlusOrMinus;
+ Expression: Or;
+ 
+ Or returns Expression:
+ 	And ({Or.left=current} "||" right=And)* ;
+ 
+ And returns Expression:
+ 	Equality ({And.left=current} "&&" right=Equality)* ;
+ 
+ Equality returns Expression:
+ 	Comparision (
+ 		{Equality.left=current} op = ("=="|"!=")
+ 		right=Comparision
+ 	)* ;
+ 	
+ Comparision returns Expression:
+ 	PlusOrMinus (
+ 		{Comparision.left=current} op=(">="|"<="|">="|">"|"<")
+ 		right=PlusOrMinus
+ 	)* ;
  
  PlusOrMinus returns Expression:
  	MulOrDiv (
