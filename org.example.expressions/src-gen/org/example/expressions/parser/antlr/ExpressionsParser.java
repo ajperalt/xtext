@@ -25,7 +25,7 @@ public class ExpressionsParser extends org.eclipse.xtext.parser.antlr.AbstractAn
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "ExpressionModel";
+		return "ExpressionsModel";
 	}
 	
 	public ExpressionsGrammarAccess getGrammarAccess() {

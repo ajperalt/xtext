@@ -57,14 +57,14 @@ public interface ExpressionsPackage extends EPackage
   ExpressionsPackage eINSTANCE = org.example.expressions.expressions.impl.ExpressionsPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link org.example.expressions.expressions.impl.ExpressionModelImpl <em>Expression Model</em>}' class.
+   * The meta object id for the '{@link org.example.expressions.expressions.impl.ExpressionsModelImpl <em>Model</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.example.expressions.expressions.impl.ExpressionModelImpl
-   * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getExpressionModel()
+   * @see org.example.expressions.expressions.impl.ExpressionsModelImpl
+   * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getExpressionsModel()
    * @generated
    */
-  int EXPRESSION_MODEL = 0;
+  int EXPRESSIONS_MODEL = 0;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -73,16 +73,16 @@ public interface ExpressionsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_MODEL__ELEMENTS = 0;
+  int EXPRESSIONS_MODEL__ELEMENTS = 0;
 
   /**
-   * The number of structural features of the '<em>Expression Model</em>' class.
+   * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_MODEL_FEATURE_COUNT = 1;
+  int EXPRESSIONS_MODEL_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.example.expressions.expressions.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
@@ -160,6 +160,172 @@ public interface ExpressionsPackage extends EPackage
   int EXPRESSION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.example.expressions.expressions.impl.OrImpl <em>Or</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.expressions.expressions.impl.OrImpl
+   * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getOr()
+   * @generated
+   */
+  int OR = 4;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Or</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.example.expressions.expressions.impl.AndImpl <em>And</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.expressions.expressions.impl.AndImpl
+   * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getAnd()
+   * @generated
+   */
+  int AND = 5;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>And</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AND_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.example.expressions.expressions.impl.EqualityImpl <em>Equality</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.expressions.expressions.impl.EqualityImpl
+   * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getEquality()
+   * @generated
+   */
+  int EQUALITY = 6;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY__OP = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Equality</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUALITY_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.example.expressions.expressions.impl.ComparisonImpl <em>Comparison</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.expressions.expressions.impl.ComparisonImpl
+   * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getComparison()
+   * @generated
+   */
+  int COMPARISON = 7;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON__OP = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Comparison</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPARISON_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link org.example.expressions.expressions.impl.PlusImpl <em>Plus</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -167,7 +333,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 4;
+  int PLUS = 8;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -204,7 +370,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 5;
+  int MINUS = 9;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -241,7 +407,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getMulOrDiv()
    * @generated
    */
-  int MUL_OR_DIV = 6;
+  int MUL_OR_DIV = 10;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -280,6 +446,34 @@ public interface ExpressionsPackage extends EPackage
   int MUL_OR_DIV_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link org.example.expressions.expressions.impl.NotImpl <em>Not</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.expressions.expressions.impl.NotImpl
+   * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getNot()
+   * @generated
+   */
+  int NOT = 11;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Not</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.example.expressions.expressions.impl.IntConstantImpl <em>Int Constant</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -287,7 +481,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getIntConstant()
    * @generated
    */
-  int INT_CONSTANT = 7;
+  int INT_CONSTANT = 12;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -315,7 +509,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getStringConstant()
    * @generated
    */
-  int STRING_CONSTANT = 8;
+  int STRING_CONSTANT = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -343,7 +537,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getBoolConstant()
    * @generated
    */
-  int BOOL_CONSTANT = 9;
+  int BOOL_CONSTANT = 14;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -371,7 +565,7 @@ public interface ExpressionsPackage extends EPackage
    * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getVariableRef()
    * @generated
    */
-  int VARIABLE_REF = 10;
+  int VARIABLE_REF = 15;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -393,25 +587,25 @@ public interface ExpressionsPackage extends EPackage
 
 
   /**
-   * Returns the meta object for class '{@link org.example.expressions.expressions.ExpressionModel <em>Expression Model</em>}'.
+   * Returns the meta object for class '{@link org.example.expressions.expressions.ExpressionsModel <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression Model</em>'.
-   * @see org.example.expressions.expressions.ExpressionModel
+   * @return the meta object for class '<em>Model</em>'.
+   * @see org.example.expressions.expressions.ExpressionsModel
    * @generated
    */
-  EClass getExpressionModel();
+  EClass getExpressionsModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.example.expressions.expressions.ExpressionModel#getElements <em>Elements</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.example.expressions.expressions.ExpressionsModel#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Elements</em>'.
-   * @see org.example.expressions.expressions.ExpressionModel#getElements()
-   * @see #getExpressionModel()
+   * @see org.example.expressions.expressions.ExpressionsModel#getElements()
+   * @see #getExpressionsModel()
    * @generated
    */
-  EReference getExpressionModel_Elements();
+  EReference getExpressionsModel_Elements();
 
   /**
    * Returns the meta object for class '{@link org.example.expressions.expressions.AbstractElement <em>Abstract Element</em>}'.
@@ -464,6 +658,156 @@ public interface ExpressionsPackage extends EPackage
    * @generated
    */
   EClass getExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.example.expressions.expressions.Or <em>Or</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Or</em>'.
+   * @see org.example.expressions.expressions.Or
+   * @generated
+   */
+  EClass getOr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.Or#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.example.expressions.expressions.Or#getLeft()
+   * @see #getOr()
+   * @generated
+   */
+  EReference getOr_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.Or#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.example.expressions.expressions.Or#getRight()
+   * @see #getOr()
+   * @generated
+   */
+  EReference getOr_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.example.expressions.expressions.And <em>And</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>And</em>'.
+   * @see org.example.expressions.expressions.And
+   * @generated
+   */
+  EClass getAnd();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.And#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.example.expressions.expressions.And#getLeft()
+   * @see #getAnd()
+   * @generated
+   */
+  EReference getAnd_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.And#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.example.expressions.expressions.And#getRight()
+   * @see #getAnd()
+   * @generated
+   */
+  EReference getAnd_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.example.expressions.expressions.Equality <em>Equality</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Equality</em>'.
+   * @see org.example.expressions.expressions.Equality
+   * @generated
+   */
+  EClass getEquality();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.Equality#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.example.expressions.expressions.Equality#getLeft()
+   * @see #getEquality()
+   * @generated
+   */
+  EReference getEquality_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.expressions.expressions.Equality#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.example.expressions.expressions.Equality#getOp()
+   * @see #getEquality()
+   * @generated
+   */
+  EAttribute getEquality_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.Equality#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.example.expressions.expressions.Equality#getRight()
+   * @see #getEquality()
+   * @generated
+   */
+  EReference getEquality_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.example.expressions.expressions.Comparison <em>Comparison</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comparison</em>'.
+   * @see org.example.expressions.expressions.Comparison
+   * @generated
+   */
+  EClass getComparison();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.Comparison#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.example.expressions.expressions.Comparison#getLeft()
+   * @see #getComparison()
+   * @generated
+   */
+  EReference getComparison_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.expressions.expressions.Comparison#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.example.expressions.expressions.Comparison#getOp()
+   * @see #getComparison()
+   * @generated
+   */
+  EAttribute getComparison_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.Comparison#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.example.expressions.expressions.Comparison#getRight()
+   * @see #getComparison()
+   * @generated
+   */
+  EReference getComparison_Right();
 
   /**
    * Returns the meta object for class '{@link org.example.expressions.expressions.Plus <em>Plus</em>}'.
@@ -573,6 +917,27 @@ public interface ExpressionsPackage extends EPackage
   EReference getMulOrDiv_Right();
 
   /**
+   * Returns the meta object for class '{@link org.example.expressions.expressions.Not <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Not</em>'.
+   * @see org.example.expressions.expressions.Not
+   * @generated
+   */
+  EClass getNot();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.expressions.expressions.Not#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.example.expressions.expressions.Not#getExpression()
+   * @see #getNot()
+   * @generated
+   */
+  EReference getNot_Expression();
+
+  /**
    * Returns the meta object for class '{@link org.example.expressions.expressions.IntConstant <em>Int Constant</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -680,14 +1045,14 @@ public interface ExpressionsPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link org.example.expressions.expressions.impl.ExpressionModelImpl <em>Expression Model</em>}' class.
+     * The meta object literal for the '{@link org.example.expressions.expressions.impl.ExpressionsModelImpl <em>Model</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.example.expressions.expressions.impl.ExpressionModelImpl
-     * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getExpressionModel()
+     * @see org.example.expressions.expressions.impl.ExpressionsModelImpl
+     * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getExpressionsModel()
      * @generated
      */
-    EClass EXPRESSION_MODEL = eINSTANCE.getExpressionModel();
+    EClass EXPRESSIONS_MODEL = eINSTANCE.getExpressionsModel();
 
     /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
@@ -695,7 +1060,7 @@ public interface ExpressionsPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION_MODEL__ELEMENTS = eINSTANCE.getExpressionModel_Elements();
+    EReference EXPRESSIONS_MODEL__ELEMENTS = eINSTANCE.getExpressionsModel_Elements();
 
     /**
      * The meta object literal for the '{@link org.example.expressions.expressions.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
@@ -742,6 +1107,126 @@ public interface ExpressionsPackage extends EPackage
      * @generated
      */
     EClass EXPRESSION = eINSTANCE.getExpression();
+
+    /**
+     * The meta object literal for the '{@link org.example.expressions.expressions.impl.OrImpl <em>Or</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.expressions.expressions.impl.OrImpl
+     * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getOr()
+     * @generated
+     */
+    EClass OR = eINSTANCE.getOr();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR__LEFT = eINSTANCE.getOr_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR__RIGHT = eINSTANCE.getOr_Right();
+
+    /**
+     * The meta object literal for the '{@link org.example.expressions.expressions.impl.AndImpl <em>And</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.expressions.expressions.impl.AndImpl
+     * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getAnd()
+     * @generated
+     */
+    EClass AND = eINSTANCE.getAnd();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AND__LEFT = eINSTANCE.getAnd_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AND__RIGHT = eINSTANCE.getAnd_Right();
+
+    /**
+     * The meta object literal for the '{@link org.example.expressions.expressions.impl.EqualityImpl <em>Equality</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.expressions.expressions.impl.EqualityImpl
+     * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getEquality()
+     * @generated
+     */
+    EClass EQUALITY = eINSTANCE.getEquality();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EQUALITY__LEFT = eINSTANCE.getEquality_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EQUALITY__OP = eINSTANCE.getEquality_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EQUALITY__RIGHT = eINSTANCE.getEquality_Right();
+
+    /**
+     * The meta object literal for the '{@link org.example.expressions.expressions.impl.ComparisonImpl <em>Comparison</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.expressions.expressions.impl.ComparisonImpl
+     * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getComparison()
+     * @generated
+     */
+    EClass COMPARISON = eINSTANCE.getComparison();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPARISON__LEFT = eINSTANCE.getComparison_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPARISON__OP = eINSTANCE.getComparison_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPARISON__RIGHT = eINSTANCE.getComparison_Right();
 
     /**
      * The meta object literal for the '{@link org.example.expressions.expressions.impl.PlusImpl <em>Plus</em>}' class.
@@ -828,6 +1313,24 @@ public interface ExpressionsPackage extends EPackage
      * @generated
      */
     EReference MUL_OR_DIV__RIGHT = eINSTANCE.getMulOrDiv_Right();
+
+    /**
+     * The meta object literal for the '{@link org.example.expressions.expressions.impl.NotImpl <em>Not</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.expressions.expressions.impl.NotImpl
+     * @see org.example.expressions.expressions.impl.ExpressionsPackageImpl#getNot()
+     * @generated
+     */
+    EClass NOT = eINSTANCE.getNot();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NOT__EXPRESSION = eINSTANCE.getNot_Expression();
 
     /**
      * The meta object literal for the '{@link org.example.expressions.expressions.impl.IntConstantImpl <em>Int Constant</em>}' class.

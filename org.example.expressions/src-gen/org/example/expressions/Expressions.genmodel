@@ -7,8 +7,8 @@
     editorPluginID="org.example.expressions.editor" runtimeVersion="2.9">
   <genPackages prefix="Expressions" basePackage="org.example.expressions" disposableProviderFactory="true"
       fileExtensions="expressions" ecorePackage="Expressions.ecore#/">
-    <genClasses ecoreClass="Expressions.ecore#//ExpressionModel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//ExpressionModel/elements"/>
+    <genClasses ecoreClass="Expressions.ecore#//ExpressionsModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//ExpressionsModel/elements"/>
     </genClasses>
     <genClasses ecoreClass="Expressions.ecore#//AbstractElement"/>
     <genClasses ecoreClass="Expressions.ecore#//Variable">
@@ -16,6 +16,24 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//Variable/expression"/>
     </genClasses>
     <genClasses ecoreClass="Expressions.ecore#//Expression"/>
+    <genClasses ecoreClass="Expressions.ecore#//Or">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//Or/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//Or/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Expressions.ecore#//And">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//And/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//And/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Expressions.ecore#//Equality">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//Equality/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expressions.ecore#//Equality/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//Equality/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Expressions.ecore#//Comparison">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//Comparison/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expressions.ecore#//Comparison/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//Comparison/right"/>
+    </genClasses>
     <genClasses ecoreClass="Expressions.ecore#//Plus">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//Plus/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//Plus/right"/>
@@ -28,6 +46,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//MulOrDiv/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expressions.ecore#//MulOrDiv/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//MulOrDiv/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Expressions.ecore#//Not">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Expressions.ecore#//Not/expression"/>
     </genClasses>
     <genClasses ecoreClass="Expressions.ecore#//IntConstant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Expressions.ecore#//IntConstant/value"/>

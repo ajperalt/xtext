@@ -14,12 +14,17 @@ import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.example.expressions.ExpressionsInjectorProvider;
 import org.example.expressions.expressions.AbstractElement;
+import org.example.expressions.expressions.And;
 import org.example.expressions.expressions.BoolConstant;
+import org.example.expressions.expressions.Comparison;
+import org.example.expressions.expressions.Equality;
 import org.example.expressions.expressions.Expression;
-import org.example.expressions.expressions.ExpressionModel;
+import org.example.expressions.expressions.ExpressionsModel;
 import org.example.expressions.expressions.IntConstant;
 import org.example.expressions.expressions.Minus;
 import org.example.expressions.expressions.MulOrDiv;
+import org.example.expressions.expressions.Not;
+import org.example.expressions.expressions.Or;
 import org.example.expressions.expressions.Plus;
 import org.example.expressions.expressions.StringConstant;
 import org.example.expressions.expressions.Variable;
@@ -34,7 +39,7 @@ import org.junit.runner.RunWith;
 public class ExpressionsParserTest {
   @Inject
   @Extension
-  private ParseHelper<ExpressionModel> _parseHelper;
+  private ParseHelper<ExpressionsModel> _parseHelper;
   
   @Inject
   @Extension
@@ -45,7 +50,7 @@ public class ExpressionsParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("10");
-      ExpressionModel _parse = this._parseHelper.parse(_builder);
+      ExpressionsModel _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -57,7 +62,7 @@ public class ExpressionsParserTest {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("i = 10");
-      ExpressionModel _parse = this._parseHelper.parse(_builder);
+      ExpressionsModel _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -65,11 +70,11 @@ public class ExpressionsParserTest {
   }
   
   @Test
-  public void testSimpleString() {
+  public void testStringConstantExpression() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("\"simpleString\"");
-      ExpressionModel _parse = this._parseHelper.parse(_builder);
+      _builder.append("\"test\"");
+      ExpressionsModel _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -77,83 +82,11 @@ public class ExpressionsParserTest {
   }
   
   @Test
-  public void testVariableString() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("s = \"String with variable\"");
-      ExpressionModel _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoErrors(_parse);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
-  @Test
-  public void testTrueBoolean() {
+  public void testBooleanConstantExpression() {
     try {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("true");
-      ExpressionModel _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoErrors(_parse);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
-  @Test
-  public void testFalseBoolean() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("false");
-      ExpressionModel _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoErrors(_parse);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
-  @Test
-  public void testVariableTrueBoolean() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("t = true");
-      ExpressionModel _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoErrors(_parse);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
-  @Test
-  public void testVariableFalseBoolean() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("f = false");
-      ExpressionModel _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoErrors(_parse);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
-  @Test
-  public void testSimpleInteger() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("10");
-      ExpressionModel _parse = this._parseHelper.parse(_builder);
-      this._validationTestHelper.assertNoErrors(_parse);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
-  @Test
-  public void testVariableInteger() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("a = 19");
-      ExpressionModel _parse = this._parseHelper.parse(_builder);
+      ExpressionsModel _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
@@ -168,7 +101,7 @@ public class ExpressionsParserTest {
       _builder.newLine();
       _builder.append("i");
       _builder.newLine();
-      final ExpressionModel e = this._parseHelper.parse(_builder);
+      final ExpressionsModel e = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(e);
       EList<AbstractElement> _elements = e.getElements();
       AbstractElement _get = _elements.get(1);
@@ -176,6 +109,109 @@ public class ExpressionsParserTest {
       EList<AbstractElement> _elements_1 = e.getElements();
       AbstractElement _get_1 = _elements_1.get(0);
       Assert.assertSame(_variable, _get_1);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testParenthesis() {
+    try {
+      ExpressionsModel _parse = this._parseHelper.parse("(10)");
+      EList<AbstractElement> _elements = _parse.getElements();
+      _elements.get(0);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testPlus() {
+    this.assertRepr("10 + 5 + 1 + 2", "(((10 + 5) + 1) + 2)");
+  }
+  
+  @Test
+  public void testPlusWithParenthesis() {
+    this.assertRepr("( 10 + 5 ) + ( 1 + 2 )", "((10 + 5) + (1 + 2))");
+  }
+  
+  @Test
+  public void testMinus() {
+    this.assertRepr("10 + 5 - 1 - 2", "(((10 + 5) - 1) - 2)");
+  }
+  
+  @Test
+  public void testMulOrDiv() {
+    this.assertRepr("10 * 5 / 1 * 2", "(((10 * 5) / 1) * 2)");
+  }
+  
+  @Test
+  public void testPlusMulPrecedence() {
+    this.assertRepr("10 + 5 * 2 - 5 / 1", "((10 + (5 * 2)) - (5 / 1))");
+  }
+  
+  @Test
+  public void testComparison() {
+    this.assertReprNoValidation("10 <= 5 < 2 > 5", "(((10 <= 5) < 2) > 5)");
+  }
+  
+  @Test
+  public void testEqualityAndComparison() {
+    this.assertRepr("true == 5 <= 2", "(true == (5 <= 2))");
+  }
+  
+  @Test
+  public void testAndOr() {
+    this.assertRepr("true || false && 1 < 0", "(true || (false && (1 < 0)))");
+  }
+  
+  @Test
+  public void testNot() {
+    this.assertRepr("!true||false", "((!true) || false)");
+  }
+  
+  @Test
+  public void testNotWithParentheses() {
+    this.assertRepr("!(true||false)", "(!(true || false))");
+  }
+  
+  @Test
+  public void testPrecedences() {
+    this.assertRepr("!true||false&&1>(1/3+5*2)", "((!true) || (false && (1 > ((1 / 3) + (5 * 2)))))");
+  }
+  
+  public ExpressionsModel assertRepr(final CharSequence input, final CharSequence expected) {
+    try {
+      ExpressionsModel _parse = this._parseHelper.parse(input);
+      final Procedure1<ExpressionsModel> _function = new Procedure1<ExpressionsModel>() {
+          public void apply(final ExpressionsModel it) {
+            ExpressionsParserTest.this._validationTestHelper.assertNoErrors(it);
+            EList<AbstractElement> _elements = it.getElements();
+            AbstractElement _last = IterableExtensions.<AbstractElement>last(_elements);
+            String _stringRepr = ExpressionsParserTest.this.stringRepr(((Expression) _last));
+            Assert.assertEquals(expected, _stringRepr);
+          }
+        };
+      ExpressionsModel _doubleArrow = ObjectExtensions.<ExpressionsModel>operator_doubleArrow(_parse, _function);
+      return _doubleArrow;
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public ExpressionsModel assertReprNoValidation(final CharSequence input, final CharSequence expected) {
+    try {
+      ExpressionsModel _parse = this._parseHelper.parse(input);
+      final Procedure1<ExpressionsModel> _function = new Procedure1<ExpressionsModel>() {
+          public void apply(final ExpressionsModel it) {
+            EList<AbstractElement> _elements = it.getElements();
+            AbstractElement _last = IterableExtensions.<AbstractElement>last(_elements);
+            String _stringRepr = ExpressionsParserTest.this.stringRepr(((Expression) _last));
+            Assert.assertEquals(expected, _stringRepr);
+          }
+        };
+      ExpressionsModel _doubleArrow = ObjectExtensions.<ExpressionsModel>operator_doubleArrow(_parse, _function);
+      return _doubleArrow;
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -191,11 +227,11 @@ public class ExpressionsParserTest {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("(");
         Expression _left = _plus.getLeft();
-        Object _stringRepr = this.stringRepr(_left);
+        String _stringRepr = this.stringRepr(_left);
         _builder.append(_stringRepr, "");
         _builder.append(" + ");
         Expression _right = _plus.getRight();
-        Object _stringRepr_1 = this.stringRepr(_right);
+        String _stringRepr_1 = this.stringRepr(_right);
         _builder.append(_stringRepr_1, "");
         _builder.append(")");
         _switchResult = _builder.toString();
@@ -208,11 +244,11 @@ public class ExpressionsParserTest {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("(");
         Expression _left = _minus.getLeft();
-        Object _stringRepr = this.stringRepr(_left);
+        String _stringRepr = this.stringRepr(_left);
         _builder.append(_stringRepr, "");
         _builder.append(" - ");
         Expression _right = _minus.getRight();
-        Object _stringRepr_1 = this.stringRepr(_right);
+        String _stringRepr_1 = this.stringRepr(_right);
         _builder.append(_stringRepr_1, "");
         _builder.append(")");
         _switchResult = _builder.toString();
@@ -225,15 +261,102 @@ public class ExpressionsParserTest {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("(");
         Expression _left = _mulOrDiv.getLeft();
-        Object _stringRepr = this.stringRepr(_left);
+        String _stringRepr = this.stringRepr(_left);
         _builder.append(_stringRepr, "");
         _builder.append(" ");
         String _op = _mulOrDiv.getOp();
         _builder.append(_op, "");
         _builder.append(" ");
         Expression _right = _mulOrDiv.getRight();
-        Object _stringRepr_1 = this.stringRepr(_right);
+        String _stringRepr_1 = this.stringRepr(_right);
         _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Comparison) {
+        final Comparison _comparison = (Comparison)e;
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        Expression _left = _comparison.getLeft();
+        String _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" ");
+        String _op = _comparison.getOp();
+        _builder.append(_op, "");
+        _builder.append(" ");
+        Expression _right = _comparison.getRight();
+        String _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Equality) {
+        final Equality _equality = (Equality)e;
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        Expression _left = _equality.getLeft();
+        String _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" ");
+        String _op = _equality.getOp();
+        _builder.append(_op, "");
+        _builder.append(" ");
+        Expression _right = _equality.getRight();
+        String _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof And) {
+        final And _and = (And)e;
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        Expression _left = _and.getLeft();
+        String _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" && ");
+        Expression _right = _and.getRight();
+        String _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Or) {
+        final Or _or = (Or)e;
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(");
+        Expression _left = _or.getLeft();
+        String _stringRepr = this.stringRepr(_left);
+        _builder.append(_stringRepr, "");
+        _builder.append(" || ");
+        Expression _right = _or.getRight();
+        String _stringRepr_1 = this.stringRepr(_right);
+        _builder.append(_stringRepr_1, "");
+        _builder.append(")");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Not) {
+        final Not _not = (Not)e;
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("(!");
+        Expression _expression = _not.getExpression();
+        String _stringRepr = this.stringRepr(_expression);
+        _builder.append(_stringRepr, "");
         _builder.append(")");
         _switchResult = _builder.toString();
       }
@@ -279,70 +402,6 @@ public class ExpressionsParserTest {
         _switchResult = _builder.toString();
       }
     }
-    String _string = _switchResult.toString();
-    return _string;
-  }
-  
-  public ExpressionModel assertRepr(final CharSequence input, final CharSequence expected) {
-    try {
-      ExpressionModel _parse = this._parseHelper.parse(input);
-      final Procedure1<ExpressionModel> _function = new Procedure1<ExpressionModel>() {
-          public void apply(final ExpressionModel it) {
-            ExpressionsParserTest.this._validationTestHelper.assertNoErrors(it);
-            EList<AbstractElement> _elements = it.getElements();
-            AbstractElement _last = IterableExtensions.<AbstractElement>last(_elements);
-            String _stringRepr = ExpressionsParserTest.this.stringRepr(((Expression) _last));
-            Assert.assertEquals(expected, _stringRepr);
-          }
-        };
-      ExpressionModel _doubleArrow = ObjectExtensions.<ExpressionModel>operator_doubleArrow(_parse, _function);
-      return _doubleArrow;
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
-  @Test
-  public void testPlus() {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("10 + 5 + 1 + 2");
-    this.assertRepr(_builder, "(((10 + 5) + 1) + 2)");
-  }
-  
-  @Test
-  public void testMinus() {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("10 - 5 - 1 - 2");
-    this.assertRepr(_builder, "(((10 - 5) - 1) - 2)");
-  }
-  
-  @Test
-  public void testPlusWithMinus() {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("10 - 5 + 1 - 2");
-    this.assertRepr(_builder, "(((10 - 5) + 1) - 2)");
-  }
-  
-  @Test
-  public void testParenthesis() {
-    try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(10)");
-      ExpressionModel _parse = this._parseHelper.parse(_builder);
-      EList<AbstractElement> _elements = _parse.getElements();
-      _elements.get(0);
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
-  }
-  
-  @Test
-  public void testPlusWithParenthesis() {
-    this.assertRepr("( 10 + 5 ) + ( 1 + 2 )", "((10 + 5) + (1 + 2))");
-  }
-  
-  @Test
-  public void testPlusMulPrecedence() {
-    this.assertRepr("10 + 5 * 2 - 5 / 1", "((10 + (5*2)) - (5/1))");
+    return _switchResult;
   }
 }

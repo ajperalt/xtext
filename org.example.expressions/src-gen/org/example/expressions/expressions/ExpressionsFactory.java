@@ -23,13 +23,13 @@ public interface ExpressionsFactory extends EFactory
   ExpressionsFactory eINSTANCE = org.example.expressions.expressions.impl.ExpressionsFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Expression Model</em>'.
+   * Returns a new object of class '<em>Model</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression Model</em>'.
+   * @return a new object of class '<em>Model</em>'.
    * @generated
    */
-  ExpressionModel createExpressionModel();
+  ExpressionsModel createExpressionsModel();
 
   /**
    * Returns a new object of class '<em>Abstract Element</em>'.
@@ -59,6 +59,42 @@ public interface ExpressionsFactory extends EFactory
   Expression createExpression();
 
   /**
+   * Returns a new object of class '<em>Or</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Or</em>'.
+   * @generated
+   */
+  Or createOr();
+
+  /**
+   * Returns a new object of class '<em>And</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>And</em>'.
+   * @generated
+   */
+  And createAnd();
+
+  /**
+   * Returns a new object of class '<em>Equality</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Equality</em>'.
+   * @generated
+   */
+  Equality createEquality();
+
+  /**
+   * Returns a new object of class '<em>Comparison</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comparison</em>'.
+   * @generated
+   */
+  Comparison createComparison();
+
+  /**
    * Returns a new object of class '<em>Plus</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -84,6 +120,15 @@ public interface ExpressionsFactory extends EFactory
    * @generated
    */
   MulOrDiv createMulOrDiv();
+
+  /**
+   * Returns a new object of class '<em>Not</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Not</em>'.
+   * @generated
+   */
+  Not createNot();
 
   /**
    * Returns a new object of class '<em>Int Constant</em>'.

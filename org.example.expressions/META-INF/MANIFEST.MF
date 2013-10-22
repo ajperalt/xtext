@@ -21,14 +21,16 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.example.expressions,
- org.example.expressions.services,
  org.example.expressions.expressions,
  org.example.expressions.expressions.impl,
  org.example.expressions.expressions.util,
- org.example.expressions.serializer,
+ org.example.expressions.formatting,
+ org.example.expressions.generator,
+ org.example.expressions.interpreter,
  org.example.expressions.parser.antlr,
  org.example.expressions.parser.antlr.internal,
- org.example.expressions.validation,
  org.example.expressions.scoping,
- org.example.expressions.generator,
- org.example.expressions.formatting
+ org.example.expressions.serializer,
+ org.example.expressions.services,
+ org.example.expressions.typing,
+ org.example.expressions.validation
