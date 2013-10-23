@@ -1,0 +1,42 @@
+package org.example.smalljava.util
+
+import org.eclipse.emf.ecore.EObject
+import org.example.smalljava.smallJava.SJBlock
+import org.example.smalljava.smallJava.SJClass
+import org.example.smalljava.smallJava.SJField
+import org.example.smalljava.smallJava.SJMethod
+import org.example.smalljava.smallJava.SJProgram
+import org.example.smalljava.smallJava.SJReturn
+
+import static extension org.eclipse.xtext.EcoreUtil2.*
+
+class SmallJavaModelUtil {
+	def static fields(SJClass c) {
+		c.members.filter(typeof(SJField))
+	}
+	
+	def static methods(SJClass c) {
+		c.members.filter(typeof(SJMethod))
+	}
+	
+	def static returnsStatment(SJMethod m) {
+		m.body.statements.typeSelect(typeof(SJReturn)).head
+	}
+	
+	def static containingClass(EObject e) {
+		e.getContainerOfType(typeof(SJClass))
+	}
+	
+	def static containingBlock(EObject e) {
+		e.getContainerOfType(typeof(SJBlock))
+	}
+	
+	def static containingProgram(EObject e) {
+		e.getContainerOfType(typeof(SJProgram))
+	}
+	
+	def static containingMethod(EObject e) {
+		e.getContainerOfType(typeof(SJMethod))
+	}
+	
+}
