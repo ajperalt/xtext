@@ -4,6 +4,7 @@
 package org.example.smalljava.validation;
 
 import com.google.common.base.Objects;
+import com.google.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -13,20 +14,25 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.example.smalljava.smallJava.SJBlock;
 import org.example.smalljava.smallJava.SJClass;
+import org.example.smalljava.smallJava.SJExpression;
 import org.example.smalljava.smallJava.SJField;
 import org.example.smalljava.smallJava.SJMember;
 import org.example.smalljava.smallJava.SJMemberSelection;
 import org.example.smalljava.smallJava.SJMethod;
 import org.example.smalljava.smallJava.SJMethodBody;
+import org.example.smalljava.smallJava.SJParameter;
 import org.example.smalljava.smallJava.SJProgram;
 import org.example.smalljava.smallJava.SJReturn;
 import org.example.smalljava.smallJava.SJStatement;
 import org.example.smalljava.smallJava.SJVariableDeclaration;
 import org.example.smalljava.smallJava.SmallJavaPackage;
+import org.example.smalljava.typing.SmallJavaTypeConformance;
+import org.example.smalljava.typing.SmallJavaTypeProvider;
 import org.example.smalljava.util.SmallJavaModelUtil;
 import org.example.smalljava.validation.AbstractSmallJavaValidator;
 
@@ -37,6 +43,16 @@ import org.example.smalljava.validation.AbstractSmallJavaValidator;
  */
 @SuppressWarnings("all")
 public class SmallJavaValidator extends AbstractSmallJavaValidator {
+  @Inject
+  @Extension
+  private SmallJavaTypeProvider _smallJavaTypeProvider;
+  
+  @Inject
+  @Extension
+  private SmallJavaTypeConformance _smallJavaTypeConformance;
+  
+  public final static String INCOMPATIBLE_TYPES = "org.example.smalljava.IncompatibleTypes";
+  
   public final static String HIERARCHY_CYCLE = "org.example.smalljava.HierarchyCycle";
   
   public final static String FIELD_SELECTION_ON_METHOD = "org.example.smalljava.FieldSelecionOnMethod";
@@ -46,6 +62,43 @@ public class SmallJavaValidator extends AbstractSmallJavaValidator {
   public final static String UNREACHABLE_CODE = "org.example.smalljava.UnreachableCode";
   
   public final static String DUPLICATE_ELEMENT = "org.example.smalljava.DuplicateElement";
+  
+  public final static String INVALID_ARGS = "org.example.smalljava.InvalidArgs";
+  
+  @Check
+  public void checkCompatibleTypes(final SJExpression exp) {
+    final SJClass actualType = this._smallJavaTypeProvider.typeFor(exp);
+    final SJClass expectedType = this._smallJavaTypeProvider.expectedType(exp);
+    boolean _or = false;
+    boolean _equals = Objects.equal(expectedType, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      boolean _equals_1 = Objects.equal(actualType, null);
+      _or = (_equals || _equals_1);
+    }
+    if (_or) {
+      return;
+    }
+    boolean _isConformant = this._smallJavaTypeConformance.isConformant(actualType, expectedType);
+    boolean _not = (!_isConformant);
+    if (_not) {
+      String _name = null;
+      if (expectedType!=null) {
+        _name=expectedType.getName();
+      }
+      String _plus = ("Incompatible types. Expected \'" + _name);
+      String _plus_1 = (_plus + "\' but was \'");
+      String _name_1 = null;
+      if (actualType!=null) {
+        _name_1=actualType.getName();
+      }
+      String _plus_2 = (_plus_1 + _name_1);
+      String _plus_3 = (_plus_2 + "\'");
+      this.error(_plus_3, null, 
+        SmallJavaValidator.INCOMPATIBLE_TYPES);
+    }
+  }
   
   @Check
   public void checkClassHierarchy(final SJClass c) {
@@ -215,6 +268,37 @@ public class SmallJavaValidator extends AbstractSmallJavaValidator {
       EAttribute _sJSymbol_Name = SmallJavaPackage.eINSTANCE.getSJSymbol_Name();
       this.error(_plus_1, _sJSymbol_Name, 
         SmallJavaValidator.DUPLICATE_ELEMENT);
+    }
+  }
+  
+  @Check
+  public void checkMethodInvocationArguments(final SJMemberSelection sel) {
+    boolean _and = false;
+    SJMember _member = sel.getMember();
+    boolean _notEquals = (!Objects.equal(_member, null));
+    if (!_notEquals) {
+      _and = false;
+    } else {
+      SJMember _member_1 = sel.getMember();
+      _and = (_notEquals && (_member_1 instanceof SJMethod));
+    }
+    if (_and) {
+      SJMember _member_2 = sel.getMember();
+      final SJMethod method = ((SJMethod) _member_2);
+      EList<SJParameter> _params = method.getParams();
+      int _size = _params.size();
+      EList<SJExpression> _args = sel.getArgs();
+      int _size_1 = _args.size();
+      boolean _notEquals_1 = (_size != _size_1);
+      if (_notEquals_1) {
+        String _memberAsStringWithType = SmallJavaModelUtil.memberAsStringWithType(method);
+        String _plus = ("Invalid number of arguments. The method " + _memberAsStringWithType);
+        String _plus_1 = (_plus + 
+          " is not applicable for the arguments + sel.argsTypesAsStrings");
+        EReference _sJMemberSelection_Member = SmallJavaPackage.eINSTANCE.getSJMemberSelection_Member();
+        this.error(_plus_1, _sJMemberSelection_Member, 
+          SmallJavaValidator.INVALID_ARGS);
+      }
     }
   }
 }

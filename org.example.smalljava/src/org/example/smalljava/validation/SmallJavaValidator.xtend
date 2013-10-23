@@ -16,6 +16,10 @@ import org.example.smalljava.smallJava.SmallJavaPackage
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import static extension org.example.smalljava.util.SmallJavaModelUtil.*
+import com.google.inject.Inject
+import org.example.smalljava.typing.SmallJavaTypeProvider
+import org.example.smalljava.typing.SmallJavaTypeConformance
+import org.example.smalljava.smallJava.SJExpression
 
 /**
  * Custom validation rules. 
@@ -23,6 +27,12 @@ import static extension org.example.smalljava.util.SmallJavaModelUtil.*
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class SmallJavaValidator extends AbstractSmallJavaValidator {
+
+	@Inject extension SmallJavaTypeProvider
+	@Inject extension SmallJavaTypeConformance
+	
+	public static val INCOMPATIBLE_TYPES = 
+		"org.example.smalljava.IncompatibleTypes"  
 
 	public static val HIERARCHY_CYCLE = 
 		"org.example.smalljava.HierarchyCycle";
@@ -38,6 +48,21 @@ class SmallJavaValidator extends AbstractSmallJavaValidator {
 	
 	public static val DUPLICATE_ELEMENT = 
 	 	"org.example.smalljava.DuplicateElement"
+	 	
+	public static val INVALID_ARGS = "org.example.smalljava.InvalidArgs"
+	 	
+	
+	
+	@Check def void checkCompatibleTypes(SJExpression exp) {
+		val actualType = exp.typeFor
+		val expectedType = exp.expectedType
+		if (expectedType == null || actualType == null)
+			return; // nothing to check
+		if (!actualType.isConformant(expectedType)) {
+			error("Incompatible types. Expected '" + expectedType?.name + "' but was '" + actualType?.name + "'", null,
+				INCOMPATIBLE_TYPES);
+		}
+	}
 	
 	@Check
 	def checkClassHierarchy(SJClass c) {
@@ -107,6 +132,21 @@ class SmallJavaValidator extends AbstractSmallJavaValidator {
 				SmallJavaPackage::eINSTANCE.SJSymbol_Name,
 				DUPLICATE_ELEMENT)
 		
+	}
+	
+		@Check
+	def void checkMethodInvocationArguments(SJMemberSelection sel) {
+		if (sel.member != null && sel.member instanceof SJMethod) {
+			val method = sel.member as SJMethod
+			if (method.params.size != sel.args.size) {
+				error(
+					"Invalid number of arguments. The method " + method.memberAsStringWithType +
+					" is not applicable for the arguments + sel.argsTypesAsStrings",
+					SmallJavaPackage::eINSTANCE.SJMemberSelection_Member,
+					INVALID_ARGS
+				)
+			}
+		}
 	}
 	 
 }

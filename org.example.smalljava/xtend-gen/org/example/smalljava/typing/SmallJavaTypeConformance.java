@@ -6,11 +6,14 @@ import java.util.ArrayList;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.example.smalljava.smallJava.SJClass;
+import org.example.smalljava.smallJava.SmallJavaPackage;
 import org.example.smalljava.typing.SmallJavaTypeProvider;
 import org.example.smalljava.util.SmallJavaModelUtil;
 
 @SuppressWarnings("all")
 public class SmallJavaTypeConformance {
+  private final SmallJavaPackage ep = SmallJavaPackage.eINSTANCE;
+  
   @Inject
   @Extension
   private IQualifiedNameProvider _iQualifiedNameProvider;

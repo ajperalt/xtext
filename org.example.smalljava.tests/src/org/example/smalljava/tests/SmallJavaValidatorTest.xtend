@@ -11,6 +11,8 @@ import org.example.smalljava.smallJava.SmallJavaPackage
 import org.example.smalljava.validation.SmallJavaValidator
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.eclipse.core.runtime.preferences.IEclipsePreferences.INodeChangeListener
+import org.eclipse.emf.ecore.EClass
 
 @RunWith(typeof(XtextRunner))
 @InjectWith(typeof(SmallJavaInjectorProvider))
@@ -115,4 +117,47 @@ class SmallJavaValidatorTest {
 		'''.parse.assertNoErrors
 	}
 	
+	def void assertIncompatibleTypes(CharSequence methodBody, EClass c, String expectedType, String actualType) {
+		'''
+		class F {}
+		class R {}
+		class P {}
+		class P1 {}
+		class P2 {}
+		class V {}
+		class C {
+			F f;
+			R m(P p) {
+				«methodBody»
+			}
+			R n(P1 p1, P2 p2) { return null; }
+		}
+		'''.parse.assertError(c,
+			SmallJavaValidator::INCOMPATIBLE_TYPES,
+			"Incompatible types. Expected '" + expectedType 
+			+ "' but was '" + actualType + "'"
+		)
+	}
+	
+	@Test def void assertVariableDeclExpIncompatibleTypes() {
+		"V v = new P();".
+			assertIncompatibleTypes(
+				SmallJavaPackage::eINSTANCE.SJNew, "V", "P")
+	}
+	
+	@Test def void assertReturnExpIncomaptibleTypes() {
+		"return p;".
+			assertIncompatibleTypes(
+				SmallJavaPackage::eINSTANCE.SJSymbolRef, "R", "P")
+			
+	}
+	
+	@Test def void assertArgExpIncompatibleTypes() {
+		"this.n(new F(), new V());" => [
+			assertIncompatibleTypes(
+				SmallJavaPackage::eINSTANCE.SJNew, "P1", "F")
+			assertIncompatibleTypes(
+				SmallJavaPackage::eINSTANCE.SJNew, "P2", "V")
+		]
+	}	
 }
