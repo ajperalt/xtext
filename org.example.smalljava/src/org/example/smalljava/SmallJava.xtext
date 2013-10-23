@@ -1,0 +1,51 @@
+grammar org.example.smalljava.SmallJava with org.eclipse.xtext.common.Terminals
+
+generate smallJava "http://www.example.org/smalljava/SmallJava"
+
+SJProgram:
+	classes+=SJClass*;
+	
+SJClass:
+	'class' name=ID ('extends' superclass=[SJClass])? '{'
+		members += SJMember*
+	'}';
+
+SJMember:
+	SJField | SJMethod;
+	
+SJField:
+	type=[SJClass] name=ID ';';
+	
+SJMethod:
+	type=[SJClass] name =ID
+	'(' (parms+=SJParameter (',' params+=SJParameter)*)? ')'
+	body_SJMethodBody;
+	
+SJMethodBody:
+	{SJMethodBody} '{' statatments += SJStatment* '}';
+
+SJStatment:
+	SJVariableDeclaration |
+	SJReturn |
+	SJExpression ';' |
+	SJIfStatement 
+;
+
+SJReturn:
+	'return' expression=SJExpression ';';
+
+SJVariableDeclaration:
+	type=[SJClass] name=ID '=' expression=SJExpression ';'
+;	
+
+SJIfStatement:
+	'if' '(' expression=SJExpression ')' thenBlock=SJIfBlock
+	(=> 'else' elseBlock=SJIfBlock)?
+;
+
+SJIfBlock:
+	statements += SJStatement 
+	| '{' statements += SJStatement+ '}'
+;
+
+SJBlock: SJVariableDeclaration | SJParameter;
