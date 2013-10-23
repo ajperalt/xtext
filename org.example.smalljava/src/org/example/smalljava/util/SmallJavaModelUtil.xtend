@@ -11,6 +11,20 @@ import org.example.smalljava.smallJava.SJReturn
 import static extension org.eclipse.xtext.EcoreUtil2.*
 
 class SmallJavaModelUtil {
+	
+	def static classHierarchy(SJClass c) {
+		val visited = <SJClass>newArrayList()
+		
+		var current = c.superclass
+		while (current != null && !visited.contains(current)) {
+			visited.add(current)
+			current = current.superclass
+		}
+		
+		visited
+	}
+	
+	
 	def static fields(SJClass c) {
 		c.members.filter(typeof(SJField))
 	}

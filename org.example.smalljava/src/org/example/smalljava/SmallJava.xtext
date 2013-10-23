@@ -2,6 +2,7 @@ grammar org.example.smalljava.SmallJava with org.eclipse.xtext.common.Terminals
 
 generate smallJava "http://www.example.org/smalljava/SmallJava"
 
+
 SJProgram:
 	('package' name=QualifiedName ';')?
 	imports+=SJImport*

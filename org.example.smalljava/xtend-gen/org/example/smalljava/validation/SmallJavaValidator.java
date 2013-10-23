@@ -3,6 +3,31 @@
  */
 package org.example.smalljava.validation;
 
+import com.google.common.base.Objects;
+import java.util.ArrayList;
+import java.util.List;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.example.smalljava.smallJava.SJBlock;
+import org.example.smalljava.smallJava.SJClass;
+import org.example.smalljava.smallJava.SJField;
+import org.example.smalljava.smallJava.SJMember;
+import org.example.smalljava.smallJava.SJMemberSelection;
+import org.example.smalljava.smallJava.SJMethod;
+import org.example.smalljava.smallJava.SJMethodBody;
+import org.example.smalljava.smallJava.SJProgram;
+import org.example.smalljava.smallJava.SJReturn;
+import org.example.smalljava.smallJava.SJStatement;
+import org.example.smalljava.smallJava.SJVariableDeclaration;
+import org.example.smalljava.smallJava.SmallJavaPackage;
+import org.example.smalljava.util.SmallJavaModelUtil;
 import org.example.smalljava.validation.AbstractSmallJavaValidator;
 
 /**
@@ -12,4 +37,184 @@ import org.example.smalljava.validation.AbstractSmallJavaValidator;
  */
 @SuppressWarnings("all")
 public class SmallJavaValidator extends AbstractSmallJavaValidator {
+  public final static String HIERARCHY_CYCLE = "org.example.smalljava.HierarchyCycle";
+  
+  public final static String FIELD_SELECTION_ON_METHOD = "org.example.smalljava.FieldSelecionOnMethod";
+  
+  public final static String METHOD_INVOCATION_ON_FIELD = "org.example.smalljava.MethodInvocationOnField";
+  
+  public final static String UNREACHABLE_CODE = "org.example.smalljava.UnreachableCode";
+  
+  public final static String DUPLICATE_ELEMENT = "org.example.smalljava.DuplicateElement";
+  
+  @Check
+  public void checkClassHierarchy(final SJClass c) {
+    ArrayList<SJClass> _classHierarchy = SmallJavaModelUtil.classHierarchy(c);
+    boolean _contains = _classHierarchy.contains(c);
+    if (_contains) {
+      String _name = c.getName();
+      String _plus = ("cycle in hierarchy of class \'" + _name);
+      String _plus_1 = (_plus + "\'");
+      EReference _sJClass_Superclass = SmallJavaPackage.eINSTANCE.getSJClass_Superclass();
+      SJClass _superclass = c.getSuperclass();
+      String _name_1 = _superclass.getName();
+      this.error(_plus_1, _sJClass_Superclass, 
+        SmallJavaValidator.HIERARCHY_CYCLE, _name_1);
+    }
+  }
+  
+  @Check
+  public void checkMemberSelection(final SJMemberSelection sel) {
+    final SJMember member = sel.getMember();
+    boolean _notEquals = (!Objects.equal(member, null));
+    if (_notEquals) {
+      boolean _and = false;
+      if (!(member instanceof SJField)) {
+        _and = false;
+      } else {
+        boolean _isMethodinvocation = sel.isMethodinvocation();
+        _and = ((member instanceof SJField) && _isMethodinvocation);
+      }
+      if (_and) {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("Method invocation on a field");
+        EAttribute _sJMemberSelection_Methodinvocation = SmallJavaPackage.eINSTANCE.getSJMemberSelection_Methodinvocation();
+        this.error(_builder.toString(), _sJMemberSelection_Methodinvocation, 
+          SmallJavaValidator.METHOD_INVOCATION_ON_FIELD);
+      }
+      boolean _and_1 = false;
+      if (!(member instanceof SJMethod)) {
+        _and_1 = false;
+      } else {
+        boolean _isMethodinvocation_1 = sel.isMethodinvocation();
+        boolean _not = (!_isMethodinvocation_1);
+        _and_1 = ((member instanceof SJMethod) && _not);
+      }
+      if (_and_1) {
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("Field selection on a method");
+        EReference _sJMemberSelection_Member = SmallJavaPackage.eINSTANCE.getSJMemberSelection_Member();
+        this.error(_builder_1.toString(), _sJMemberSelection_Member, 
+          SmallJavaValidator.FIELD_SELECTION_ON_METHOD);
+      }
+    }
+  }
+  
+  @Check
+  public void checkNoStatmentAfterReturn(final SJReturn ret) {
+    SJBlock _containingBlock = SmallJavaModelUtil.containingBlock(ret);
+    final EList<SJStatement> statements = _containingBlock.getStatements();
+    SJStatement _last = IterableExtensions.<SJStatement>last(statements);
+    boolean _notEquals = (!Objects.equal(_last, ret));
+    if (_notEquals) {
+      int _indexOf = statements.indexOf(ret);
+      int _plus = (_indexOf + 1);
+      SJStatement _get = statements.get(_plus);
+      this.error("Unreachable code", _get, 
+        null, 
+        SmallJavaValidator.UNREACHABLE_CODE);
+    }
+  }
+  
+  @Check
+  public void checkNoDuplicateClass(final SJClass c) {
+    SJProgram _containingProgram = SmallJavaModelUtil.containingProgram(c);
+    EList<SJClass> _classes = _containingProgram.getClasses();
+    final Function1<SJClass,Boolean> _function = new Function1<SJClass,Boolean>() {
+        public Boolean apply(final SJClass it) {
+          boolean _and = false;
+          boolean _notEquals = (!Objects.equal(it, c));
+          if (!_notEquals) {
+            _and = false;
+          } else {
+            String _name = it.getName();
+            String _name_1 = c.getName();
+            boolean _equals = Objects.equal(_name, _name_1);
+            _and = (_notEquals && _equals);
+          }
+          return Boolean.valueOf(_and);
+        }
+      };
+    boolean _exists = IterableExtensions.<SJClass>exists(_classes, _function);
+    if (_exists) {
+      String _name = c.getName();
+      String _plus = ("Duplicate class \'" + _name);
+      String _plus_1 = (_plus + "\'");
+      EAttribute _sJClass_Name = SmallJavaPackage.eINSTANCE.getSJClass_Name();
+      this.error(_plus_1, _sJClass_Name, 
+        SmallJavaValidator.DUPLICATE_ELEMENT);
+    }
+  }
+  
+  @Check
+  public void checkNoDuplicateMember(final SJMember member) {
+    SJClass _containingClass = SmallJavaModelUtil.containingClass(member);
+    EList<SJMember> _members = _containingClass.getMembers();
+    final Function1<SJMember,Boolean> _function = new Function1<SJMember,Boolean>() {
+        public Boolean apply(final SJMember it) {
+          boolean _and = false;
+          boolean _and_1 = false;
+          boolean _notEquals = (!Objects.equal(it, member));
+          if (!_notEquals) {
+            _and_1 = false;
+          } else {
+            EClass _eClass = it.eClass();
+            EClass _eClass_1 = member.eClass();
+            boolean _equals = Objects.equal(_eClass, _eClass_1);
+            _and_1 = (_notEquals && _equals);
+          }
+          if (!_and_1) {
+            _and = false;
+          } else {
+            String _name = it.getName();
+            String _name_1 = member.getName();
+            boolean _equals_1 = Objects.equal(_name, _name_1);
+            _and = (_and_1 && _equals_1);
+          }
+          return Boolean.valueOf(_and);
+        }
+      };
+    final SJMember duplicate = IterableExtensions.<SJMember>findFirst(_members, _function);
+    boolean _notEquals = (!Objects.equal(duplicate, null));
+    if (_notEquals) {
+      String _name = member.getName();
+      String _plus = ("Duplicate member \'" + _name);
+      String _plus_1 = (_plus + "\'");
+      EAttribute _sJMember_Name = SmallJavaPackage.eINSTANCE.getSJMember_Name();
+      this.error(_plus_1, _sJMember_Name, 
+        SmallJavaValidator.DUPLICATE_ELEMENT);
+    }
+  }
+  
+  @Check
+  public void checkNoDuplicateVariable(final SJVariableDeclaration vardecl) {
+    SJMethod _containingMethod = SmallJavaModelUtil.containingMethod(vardecl);
+    SJMethodBody _body = _containingMethod.getBody();
+    List<SJVariableDeclaration> _allContentsOfType = EcoreUtil2.<SJVariableDeclaration>getAllContentsOfType(_body, SJVariableDeclaration.class);
+    final Function1<SJVariableDeclaration,Boolean> _function = new Function1<SJVariableDeclaration,Boolean>() {
+        public Boolean apply(final SJVariableDeclaration it) {
+          boolean _and = false;
+          boolean _notEquals = (!Objects.equal(it, vardecl));
+          if (!_notEquals) {
+            _and = false;
+          } else {
+            String _name = it.getName();
+            String _name_1 = vardecl.getName();
+            boolean _equals = Objects.equal(_name, _name_1);
+            _and = (_notEquals && _equals);
+          }
+          return Boolean.valueOf(_and);
+        }
+      };
+    final SJVariableDeclaration duplicate = IterableExtensions.<SJVariableDeclaration>findFirst(_allContentsOfType, _function);
+    boolean _notEquals = (!Objects.equal(duplicate, null));
+    if (_notEquals) {
+      String _name = vardecl.getName();
+      String _plus = ("Duplicate variable declaration \'" + _name);
+      String _plus_1 = (_plus + "\'");
+      EAttribute _sJSymbol_Name = SmallJavaPackage.eINSTANCE.getSJSymbol_Name();
+      this.error(_plus_1, _sJSymbol_Name, 
+        SmallJavaValidator.DUPLICATE_ELEMENT);
+    }
+  }
 }

@@ -4,6 +4,19 @@
 package org.example.smalljava.validation
 //import org.eclipse.xtext.validation.Check
 
+import org.eclipse.xtext.validation.Check
+import org.example.smalljava.smallJava.SJClass
+import org.example.smalljava.smallJava.SJField
+import org.example.smalljava.smallJava.SJMember
+import org.example.smalljava.smallJava.SJMemberSelection
+import org.example.smalljava.smallJava.SJMethod
+import org.example.smalljava.smallJava.SJReturn
+import org.example.smalljava.smallJava.SJVariableDeclaration
+import org.example.smalljava.smallJava.SmallJavaPackage
+
+import static extension org.eclipse.xtext.EcoreUtil2.*
+import static extension org.example.smalljava.util.SmallJavaModelUtil.*
+
 /**
  * Custom validation rules. 
  *
@@ -11,14 +24,89 @@ package org.example.smalljava.validation
  */
 class SmallJavaValidator extends AbstractSmallJavaValidator {
 
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	public static val HIERARCHY_CYCLE = 
+		"org.example.smalljava.HierarchyCycle";
+	
+	public static val FIELD_SELECTION_ON_METHOD = 
+		"org.example.smalljava.FieldSelecionOnMethod"
+	
+	public static val METHOD_INVOCATION_ON_FIELD =
+	 	"org.example.smalljava.MethodInvocationOnField"
+	
+	public static val UNREACHABLE_CODE = 
+		"org.example.smalljava.UnreachableCode"
+	
+	public static val DUPLICATE_ELEMENT = 
+	 	"org.example.smalljava.DuplicateElement"
+	
+	@Check
+	def checkClassHierarchy(SJClass c) {
+		if (c.classHierarchy.contains(c)) {
+			error("cycle in hierarchy of class '" + c.name + "'", SmallJavaPackage::eINSTANCE.SJClass_Superclass,
+				HIERARCHY_CYCLE, c.superclass.name)
+		}
+	}
+	
+	@Check
+	def void checkMemberSelection(SJMemberSelection sel) {
+		val member = sel.member
+		if (member != null) {
+			if (member instanceof SJField && sel.methodinvocation)
+				error(
+					'''Method invocation on a field''',
+					SmallJavaPackage::eINSTANCE.
+						SJMemberSelection_Methodinvocation,
+					METHOD_INVOCATION_ON_FIELD)
+			if (member instanceof SJMethod && !sel.methodinvocation)
+				error('''Field selection on a method''', 
+					SmallJavaPackage::eINSTANCE.SJMemberSelection_Member,
+					FIELD_SELECTION_ON_METHOD)
+		}
+	}
+	
+	@Check
+	def void checkNoStatmentAfterReturn(SJReturn ret) {
+		val statements = ret.containingBlock.statements
+		if (statements.last != ret) {
+			// put the error on the statement after the return 
+			error("Unreachable code",
+				statements.get(statements.indexOf(ret)+1),
+				null, // EStructuralFeature
+				UNREACHABLE_CODE
+			)
+		}
+	}
+	
+	@Check def void checkNoDuplicateClass(SJClass c) {
+		if (c.containingProgram.classes.exists[
+			it != c && it.name == c.name])
+			
+			error("Duplicate class '" + c.name + "'",
+				SmallJavaPackage::eINSTANCE.SJClass_Name,
+				DUPLICATE_ELEMENT)
+	}
+	
+	@Check def void checkNoDuplicateMember(SJMember member) {
+		val duplicate = member.containingClass.members.findFirst[
+			it != member && it.eClass == member.eClass &&
+			it.name == member.name]
+		
+		if (duplicate != null) 
+			error("Duplicate member '" + member.name + "'",
+				SmallJavaPackage::eINSTANCE.SJMember_Name,
+				DUPLICATE_ELEMENT)
+	}
+	
+	@Check def void checkNoDuplicateVariable(SJVariableDeclaration vardecl) {
+		val duplicate = vardecl.containingMethod.body.
+		getAllContentsOfType(typeof(SJVariableDeclaration)).
+			findFirst[it != vardecl && it.name == vardecl.name]
+			
+		if (duplicate != null)
+			error("Duplicate variable declaration '" + vardecl.name + "'",
+				SmallJavaPackage::eINSTANCE.SJSymbol_Name,
+				DUPLICATE_ELEMENT)
+		
+	}
+	 
 }

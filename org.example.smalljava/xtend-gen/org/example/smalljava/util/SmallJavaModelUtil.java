@@ -1,10 +1,13 @@
 package org.example.smalljava.util;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
+import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.EcoreUtil2;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.example.smalljava.smallJava.SJBlock;
 import org.example.smalljava.smallJava.SJClass;
@@ -18,6 +21,43 @@ import org.example.smalljava.smallJava.SJStatement;
 
 @SuppressWarnings("all")
 public class SmallJavaModelUtil {
+  public static ArrayList<SJClass> classHierarchy(final SJClass c) {
+    ArrayList<SJClass> _xblockexpression = null;
+    {
+      final ArrayList<SJClass> visited = CollectionLiterals.<SJClass>newArrayList();
+      SJClass current = c.getSuperclass();
+      boolean _and = false;
+      boolean _notEquals = (!Objects.equal(current, null));
+      if (!_notEquals) {
+        _and = false;
+      } else {
+        boolean _contains = visited.contains(current);
+        boolean _not = (!_contains);
+        _and = (_notEquals && _not);
+      }
+      boolean _while = _and;
+      while (_while) {
+        {
+          visited.add(current);
+          SJClass _superclass = current.getSuperclass();
+          current = _superclass;
+        }
+        boolean _and_1 = false;
+        boolean _notEquals_1 = (!Objects.equal(current, null));
+        if (!_notEquals_1) {
+          _and_1 = false;
+        } else {
+          boolean _contains_1 = visited.contains(current);
+          boolean _not_1 = (!_contains_1);
+          _and_1 = (_notEquals_1 && _not_1);
+        }
+        _while = _and_1;
+      }
+      _xblockexpression = (visited);
+    }
+    return _xblockexpression;
+  }
+  
   public static Iterable<SJField> fields(final SJClass c) {
     EList<SJMember> _members = c.getMembers();
     Iterable<SJField> _filter = Iterables.<SJField>filter(_members, SJField.class);
