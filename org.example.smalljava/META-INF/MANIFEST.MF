@@ -31,5 +31,6 @@ Export-Package: org.example.smalljava,
  org.example.smalljava.smallJava,
  org.example.smalljava.smallJava.impl,
  org.example.smalljava.smallJava.util,
+ org.example.smalljava.typing,
  org.example.smalljava.util,
  org.example.smalljava.validation
